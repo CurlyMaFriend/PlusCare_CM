@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PlusCare_CM</string>
+    <string name="loginUsername">Username</string>
+    <string name="loginPassword">Password</string>
+    <string name="confirmarLogin">Login</string>
+    <string name="noAccount">No account? Click here</string>
+    <string name="createUsername">Account username</string>
+    <string name="createPassword">Account Password</string>
+    <string name="createPasswordVerify">Verify Password</string>
+    <string name="buttonCreate">Create</string>
+    <string name="buttonCancel">Cancel</string>
+    <string name="passwordUnmatched">The passwords don\'t match</string>
+    <string name="usernameNotAvailable">Username not available</string>
+    <string name="createdAccountSuccess">Account created successfully</string>
+    <string name="loginSuccessfully">Successfully logged in</string>
+    <string name="errorOnLogin">Credentials don\'t exist</string>
+    <string name="nomeUtente">Name: </string>
+    <string name="idadeUtente">Age: </string>
+    <string name="nomePrefUtente">Nickname: </string>
+    <string name="dadosUtente">Data</string>
+    <string name="dadosSaudeUtente">Health</string>
+</resources>

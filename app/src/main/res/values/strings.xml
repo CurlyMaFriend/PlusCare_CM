@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">PlusCare_CM</string>
+    <string name="loginUsername">Nome de Utilizador</string>
+    <string name="loginPassword">Password</string>
+    <string name="confirmarLogin">Autenticar</string>
+    <string name="noAccount">Sem conta? Clique aqui</string>
+    <string name="createUsername">Nome da conta</string>
+    <string name="createPassword">Insira a Password</string>
+    <string name="createPasswordVerify">Confirmação da Password</string>
+    <string name="buttonCreate">Criar</string>
+    <string name="buttonCancel">Cancelar</string>
+    <string name="passwordUnmatched">As passwords não coincidem</string>
+    <string name="usernameNotAvailable">Nome de utilizador não disponível</string>
+    <string name="createdAccountSuccess">Conta criada com sucesso</string>
+    <string name="loginSuccessfully">Login efetuado com sucesso</string>
+    <string name="errorOnLogin">As credenciais estão erradas</string>
+    <string name="nomeUtente">Nome: </string>
+    <string name="idadeUtente">Idade: </string>
+    <string name="nomePrefUtente">Alcunha: </string>
+    <string name="dadosUtente">Dados</string>
+    <string name="dadosSaudeUtente">Saúde</string>
+
 </resources>
