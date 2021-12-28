@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void switchActivities() {
-        Intent switchActivityIntent = new Intent(this, LoginActivity.class);
+        Intent switchActivityIntent = new Intent(this, UtilizadorInfo.class);
         startActivity(switchActivityIntent);
     }
 
