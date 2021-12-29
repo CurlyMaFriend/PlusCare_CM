@@ -19,5 +19,26 @@
     <string name="nomePrefUtente">Alcunha: </string>
     <string name="dadosUtente">Dados</string>
     <string name="dadosSaudeUtente">Saúde</string>
+    <string name="address">Morada: </string>
+    <string name="bloodType">Tipo sanguíneo: </string>
+    <string name="profession">Profissão: </string>
+    <string name="educationLevel">Nível de Educação: </string>
+    <string name="NIF">NIF: </string>
+    <string name="NSS">NSS: </string>
+    <string name="CC">CC: </string>
+    <string name="nationatility">Nacionalidade: </string>
+    <string name="socialSituation">Situação Matrimonial: </string>
+    <string name="dateOfBirth">Data de Nascimento: </string>
+    <string name="diseases">Doenças: </string>
+    <string name="desabilities">Deficiências: </string>
+    <string name="dadosCuidadosUtente">Cuidados</string>
+    <string name="nextMedication">Próxima medicação</string>
+    <string name="nextHygiene">Próxima Higiene</string>
+    <string name="dateValidity">Data de validade: </string>
+    <string name="doseToma">Dose: </string>
+    <string name="dateProvided">Hora de toma: </string>
+    <string name="typeHygiene">Tipo de higiene: </string>
+    <string name="descritpion">Descrição: </string>
+    <string name="details">Detalhes: </string>
 
 </resources>

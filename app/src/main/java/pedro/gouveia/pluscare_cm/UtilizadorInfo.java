@@ -31,6 +31,7 @@ public class UtilizadorInfo extends AppCompatActivity {
 
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.dadosUtente)));
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.dadosSaudeUtente)));
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.dadosCuidadosUtente)));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

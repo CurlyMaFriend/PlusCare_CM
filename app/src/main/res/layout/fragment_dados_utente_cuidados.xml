@@ -3,17 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dadosUtenteFragment">
-
+    tools:context=".dadosUtenteCuidadosFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/my_custom_linearlayout"
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10sp"
             android:orientation="horizontal">
@@ -22,15 +20,9 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/address"
+                android:text="@string/nextMedication"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/morada"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -40,18 +32,19 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/dateOfBirth"
+                android:text="@string/nomeUtente"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/dataNascimento"
+                android:id="@+id/nomeMedicamento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:textSize="18sp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -61,18 +54,54 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/socialSituation"
+                android:text="@string/dateValidity"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/situacaoMatrimonial"
+                android:id="@+id/dataValidade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dateProvided"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dateProvided"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/doseToma"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="18sp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -82,18 +111,11 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/nationatility"
+                android:text="@string/nextHygiene"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/nacionalidade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -103,18 +125,18 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/educationLevel"
+                android:text="@string/nomeUtente"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/nivelEducacao"
+                android:id="@+id/nomeHigiene"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:textSize="18sp" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -124,68 +146,60 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/profession"
+                android:text="@string/typeHygiene"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/profissao"
+                android:id="@+id/tipoHigiene"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:textSize="18sp" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10sp"
-            android:orientation="horizontal"
-            android:weightSum="3">
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/NIF"
+                android:text="@string/descritpion"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/nif"
+                android:id="@+id/description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="3"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/details"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/textView16"
+                android:id="@+id/details"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/NSS"
+                android:layout_weight="3"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/nss"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/CC"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/cc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
 

@@ -4,10 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Escolinha/Mestrado/2 Ano/1 Semestre/CM/PlusCare_CM/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/drawable/my_custom_linearlayout.xml" value="0.44583333333333336" />
         <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/activity_main.xml" value="0.4296875" />
         <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/admin_activity_layout.xml" value="0.4296875" />
         <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/auxiliar_main_activity.xml" value="0.4296875" />
         <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_dados_utente.xml" value="0.4296875" />
+        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_dados_utente_atividades.xml" value="0.4296875" />
         <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_dados_utente_saude.xml" value="0.4296875" />
         <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/lista_utentes_layout.xml" value="0.375" />
         <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/lista_utilizadores_layout.xml" value="0.24375" />

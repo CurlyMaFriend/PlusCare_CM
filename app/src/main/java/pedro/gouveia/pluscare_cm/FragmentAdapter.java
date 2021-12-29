@@ -19,6 +19,8 @@ public class FragmentAdapter extends FragmentStateAdapter {
         switch (position){
             case 1:
                 return new dadosUtenteSaudeFragment();
+            case 2:
+                return new dadosUtenteCuidadosFragment();
         }
 
         return new dadosUtenteFragment();
@@ -26,6 +28,6 @@ public class FragmentAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 3;
     }
 }

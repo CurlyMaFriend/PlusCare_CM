@@ -20,4 +20,26 @@
     <string name="nomePrefUtente">Nickname: </string>
     <string name="dadosUtente">Data</string>
     <string name="dadosSaudeUtente">Health</string>
+    <string name="address">Address: </string>
+    <string name="bloodType">Blood type: </string>
+    <string name="profession">Profession: </string>
+    <string name="educationLevel">Education level: </string>
+    <string name="NIF">NIF: </string>
+    <string name="NSS">NSS: </string>
+    <string name="CC">CC: </string>
+    <string name="nationatility">Nationality: </string>
+    <string name="socialSituation">Social Situation: </string>
+    <string name="dateOfBirth">Date of Birth: </string>
+    <string name="diseases">Diseases: </string>
+    <string name="desabilities">Disabilities: </string>
+    <string name="dadosCuidadosUtente">Care</string>
+    <string name="nextMedication">Next Medication</string>
+    <string name="nextHygiene">Next Hygiene</string>
+    <string name="dateValidity">Date of validity</string>
+    <string name="doseToma">Dose: </string>
+    <string name="dateProvided">Time provided: </string>
+    <string name="typeHygiene">Type of hygiene: </string>
+    <string name="descritpion">Description: </string>
+    <string name="details">Details: </string>
+
 </resources>
