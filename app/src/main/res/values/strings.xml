@@ -40,5 +40,16 @@
     <string name="typeHygiene">Tipo de higiene: </string>
     <string name="descritpion">Descrição: </string>
     <string name="details">Detalhes: </string>
+    <string name="tarefas">Tarefas: </string>
+    <string name="medicamentos">Medicamentos: </string>
+    <string name="higiene">Higiene: </string>
+    <string name="ocorrencias">Ocorrências: </string>
+    <string name="total">Total: </string>
+    <string name="porFazer">Por fazer: </string>
+    <string name="listarTarefas">Listar Tarefas</string>
+    <string name="listarMedicamentos">Listar Medicamentos</string>
+    <string name="listarHigiene">Listar Higiene</string>
+    <string name="listarOcorrencias">Listar Ocorrências</string>
+
 
 </resources>
