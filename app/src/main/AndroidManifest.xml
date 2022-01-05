@@ -21,7 +21,13 @@
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".AdminMainActivity"></activity>
         <activity android:name=".AuxiliarMainActivity"></activity>
-        <activity android:name=".UtilizadorInfo"></activity>
+        <activity android:name=".UtenteInfo"></activity>
+        <activity android:name=".TarefasInfo"></activity>
+        <activity android:name=".HigienesInfo"></activity>
+        <activity android:name=".MedicamentosInfo"></activity>
+        <activity android:name=".NovaContaActivity"></activity>
+        <activity android:name=".OcorrenciasInfo"></activity>
+
     </application>
 
 </manifest>

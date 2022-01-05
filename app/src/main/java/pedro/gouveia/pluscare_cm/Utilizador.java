@@ -2,21 +2,21 @@ package pedro.gouveia.pluscare_cm;
 
 public class Utilizador {
 
-    private String username, password;
+    private String email, password;
     private int tipo;
 
     Utilizador(String aUsername, String aPassword){
-        username = aUsername;
+        email = aUsername;
         password = aPassword;
         tipo = -1;
     }
 
     public String getUsername() {
-        return username;
+        return email;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.email = username;
     }
 
     public String getPassword() {

@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentUtenteDados">
-
+    tools:context=".FragmentMedicamentosPorFazer">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,11 +21,10 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/address"
+                android:text="@string/descritpion"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/morada"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -43,57 +41,17 @@
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/dateOfBirth"
+                android:text="@string/details"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/dataNascimento"
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="18sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10sp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/socialSituation"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/situacaoMatrimonial"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="18sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10sp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/nationatility"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/nacionalidade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="18sp" />
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -106,36 +64,16 @@
                 android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/educationLevel"
+                android:text="@string/dataAdd"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/nivelEducacao"
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="18sp" />
-        </LinearLayout>
+                android:ems="10"
+                android:inputType="date" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10sp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/profession"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/profissao"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -143,50 +81,57 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10sp"
             android:orientation="horizontal"
-            android:weightSum="3">
+            android:weightSum="2">
 
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/NIF"
+                android:text="@string/horaInicio"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/nif"
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="18sp" />
+                android:ems="10"
+                android:inputType="date" />
 
             <TextView
                 android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/NSS"
+                android:text="@string/horaFim"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/nss"
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="18sp" />
+                android:ems="10"
+                android:inputType="date" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/textView21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/CC"
+                android:text="@string/comments"
                 android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/cc"
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="18sp" />
+                android:ems="10"
+                android:gravity="start|top"
+                android:inputType="textMultiLine" />
         </LinearLayout>
     </LinearLayout>
-
 </FrameLayout>

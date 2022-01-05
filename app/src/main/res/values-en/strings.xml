@@ -51,5 +51,27 @@
     <string name="listarMedicamentos">List Medicine</string>
     <string name="listarHigiene">List Hygiene</string>
     <string name="listarOcorrencias">List Occurrences</string>
+    <string name="tasksDay">Daily Tasks: </string>
+    <string name="hygieneDay">Daily Hygiene: </string>
+    <string name="medicineDay">Daily Medicine: </string>
+    <string name="ocorrenciasDay">Daily occurrences: </string>
+    <string name="Tarefas">Tasks</string>
+    <string name="Tarefa">Task</string>
+    <string name="Medicamentos">Medicine</string>
+    <string name="Ocorrencias">Occorrunces</string>
+    <string name="Higiene">Hygiene</string>
+    <string name="Utentes">Utentes</string>
+    <string name="Notificacoes">Notifications</string>
+    <string name="todayStats">Today\'s Statistics</string>
+    <string name="PorFazer">To be Done</string>
+    <string name="Completas">Complete</string>
+    <string name="Incompletas">Missed</string>
+    <string name="dataAdd">Added data: </string>
+    <string name="horaInicio">Beggining hour: </string>
+    <string name="horaFim">Ending hour: </string>
+    <string name="comments">Comments: </string>
+    <string name="tempoRestante">Remaining time: </string>
+    <string name="causas">Causes:</string>
+    <string name="justificacao">Justification:</string>
 
 </resources>

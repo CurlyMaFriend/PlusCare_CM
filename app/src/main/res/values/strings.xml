@@ -50,6 +50,27 @@
     <string name="listarMedicamentos">Listar Medicamentos</string>
     <string name="listarHigiene">Listar Higiene</string>
     <string name="listarOcorrencias">Listar Ocorrências</string>
-
+    <string name="tasksDay">Tarefas do dia: </string>
+    <string name="hygieneDay">Higiene do dia: </string>
+    <string name="medicineDay">Medicamentos do dia: </string>
+    <string name="ocorrenciasDay">Ocorrências do dia: </string>
+    <string name="Tarefas">Tarefas</string>
+    <string name="Tarefa">Tarefa</string>
+    <string name="Medicamentos">Medicamentos</string>
+    <string name="Ocorrencias">Ocorrências</string>
+    <string name="Higiene">Higiene</string>
+    <string name="Utentes">Utentes</string>
+    <string name="Notificacoes">Notificações</string>
+    <string name="todayStats">Estatísticas de Hoje</string>
+    <string name="PorFazer">Por fazer</string>
+    <string name="Completas">Completas</string>
+    <string name="Incompletas">Falhadas</string>
+    <string name="dataAdd">Data inserido: </string>
+    <string name="horaInicio">Data inicial: </string>
+    <string name="horaFim">Data final: </string>
+    <string name="comments">Comentários: </string>
+    <string name="tempoRestante">Tempo Restante: </string>
+    <string name="causas">Causas:</string>
+    <string name="justificacao">Justificação:</string>
 
 </resources>

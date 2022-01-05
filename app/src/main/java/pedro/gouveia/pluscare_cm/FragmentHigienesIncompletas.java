@@ -8,12 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link dadosUtenteCuidadosFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class dadosUtenteCuidadosFragment extends Fragment {
+public class FragmentHigienesIncompletas extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +19,7 @@ public class dadosUtenteCuidadosFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public dadosUtenteCuidadosFragment() {
+    public FragmentHigienesIncompletas() {
         // Required empty public constructor
     }
 
@@ -34,11 +29,11 @@ public class dadosUtenteCuidadosFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment dadosUtenteAtividadesFragment.
+     * @return A new instance of fragment FragmentHigienesIncompletas.
      */
     // TODO: Rename and change types and number of parameters
-    public static dadosUtenteCuidadosFragment newInstance(String param1, String param2) {
-        dadosUtenteCuidadosFragment fragment = new dadosUtenteCuidadosFragment();
+    public static FragmentHigienesIncompletas newInstance(String param1, String param2) {
+        FragmentHigienesIncompletas fragment = new FragmentHigienesIncompletas();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +54,6 @@ public class dadosUtenteCuidadosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dados_utente_cuidados, container, false);
+        return inflater.inflate(R.layout.fragment_higienes_incompletas, container, false);
     }
 }

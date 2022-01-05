@@ -7,8 +7,10 @@ public class Utente {
     private String nome, morada, situacaoMatrimonial, profissao,nivelEducacao, nacionalidade, nomePreferencia, tipoSangue, deficiencias, doencas;
     private int nif, nss, cc;
     private Date dataNascimento;
+    private int id;
 
-    public Utente(String nome, String morada, String situacaoMatrimonial, String profissao, String nivelEducacao, String nacionalidade, String nomePreferencia, String tipoSangue, String deficiencias, String doencas, int nif, int nss, int cc, Date dataNascimento) {
+    public Utente(int id, String nome, String morada, String situacaoMatrimonial, String profissao, String nivelEducacao, String nacionalidade, String nomePreferencia, String tipoSangue, String deficiencias, String doencas, int nif, int nss, int cc, Date dataNascimento) {
+        this.id = id;
         this.nome = nome;
         this.morada = morada;
         this.situacaoMatrimonial = situacaoMatrimonial;

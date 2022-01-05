@@ -4,34 +4,32 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
-public class UtilizadorInfo extends AppCompatActivity {
+public class HigienesInfo extends AppCompatActivity {
 
     private TabLayout tabLayout;
-    private FragmentAdapter fragmentAdapter;
+    private FragmentAdapterHigiene fragmentAdapter;
     private ViewPager2 viewPage;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.utente_info_layout);
+        setContentView(R.layout.higienes_info_layout);
 
-        tabLayout = findViewById(R.id.tabLayout);
-        viewPage = findViewById(R.id.viewPager2);
+        tabLayout = findViewById(R.id.tabLayout5);
+        viewPage = findViewById(R.id.viewPager25);
 
         FragmentManager fm = getSupportFragmentManager();
-        fragmentAdapter = new FragmentAdapter(fm, getLifecycle());
+        fragmentAdapter = new FragmentAdapterHigiene(fm, getLifecycle());
         viewPage.setAdapter(fragmentAdapter);
 
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.dadosUtente)));
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.dadosSaudeUtente)));
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.dadosCuidadosUtente)));
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.Completas)));
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.PorFazer)));
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.Incompletas)));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -58,4 +56,5 @@ public class UtilizadorInfo extends AppCompatActivity {
         });
 
     }
+
 }

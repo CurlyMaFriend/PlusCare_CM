@@ -6,28 +6,28 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-public class FragmentAdapter extends FragmentStateAdapter {
+public class FragmentAdapterMedicamento extends FragmentStateAdapter {
 
-    public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+    public FragmentAdapterMedicamento(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
     }
 
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-
-        switch (position){
+        switch (position) {
             case 1:
-                return new dadosUtenteSaudeFragment();
+                return new FragmentMedicamentosPorFazer();
             case 2:
-                return new dadosUtenteCuidadosFragment();
+                return new FragmentMedicamentosIncompletos();
+            default:
+                return new FragmentMedicamentosCompletos();
         }
-
-        return new dadosUtenteFragment();
     }
 
     @Override
     public int getItemCount() {
         return 3;
     }
+
 }
