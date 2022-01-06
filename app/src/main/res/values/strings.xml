@@ -15,6 +15,7 @@
     <string name="loginSuccessfully">Login efetuado com sucesso</string>
     <string name="errorOnLogin">As credenciais estão erradas</string>
     <string name="nomeUtente">Nome: </string>
+    <string name="sobrenomeUtente">Sobrenome: </string>
     <string name="idadeUtente">Idade: </string>
     <string name="nomePrefUtente">Alcunha: </string>
     <string name="dadosUtente">Dados</string>
@@ -72,5 +73,15 @@
     <string name="tempoRestante">Tempo Restante: </string>
     <string name="causas">Causas:</string>
     <string name="justificacao">Justificação:</string>
+    <string name="listaUtilizadores">Lista de Utilizadores</string>
+    <string name="roleUser">Cargo: </string>
+    <string name="buttonCriar">Criar</string>
+    <string name="arquivadas">Arquivadas</string>
+    <string name="novas">Novas</string>
+    <string name="listMedicamentos">Lista de Medicamentos</string>
+    <string name="listOcorrencias">Lista de Ocorrencias</string>
+    <string name="listTarefas">Lista de Tarefas</string>
+    <string name="listHigienes">Lista de Higienes</string>
+
 
 </resources>

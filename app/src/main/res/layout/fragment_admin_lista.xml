@@ -12,14 +12,14 @@
 
         <LinearLayout
             android:id="@+id/linearLayout3"
-            android:layout_width="342dp"
-            android:layout_height="wrap_content"
+            android:layout_width="301dp"
+            android:layout_height="116dp"
             android:layout_marginTop="100dp"
             android:layout_marginBottom="10dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintHorizontal_bias="0.309"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -97,14 +97,14 @@
 
         <LinearLayout
             android:id="@+id/linearLayout2"
-            android:layout_width="342dp"
-            android:layout_height="wrap_content"
+            android:layout_width="301dp"
+            android:layout_height="116dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintHorizontal_bias="0.32"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
@@ -181,14 +181,14 @@
 
         <LinearLayout
             android:id="@+id/linearLayout4"
-            android:layout_width="342dp"
-            android:layout_height="wrap_content"
+            android:layout_width="301dp"
+            android:layout_height="116dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintHorizontal_bias="0.318"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
@@ -266,14 +266,14 @@
 
         <LinearLayout
             android:id="@+id/linearLayout5"
-            android:layout_width="342dp"
-            android:layout_height="wrap_content"
+            android:layout_width="301dp"
+            android:layout_height="116dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="100dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintHorizontal_bias="0.309"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 

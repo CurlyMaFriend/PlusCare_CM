@@ -9,27 +9,26 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 
-public class TarefasInfo extends AppCompatActivity {
+public class OcorrenciasInfoActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
-    private FragmentAdapterTarefa fragmentAdapter;
+    private FragmentAdapterHigiene fragmentAdapter;
     private ViewPager2 viewPage;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tarefas_info_layout);
+        setContentView(R.layout.ocorrencias_info_layout);
 
-        tabLayout = findViewById(R.id.tabLayout2);
-        viewPage = findViewById(R.id.viewPager22);
+        tabLayout = findViewById(R.id.tabLayout3);
+        viewPage = findViewById(R.id.viewPager23);
 
         FragmentManager fm = getSupportFragmentManager();
-        fragmentAdapter = new FragmentAdapterTarefa(fm, getLifecycle());
+        fragmentAdapter = new FragmentAdapterHigiene(fm, getLifecycle());
         viewPage.setAdapter(fragmentAdapter);
 
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.Completas)));
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.PorFazer)));
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.Incompletas)));
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.novas)));
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.arquivadas)));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

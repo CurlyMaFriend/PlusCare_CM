@@ -21,12 +21,12 @@
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".AdminMainActivity"></activity>
         <activity android:name=".AuxiliarMainActivity"></activity>
-        <activity android:name=".UtenteInfo"></activity>
-        <activity android:name=".TarefasInfo"></activity>
-        <activity android:name=".HigienesInfo"></activity>
-        <activity android:name=".MedicamentosInfo"></activity>
+        <activity android:name=".UtentesListaActivity"></activity>
+        <activity android:name=".TarefasInfoActivity"></activity>
+        <activity android:name=".HigienesInfoActivity"></activity>
+        <activity android:name=".MedicamentosInfoActivity"></activity>
         <activity android:name=".NovaContaActivity"></activity>
-        <activity android:name=".OcorrenciasInfo"></activity>
+        <activity android:name=".OcorrenciasInfoActivity"></activity>
 
     </application>
 

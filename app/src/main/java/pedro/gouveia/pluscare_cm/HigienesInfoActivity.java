@@ -9,22 +9,22 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 
-public class MedicamentosInfo extends AppCompatActivity {
+public class HigienesInfoActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
-    private FragmentAdapterMedicamento fragmentAdapter;
+    private FragmentAdapterHigiene fragmentAdapter;
     private ViewPager2 viewPage;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.medicamentos_info_layout);
+        setContentView(R.layout.higienes_info_layout);
 
-        tabLayout = findViewById(R.id.tabLayout4);
-        viewPage = findViewById(R.id.viewPager24);
+        tabLayout = findViewById(R.id.tabLayout5);
+        viewPage = findViewById(R.id.viewPager25);
 
         FragmentManager fm = getSupportFragmentManager();
-        fragmentAdapter = new FragmentAdapterMedicamento(fm, getLifecycle());
+        fragmentAdapter = new FragmentAdapterHigiene(fm, getLifecycle());
         viewPage.setAdapter(fragmentAdapter);
 
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.Completas)));

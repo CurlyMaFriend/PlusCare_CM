@@ -16,6 +16,7 @@
     <string name="loginSuccessfully">Successfully logged in</string>
     <string name="errorOnLogin">Credentials don\'t exist</string>
     <string name="nomeUtente">Name: </string>
+    <string name="sobrenomeUtente">Surname: </string>
     <string name="idadeUtente">Age: </string>
     <string name="nomePrefUtente">Nickname: </string>
     <string name="dadosUtente">Data</string>
@@ -73,5 +74,15 @@
     <string name="tempoRestante">Remaining time: </string>
     <string name="causas">Causes:</string>
     <string name="justificacao">Justification:</string>
+    <string name="listaUtilizadores">List of Users</string>
+    <string name="roleUser">Role: </string>
+    <string name="buttonCriar">Create</string>
+    <string name="arquivadas">Archived</string>
+    <string name="novas">New</string>
+    <string name="listMedicamentos">Medicine List</string>
+    <string name="listOcorrencias">Occorrunce List</string>
+    <string name="listTarefas">Task List</string>
+    <string name="listHigienes">Hygiene List</string>
+
 
 </resources>

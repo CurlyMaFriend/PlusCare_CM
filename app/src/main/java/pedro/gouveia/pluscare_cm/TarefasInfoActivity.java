@@ -9,22 +9,22 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 
-public class OcorrenciasInfo extends AppCompatActivity {
+public class TarefasInfoActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
-    private FragmentAdapterHigiene fragmentAdapter;
+    private FragmentAdapterTarefa fragmentAdapter;
     private ViewPager2 viewPage;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ocorrencias_info_layout);
+        setContentView(R.layout.tarefas_info_layout);
 
-        tabLayout = findViewById(R.id.tabLayout3);
-        viewPage = findViewById(R.id.viewPager23);
+        tabLayout = findViewById(R.id.tabLayout2);
+        viewPage = findViewById(R.id.viewPager22);
 
         FragmentManager fm = getSupportFragmentManager();
-        fragmentAdapter = new FragmentAdapterHigiene(fm, getLifecycle());
+        fragmentAdapter = new FragmentAdapterTarefa(fm, getLifecycle());
         viewPage.setAdapter(fragmentAdapter);
 
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.Completas)));
