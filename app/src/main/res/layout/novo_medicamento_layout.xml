@@ -28,7 +28,7 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/descritpion"
+                android:text="@string/nomeUtente"
                 android:textSize="18sp" />
 
             <TextView
@@ -71,7 +71,6 @@
                 android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/dataAdd"
                 android:textSize="18sp" />
 
             <EditText

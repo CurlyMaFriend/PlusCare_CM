@@ -38,9 +38,14 @@ public class DBHandler extends SQLiteOpenHelper {
     //TABELA MEDICAMENTOS
     private static final String TABLE_MEDICAMENTOS = "medicamentos";
     private static final String FIRSTCOL_MEDICAMENTOS = "id";
-    private static final String SECONDCOL_MEDICAMENTOS = "Titulo";
+    private static final String SECONDCOL_MEDICAMENTOS = "Nome";
     private static final String THIRDCOL_MEDICAMENTOS = "Descricao";
-    private static final String DICTIONARY_TABLE_MEDICAMENTOS_CREATE = "CREATE TABLE IF NOT EXISTS " + TABLE_MEDICAMENTOS + " (" + FIRSTCOL_MEDICAMENTOS + " INTEGER PRIMARY KEY AUTOINCREMENT, " + SECONDCOL_MEDICAMENTOS + " TEXT, " + THIRDCOL_MEDICAMENTOS + " TEXT);";
+    private static final String FOURDCOL_MEDICAMENTOS = "Tipo";
+    private static final String DICTIONARY_TABLE_MEDICAMENTOS_CREATE = "CREATE TABLE IF NOT EXISTS " + TABLE_MEDICAMENTOS + " ("
+            + FIRSTCOL_MEDICAMENTOS + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + SECONDCOL_MEDICAMENTOS + " TEXT, "
+            + THIRDCOL_MEDICAMENTOS + " TEXT, "
+            + FOURDCOL_MEDICAMENTOS + " TEXT); ";
 
     //TABELA OCORRENCIAS
     private static final String TABLE_OCORRENCIAS = "ocorrencias";
