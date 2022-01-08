@@ -14,8 +14,8 @@ public class Tarefa {
         this.idAndar = idAndar;
         this.titulo = titulo;
         this.descricao = descricao;
-        this.dataFim = dataFim;
         this.dataInicio = dataInicio;
+        this.dataFim = dataFim;
     }
 
     public int getId() {

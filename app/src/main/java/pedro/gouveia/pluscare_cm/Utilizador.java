@@ -2,12 +2,14 @@ package pedro.gouveia.pluscare_cm;
 
 public class Utilizador {
 
-    private String email, password;
-    private int tipo;
+    private String email, password, role;
+    private int tipo, id;
 
-    Utilizador(String aUsername, String aPassword){
+    Utilizador(int aId, String aUsername, String aPassword){
+        id = aId;
         email = aUsername;
         password = aPassword;
+        role = "TBD";
         tipo = -1;
     }
 
