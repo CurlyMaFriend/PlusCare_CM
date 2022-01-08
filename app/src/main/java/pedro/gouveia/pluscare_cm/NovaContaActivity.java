@@ -5,18 +5,24 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class NovaContaActivity extends AppCompatActivity {
 
-    private EditText username, password, verifyPassword;
+    private EditText username, password, verifyPassword, createAddress, email;
+    private TextView dataNascimento;
     private Button buttonCreate, buttonCancel;
     private ImageView imageView;
+    private Date date1;
 
     private ArrayList<String> userNames = new ArrayList<>();
 
@@ -33,6 +39,17 @@ public class NovaContaActivity extends AppCompatActivity {
         username = findViewById(R.id.createUsernameText);
         password = findViewById(R.id.createPassword);
         verifyPassword = findViewById(R.id.createPasswordVerify);
+        createAddress = findViewById(R.id.createAddress);
+
+        email = findViewById(R.id.createEmail);
+
+        dataNascimento = findViewById(R.id.editTextDate);
+
+        try {
+            date1 = new SimpleDateFormat("dd/MM/yyyy").parse(dataNascimento.getText().toString());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
         buttonCreate = findViewById(R.id.buttonCreateAccount);
         buttonCancel = findViewById(R.id.buttonCancelCreate);
@@ -48,10 +65,12 @@ public class NovaContaActivity extends AppCompatActivity {
                 username.setText("");
                 verifyPassword.setText("");
                 password.setText("");
+                createAddress.setText("");
+                dataNascimento.setText("");
             } else {
 
                 if (verifyPassword.getText().equals(password.getText())) {
-                    new Utilizador(username.getText().toString(), password.getText().toString());
+                    new Utilizador(username.getText().toString(), email.getText().toString(), createAddress.getText().toString(), date1);
                     Toast.makeText(this,getString(R.string.createdAccountSuccess),Toast.LENGTH_LONG);
                     switchActivities(LoginActivity.class);
                 } else {

@@ -4,27 +4,27 @@ import java.util.Date;
 
 public class Utente {
 
-    private String nome, morada, situacaoMatrimonial, profissao,nivelEducacao, nacionalidade, nomePreferencia, tipoSangue, deficiencias, doencas;
-    private int nif, nss, cc;
+    private String nome, morada, estadoCivil, profissao,grauEscolaridade, nacionalidade, nomePreferencia, tipoSangue, deficiencias, altura;
+    private int nif, niss, cc, nus, andarId;
     private Date dataNascimento;
     private int id;
 
-    public Utente(int id, String nome, String morada, String situacaoMatrimonial, String profissao, String nivelEducacao, String nacionalidade, String nomePreferencia, String tipoSangue, String deficiencias, String doencas, int nif, int nss, int cc, Date dataNascimento) {
+    public Utente(int id, int andarId, String nome, String morada, String estadoCivil, String profissao, String altura, String grauEscolaridade, String nacionalidade, String nomePreferencia, String tipoSangue, String deficiencias, String doencas, int nif, int niss, int cc, int nus, Date dataNascimento) {
         this.id = id;
         this.nome = nome;
-        this.morada = morada;
-        this.situacaoMatrimonial = situacaoMatrimonial;
-        this.profissao = profissao;
-        this.nivelEducacao = nivelEducacao;
-        this.nacionalidade = nacionalidade;
         this.nomePreferencia = nomePreferencia;
-        this.tipoSangue = tipoSangue;
-        this.deficiencias = deficiencias;
-        this.doencas = doencas;
-        this.nif = nif;
-        this.nss = nss;
-        this.cc = cc;
+        this.morada = morada;
         this.dataNascimento = dataNascimento;
+        this.estadoCivil = estadoCivil;
+        this.grauEscolaridade = grauEscolaridade;
+        this.profissao = profissao;
+        this.nacionalidade = nacionalidade;
+        this.altura = altura;
+        this.cc = cc;
+        this.nif = nif;
+        this.niss = niss;
+        this.nus = nus;
+        this.andarId = andarId;
     }
 
     public String getNome() {
@@ -43,12 +43,12 @@ public class Utente {
         this.morada = morada;
     }
 
-    public String getSituacaoMatrimonial() {
-        return situacaoMatrimonial;
+    public String getEstadoCivil() {
+        return estadoCivil;
     }
 
-    public void setSituacaoMatrimonial(String situacaoMatrimonial) {
-        this.situacaoMatrimonial = situacaoMatrimonial;
+    public void setEstadoCivil(String estadoCivil) {
+        this.estadoCivil = estadoCivil;
     }
 
     public String getProfissao() {
@@ -60,11 +60,11 @@ public class Utente {
     }
 
     public String getNivelEducacao() {
-        return nivelEducacao;
+        return grauEscolaridade;
     }
 
-    public void setNivelEducacao(String nivelEducacao) {
-        this.nivelEducacao = nivelEducacao;
+    public void setNivelEducacao(String grauEscolaridade) {
+        this.grauEscolaridade = grauEscolaridade;
     }
 
     public String getNacionalidade() {
@@ -83,30 +83,6 @@ public class Utente {
         this.nomePreferencia = nomePreferencia;
     }
 
-    public String getTipoSangue() {
-        return tipoSangue;
-    }
-
-    public void setTipoSangue(String tipoSangue) {
-        this.tipoSangue = tipoSangue;
-    }
-
-    public String getDeficiencias() {
-        return deficiencias;
-    }
-
-    public void setDeficiencias(String deficiencias) {
-        this.deficiencias = deficiencias;
-    }
-
-    public String getDoencas() {
-        return doencas;
-    }
-
-    public void setDoencas(String doencas) {
-        this.doencas = doencas;
-    }
-
     public int getNif() {
         return nif;
     }
@@ -116,11 +92,11 @@ public class Utente {
     }
 
     public int getNss() {
-        return nss;
+        return niss;
     }
 
-    public void setNss(int nss) {
-        this.nss = nss;
+    public void setNss(int niss) {
+        this.niss = niss;
     }
 
     public int getCc() {

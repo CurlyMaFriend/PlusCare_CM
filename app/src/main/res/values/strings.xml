@@ -5,6 +5,7 @@
     <string name="confirmarLogin">Autenticar</string>
     <string name="noAccount">Sem conta? Clique aqui</string>
     <string name="createUsername">Nome da conta</string>
+    <string name="createEmail">Email da conta</string>
     <string name="createPassword">Insira a Password</string>
     <string name="createPasswordVerify">Confirmação da Password</string>
     <string name="buttonCreate">Criar</string>
@@ -82,6 +83,8 @@
     <string name="listOcorrencias">Lista de Ocorrencias</string>
     <string name="listTarefas">Lista de Tarefas</string>
     <string name="listHigienes">Lista de Higienes</string>
+    <string name="createAddress">Introduza a sua morada</string>
+    <string name="createDateBirth">Introduza a sua idade</string>
 
 
 </resources>

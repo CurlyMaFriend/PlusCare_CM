@@ -1,16 +1,20 @@
 package pedro.gouveia.pluscare_cm;
 
+import java.util.Date;
+
 public class Utilizador {
 
-    private String email, password, role;
+    private String email, nome, morada;
+    private Date dataNascimento;
     private int tipo, id;
 
-    Utilizador(int aId, String aUsername, String aPassword){
-        id = aId;
+    Utilizador(String aUsername, String aNome, String aMorada, Date aDataNascimento) {
+        id = -1;
+        nome = aNome;
+        morada = aMorada;
         email = aUsername;
-        password = aPassword;
-        role = "TBD";
         tipo = -1;
+        dataNascimento = aDataNascimento;
     }
 
     public String getUsername() {
@@ -21,11 +25,31 @@ public class Utilizador {
         this.email = username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Date getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
+
+    public int getId() {
+        return id;
     }
 }

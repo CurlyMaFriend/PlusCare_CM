@@ -6,6 +6,7 @@
     <string name="confirmarLogin">Login</string>
     <string name="noAccount">No account? Click here</string>
     <string name="createUsername">Account username</string>
+    <string name="createEmail">Account email</string>
     <string name="createPassword">Account Password</string>
     <string name="createPasswordVerify">Verify Password</string>
     <string name="buttonCreate">Create</string>
@@ -83,6 +84,8 @@
     <string name="listOcorrencias">Occorrunce List</string>
     <string name="listTarefas">Task List</string>
     <string name="listHigienes">Hygiene List</string>
+    <string name="createAddress">Input your address</string>
+    <string name="createDateBirth">Input your day of birth</string>
 
 
 </resources>
