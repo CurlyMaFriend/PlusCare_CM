@@ -5,6 +5,7 @@
     <string name="confirmarLogin">Autenticar</string>
     <string name="noAccount">Sem conta? Clique aqui</string>
     <string name="createUsername">Nome da conta</string>
+    <string name="nickname">Alcunha: </string>
     <string name="createEmail">Email da conta</string>
     <string name="createPassword">Insira a Password</string>
     <string name="createPasswordVerify">Confirmação da Password</string>
@@ -24,12 +25,13 @@
     <string name="address">Morada: </string>
     <string name="bloodType">Tipo sanguíneo: </string>
     <string name="profession">Profissão: </string>
-    <string name="educationLevel">Nível de Educação: </string>
+    <string name="educationLevel">Grau de Escolaridade: </string>
     <string name="NIF">NIF: </string>
-    <string name="NSS">NSS: </string>
+    <string name="NISS">NISS: </string>
     <string name="CC">CC: </string>
+    <string name="NUS">NUS: </string>
     <string name="nationatility">Nacionalidade: </string>
-    <string name="socialSituation">Situação Matrimonial: </string>
+    <string name="socialSituation">Estado Civil: </string>
     <string name="dateOfBirth">Data de Nascimento: </string>
     <string name="diseases">Doenças: </string>
     <string name="desabilities">Deficiências: </string>
@@ -85,6 +87,6 @@
     <string name="listHigienes">Lista de Higienes</string>
     <string name="createAddress">Introduza a sua morada</string>
     <string name="createDateBirth">Introduza a sua idade</string>
-
+    <string name="height">Altura: </string>
 
 </resources>

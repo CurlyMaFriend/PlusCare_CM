@@ -9,8 +9,8 @@ public class Utente {
     private Date dataNascimento;
     private int id;
 
-    public Utente(int id, int andarId, String nome, String morada, String estadoCivil, String profissao, String altura, String grauEscolaridade, String nacionalidade, String nomePreferencia, String tipoSangue, String deficiencias, String doencas, int nif, int niss, int cc, int nus, Date dataNascimento) {
-        this.id = id;
+    public Utente(String nome, String nomePreferencia, String morada, Date dataNascimento, String estadoCivil,  String grauEscolaridade, String profissao, String nacionalidade, String altura, int cc, int nif, int niss, int nus) {
+        this.id = -1;
         this.nome = nome;
         this.nomePreferencia = nomePreferencia;
         this.morada = morada;
@@ -24,7 +24,7 @@ public class Utente {
         this.nif = nif;
         this.niss = niss;
         this.nus = nus;
-        this.andarId = andarId;
+        this.andarId = -1;
     }
 
     public String getNome() {

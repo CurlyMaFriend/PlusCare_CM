@@ -6,6 +6,7 @@
     <string name="confirmarLogin">Login</string>
     <string name="noAccount">No account? Click here</string>
     <string name="createUsername">Account username</string>
+    <string name="nickname">Nickname: </string>
     <string name="createEmail">Account email</string>
     <string name="createPassword">Account Password</string>
     <string name="createPasswordVerify">Verify Password</string>
@@ -24,11 +25,12 @@
     <string name="dadosSaudeUtente">Health</string>
     <string name="address">Address: </string>
     <string name="bloodType">Blood type: </string>
-    <string name="profession">Profession: </string>
+    <string name="profession">Job: </string>
     <string name="educationLevel">Education level: </string>
     <string name="NIF">NIF: </string>
-    <string name="NSS">NSS: </string>
+    <string name="NISS">NISS: </string>
     <string name="CC">CC: </string>
+    <string name="NUS">NUS: </string>
     <string name="nationatility">Nationality: </string>
     <string name="socialSituation">Social Situation: </string>
     <string name="dateOfBirth">Date of Birth: </string>
@@ -86,6 +88,7 @@
     <string name="listHigienes">Hygiene List</string>
     <string name="createAddress">Input your address</string>
     <string name="createDateBirth">Input your day of birth</string>
+    <string name="height">Height: </string>
 
 
 </resources>

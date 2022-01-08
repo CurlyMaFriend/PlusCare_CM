@@ -25,7 +25,6 @@
         <activity android:name=".TarefasInfoActivity"></activity>
         <activity android:name=".HigienesInfoActivity"></activity>
         <activity android:name=".MedicamentosInfoActivity"></activity>
-        <activity android:name=".NovaContaActivity"></activity>
         <activity android:name=".OcorrenciasInfoActivity"></activity>
 
     </application>

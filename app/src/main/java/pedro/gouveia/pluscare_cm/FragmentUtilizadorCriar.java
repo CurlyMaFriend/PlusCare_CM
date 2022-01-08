@@ -2,21 +2,26 @@ package pedro.gouveia.pluscare_cm;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class NovaContaActivity extends AppCompatActivity {
+public class FragmentUtilizadorCriar extends Fragment {
 
     private EditText username, password, verifyPassword, createAddress, email;
     private TextView dataNascimento;
@@ -26,24 +31,30 @@ public class NovaContaActivity extends AppCompatActivity {
 
     private ArrayList<String> userNames = new ArrayList<>();
 
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.nova_conta_layout, container, false);
+    }
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.nova_conta_layout);
+    protected void onViewCreated(@Nullable Bundle savedInstanceState, @Nullable View viewFrag) {
 
-        imageView = findViewById(R.id.imageView);
+        super.onViewCreated(viewFrag,savedInstanceState);
+
+        imageView = viewFrag.findViewById(R.id.imageView);
 
         //userNames =
 
-        username = findViewById(R.id.createUsernameText);
-        password = findViewById(R.id.createPassword);
-        verifyPassword = findViewById(R.id.createPasswordVerify);
-        createAddress = findViewById(R.id.createAddress);
+        username = viewFrag.findViewById(R.id.createUsernameText);
+        password = viewFrag.findViewById(R.id.createPassword);
+        verifyPassword = viewFrag.findViewById(R.id.createPasswordVerify);
+        createAddress = viewFrag.findViewById(R.id.createAddress);
 
-        email = findViewById(R.id.createEmail);
+        email = viewFrag.findViewById(R.id.createEmail);
 
-        dataNascimento = findViewById(R.id.editTextDate);
+        dataNascimento = viewFrag.findViewById(R.id.editTextDate);
 
         try {
             date1 = new SimpleDateFormat("dd/MM/yyyy").parse(dataNascimento.getText().toString());
@@ -51,17 +62,17 @@ public class NovaContaActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        buttonCreate = findViewById(R.id.buttonCreateAccount);
-        buttonCancel = findViewById(R.id.buttonCancelCreate);
+        buttonCreate = viewFrag.findViewById(R.id.buttonCreateAccount);
+        buttonCancel = viewFrag.findViewById(R.id.buttonCancelCreate);
 
         imageView.setOnClickListener(view -> {
             //Colocar permissão para escolher a foto a partir da galeria
-            Toast.makeText(this,"Under Development",Toast.LENGTH_SHORT);
+            Toast.makeText(getContext(),"Under Development",Toast.LENGTH_SHORT);
         });
 
         buttonCreate.setOnClickListener(view -> {
             if(userNames.contains(username.getText())){
-                Toast.makeText(this,getString(R.string.usernameNotAvailable),Toast.LENGTH_SHORT);
+                Toast.makeText(getContext(),getString(R.string.usernameNotAvailable),Toast.LENGTH_SHORT);
                 username.setText("");
                 verifyPassword.setText("");
                 password.setText("");
@@ -71,10 +82,10 @@ public class NovaContaActivity extends AppCompatActivity {
 
                 if (verifyPassword.getText().equals(password.getText())) {
                     new Utilizador(username.getText().toString(), email.getText().toString(), createAddress.getText().toString(), date1);
-                    Toast.makeText(this,getString(R.string.createdAccountSuccess),Toast.LENGTH_LONG);
+                    Toast.makeText(getContext(),getString(R.string.createdAccountSuccess),Toast.LENGTH_LONG);
                     switchActivities(LoginActivity.class);
                 } else {
-                    Toast.makeText(this, getString(R.string.passwordUnmatched), Toast.LENGTH_SHORT);
+                    Toast.makeText(getContext(), getString(R.string.passwordUnmatched), Toast.LENGTH_SHORT);
                     verifyPassword.setText("");
                     password.setText("");
                 }
@@ -87,7 +98,7 @@ public class NovaContaActivity extends AppCompatActivity {
     }
 
     private void switchActivities(Class i) {
-        Intent switchActivityIntent = new Intent(this, i);
+        Intent switchActivityIntent = new Intent(getContext(), i);
         startActivity(switchActivityIntent);
     }
 
