@@ -4,19 +4,19 @@ import java.util.Date;
 
 public class Utente {
 
-    private String nome, morada, estadoCivil, profissao,grauEscolaridade, nacionalidade, nomePreferencia, tipoSangue, deficiencias, altura;
-    private int nif, niss, cc, nus, andarId;
-    private Date dataNascimento;
-    private int id;
+    private String nome, morada, estado_civil, profissao,grau_escolaridade, nacionalidade, nome_preferencia, tipoSangue, deficiencias, altura;
+    private long nif, niss, cc, nus, andar_id;
+    private String data_nascimento;
+    private String id;
 
-    public Utente(String nome, String nomePreferencia, String morada, Date dataNascimento, String estadoCivil,  String grauEscolaridade, String profissao, String nacionalidade, String altura, int cc, int nif, int niss, int nus) {
-        this.id = -1;
+    public Utente(String nome, String nomePreferencia, String morada, String dataNascimento, String estadoCivil,  String grauEscolaridade, String profissao, String nacionalidade, String altura, long cc, long nif, long niss, long nus) {
+        this.id = "0";
         this.nome = nome;
-        this.nomePreferencia = nomePreferencia;
+        this.nome_preferencia = nomePreferencia;
         this.morada = morada;
-        this.dataNascimento = dataNascimento;
-        this.estadoCivil = estadoCivil;
-        this.grauEscolaridade = grauEscolaridade;
+        this.data_nascimento = dataNascimento;
+        this.estado_civil = estadoCivil;
+        this.grau_escolaridade = grauEscolaridade;
         this.profissao = profissao;
         this.nacionalidade = nacionalidade;
         this.altura = altura;
@@ -24,7 +24,7 @@ public class Utente {
         this.nif = nif;
         this.niss = niss;
         this.nus = nus;
-        this.andarId = -1;
+        this.andar_id = -1;
     }
 
     public String getNome() {
@@ -44,11 +44,11 @@ public class Utente {
     }
 
     public String getEstadoCivil() {
-        return estadoCivil;
+        return estado_civil;
     }
 
     public void setEstadoCivil(String estadoCivil) {
-        this.estadoCivil = estadoCivil;
+        this.estado_civil = estadoCivil;
     }
 
     public String getProfissao() {
@@ -60,11 +60,11 @@ public class Utente {
     }
 
     public String getNivelEducacao() {
-        return grauEscolaridade;
+        return grau_escolaridade;
     }
 
     public void setNivelEducacao(String grauEscolaridade) {
-        this.grauEscolaridade = grauEscolaridade;
+        this.grau_escolaridade = grauEscolaridade;
     }
 
     public String getNacionalidade() {
@@ -76,42 +76,65 @@ public class Utente {
     }
 
     public String getNomePreferencia() {
-        return nomePreferencia;
+        return nome_preferencia;
     }
 
     public void setNomePreferencia(String nomePreferencia) {
-        this.nomePreferencia = nomePreferencia;
+        this.nome_preferencia = nomePreferencia;
     }
 
-    public int getNif() {
+    public long getNif() {
         return nif;
     }
 
-    public void setNif(int nif) {
+    public void setNif(long nif) {
         this.nif = nif;
     }
 
-    public int getNss() {
+    public long getNss() {
         return niss;
     }
 
-    public void setNss(int niss) {
+    public void setNss(long niss) {
         this.niss = niss;
     }
 
-    public int getCc() {
+    public long getCc() {
         return cc;
     }
 
-    public void setCc(int cc) {
+    public void setCc(long cc) {
         this.cc = cc;
     }
 
-    public Date getDataNascimento() {
-        return dataNascimento;
+    public String getDataNascimento() {
+        return data_nascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setDataNascimento(String dataNascimento) {
+        this.data_nascimento = dataNascimento;
+    }
+
+    @Override
+    public String toString() {
+        return "Utente{" +
+                "nome='" + nome + '\'' +
+                ", morada='" + morada + '\'' +
+                ", estado_civil='" + estado_civil + '\'' +
+                ", profissao='" + profissao + '\'' +
+                ", grau_escolaridade='" + grau_escolaridade + '\'' +
+                ", nacionalidade='" + nacionalidade + '\'' +
+                ", nome_preferencia='" + nome_preferencia + '\'' +
+                ", tipoSangue='" + tipoSangue + '\'' +
+                ", deficiencias='" + deficiencias + '\'' +
+                ", altura='" + altura + '\'' +
+                ", nif=" + nif +
+                ", niss=" + niss +
+                ", cc=" + cc +
+                ", nus=" + nus +
+                ", andar_id=" + andar_id +
+                ", data_nascimento=" + data_nascimento +
+                ", id=" + id +
+                '}';
     }
 }

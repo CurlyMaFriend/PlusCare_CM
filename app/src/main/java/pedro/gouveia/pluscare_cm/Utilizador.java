@@ -1,20 +1,22 @@
 package pedro.gouveia.pluscare_cm;
 
+import com.google.gson.annotations.Expose;
+
 import java.util.Date;
 
 public class Utilizador {
 
-    private String email, nome, morada;
-    private Date dataNascimento;
-    private int tipo, id;
+    private String email, nome, morada, id;
+    private String data_nascimento;
+    private int tipo;
 
-    Utilizador(String aUsername, String aNome, String aMorada, Date aDataNascimento) {
-        id = -1;
+    Utilizador(String aUsername, String aNome, String aMorada, String aDataNascimento) {
+        id = "0";
         nome = aNome;
         morada = aMorada;
         email = aUsername;
         tipo = -1;
-        dataNascimento = aDataNascimento;
+        data_nascimento = aDataNascimento;
     }
 
     public String getUsername() {
@@ -33,12 +35,12 @@ public class Utilizador {
         this.email = email;
     }
 
-    public Date getDataNascimento() {
-        return dataNascimento;
+    public String getDataNascimento() {
+        return data_nascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
-        this.dataNascimento = dataNascimento;
+    public void setDataNascimento(String dataNascimento) {
+        this.data_nascimento = dataNascimento;
     }
 
     public int getTipo() {
@@ -49,7 +51,19 @@ public class Utilizador {
         this.tipo = tipo;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Utilizador{" +
+                "email='" + email + '\'' +
+                ", nome='" + nome + '\'' +
+                ", morada='" + morada + '\'' +
+                ", data_nascimento=" + data_nascimento +
+                ", tipo=" + tipo +
+                ", id=" + id +
+                '}';
     }
 }
