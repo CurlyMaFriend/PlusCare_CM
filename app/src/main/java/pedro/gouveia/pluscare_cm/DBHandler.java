@@ -2,6 +2,7 @@ package pedro.gouveia.pluscare_cm;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Handler;
@@ -10,7 +11,10 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -284,6 +288,222 @@ public class DBHandler extends SQLiteOpenHelper implements Runnable{
             });
         });
     }
+
+    // As listagens abaixo precisam de ser testadas - UNTESTED
+
+    public ArrayList<Tarefa> listTarefas(){
+
+        String idFunc, idAndar, titulo, descricao, estado, idUtente, data;
+        Date date2 = null;
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<Tarefa> tarefasList = new ArrayList<>();
+
+        String selectQuery = "SELECT * FROM " + TABLE_TAREFAS;
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                idFunc = cursor.getString(1);
+                idAndar = cursor.getString(2);
+                titulo = cursor.getString(3);
+                descricao = cursor.getString(4);
+                estado = cursor.getString(5);
+                idUtente = cursor.getString(6);
+                data = cursor.getString(7);
+
+                try {
+                    date2 = new SimpleDateFormat("dd/MM/yyyy").parse(data);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                tarefasList.add(new Tarefa(idFunc,idAndar,titulo,descricao,estado,idUtente,date2));
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return tarefasList;
+    }
+
+    public ArrayList<Higiene> listHigienes(){
+
+        String titulo, descricao;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<Higiene> higienesList = new ArrayList<>();
+
+        String selectQuery = "SELECT * FROM " + TABLE_HIGIENES;
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                titulo = cursor.getString(1);
+                descricao = cursor.getString(2);
+                higienesList.add(new Higiene(titulo,descricao));
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        // return contact list
+        return higienesList;
+
+    }
+
+    public ArrayList<Ocorrencia> listOcorrencias(){
+
+        String titulo, descricao, dataInicio;
+        Date date2 = null;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<Ocorrencia> ocorrenciasList = new ArrayList<>();
+
+        String selectQuery = "SELECT * FROM " + TABLE_OCORRENCIAS;
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                titulo = cursor.getString(1);
+                descricao = cursor.getString(2);
+                dataInicio = cursor.getString(3);
+
+                try {
+                    date2 = new SimpleDateFormat("dd/MM/yyyy").parse(dataInicio);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                ocorrenciasList.add(new Ocorrencia(titulo,descricao,date2));
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return ocorrenciasList;
+
+    }
+
+    public ArrayList<Medicamento> listMedicamentos(){
+
+        String nome, descricao, tipo;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<Medicamento> medicamentosList = new ArrayList<>();
+
+        String selectQuery = "SELECT * FROM " + TABLE_MEDICAMENTOS;
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                nome = cursor.getString(1);
+                descricao = cursor.getString(2);
+                tipo = cursor.getString(3);
+
+                medicamentosList.add(new Medicamento(nome, descricao, tipo));
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        // return contact list
+        return medicamentosList;
+
+    }
+
+    public ArrayList<Utente> listUtentes(){
+
+        String nome, nomePref, morada, dataNascimento, estadoCivil, grauEscolaridade, profissao, nacionalidade;
+        long cc, nif, niss, nus;
+        int altura;
+        Date date2 = null;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<Utente> utentesList = new ArrayList<>();
+
+        String selectQuery = "SELECT * FROM " + TABLE_UTENTES;
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                nome = cursor.getString(1);
+                nomePref = cursor.getString(2);
+                morada = cursor.getString(3);
+                dataNascimento = cursor.getString(4);
+                estadoCivil = cursor.getString(5);
+                grauEscolaridade = cursor.getString(6);
+                profissao = cursor.getString(7);
+                nacionalidade = cursor.getString(8);
+                altura = cursor.getInt(9);
+                cc = cursor.getLong(10);
+                nif = cursor.getLong(11);
+                niss = cursor.getLong(12);
+                nus = cursor.getLong(13);
+
+                try {
+                    date2 = new SimpleDateFormat("dd/MM/yyyy").parse(dataNascimento);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                utentesList.add(new Utente(nome, nomePref, morada, date2, estadoCivil, grauEscolaridade, profissao, nacionalidade, altura, cc, nif, niss, nus));
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        // return contact list
+        return utentesList;
+
+    }
+
+    public ArrayList<Utilizador> listUtilizadores(){
+
+        String nome, morada, email, tipo, dataNascimento;
+        Date date2 = null;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<Utilizador> utilizadoresList = new ArrayList<>();
+
+        String selectQuery = "SELECT * FROM " + TABLE_UTILIZADORES;
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                nome = cursor.getString(1);
+                morada = cursor.getString(2);
+                email = cursor.getString(3);
+                dataNascimento = cursor.getString(5);
+
+                try {
+                    date2 = new SimpleDateFormat("dd/MM/yyyy").parse(dataNascimento);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                utilizadoresList.add(new Utilizador(nome, morada, email, date2));
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        // return contact list
+        return utilizadoresList;
+
+    }
+
 
     @Override
     public void run() {

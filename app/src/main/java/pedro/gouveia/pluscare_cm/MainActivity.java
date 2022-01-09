@@ -41,13 +41,14 @@ public class MainActivity extends AppCompatActivity {
         functionsManager = new FunctionsManager(this, sharedPreferences, viewModel);
 
         dbHandler = new DBHandler(this, viewModel);
-
+        /*
         dbHandler.addMedicamento(new Medicamento("teste","teste","teste"));
         dbHandler.addHigiene( new Higiene("teste","teste"));
         dbHandler.addTarefa(new Tarefa("teste","teste","teste","teste","teste","asd",new Date()));
         dbHandler.addUtilizador(new Utilizador("teste@teste","teste","teste",new Date()));
         dbHandler.addOcorrencia(new Ocorrencia("teste","teste",new Date()));
         dbHandler.addUtente(new Utente("teste","teste","teste",new Date(), "teste", "teste", "teste","teste",100,1,1, 100, 100000000));
+        */
         //switchActivities();
 
         viewModel.getUsers().observe(this, item ->{
