@@ -26,6 +26,8 @@ public class DBHandler extends SQLiteOpenHelper implements Runnable{
     //TABELA TAREFAS
     private static final String TABLE_TAREFAS = "tarefas";
     private static final String FIRSTCOL_TAREFAS= "id";
+    private static final String FIRSTSECONDCOL_TAREFAS= "medicamentoId";
+    private static final String SECONDFIRSTCOL_TAREFAS= "tarefasId";
     private static final String SECONDCOL_TAREFAS = "idFuncionario";
     private static final String THIRDCOL_TAREFAS = "idAndar";
     private static final String FOURTHCOL_TAREFAS = "titulo";
@@ -33,7 +35,7 @@ public class DBHandler extends SQLiteOpenHelper implements Runnable{
     private static final String SIXTHCOL_TAREFAS = "Estado";
     private static final String SEVENTHCOL_TAREFAS = "idUtente";
     private static final String EIGTHCOL_TAREFAS = "dataTarefa";
-    private static final String DICTIONARY_TABLE_TAREFAS_CREATE = "CREATE TABLE IF NOT EXISTS " + TABLE_TAREFAS + " (" + FIRSTCOL_TAREFAS + " INTEGER PRIMARY KEY AUTOINCREMENT, " + SECONDCOL_TAREFAS + " TEXT, " + THIRDCOL_TAREFAS + " TEXT, " + FOURTHCOL_TAREFAS + " TEXT, " + FIFTHCOL_TAREFAS + " TEXT, " + SIXTHCOL_TAREFAS + " TEXT, " + SEVENTHCOL_TAREFAS + " TEXT, " + EIGTHCOL_TAREFAS +" DATE);";
+    private static final String DICTIONARY_TABLE_TAREFAS_CREATE = "CREATE TABLE IF NOT EXISTS " + TABLE_TAREFAS + " (" + FIRSTCOL_TAREFAS + " INTEGER PRIMARY KEY AUTOINCREMENT, " + FIRSTSECONDCOL_TAREFAS + " TEXT, " + SECONDFIRSTCOL_TAREFAS + " TEXT, " + SECONDCOL_TAREFAS + " TEXT, " + THIRDCOL_TAREFAS + " TEXT, " + FOURTHCOL_TAREFAS + " TEXT, " + FIFTHCOL_TAREFAS + " TEXT, " + SIXTHCOL_TAREFAS + " TEXT, " + SEVENTHCOL_TAREFAS + " TEXT, " + EIGTHCOL_TAREFAS +" DATE);";
 
     //TABELA MEDICAMENTOS
     private static final String TABLE_MEDICAMENTOS = "medicamentos";
@@ -201,6 +203,8 @@ public class DBHandler extends SQLiteOpenHelper implements Runnable{
             SQLiteDatabase db = this.getWritableDatabase();
             ContentValues values = new ContentValues();
 
+            values.put(FIRSTSECONDCOL_TAREFAS, aTarefa.getMedicamentoId());
+            values.put(SECONDFIRSTCOL_TAREFAS, aTarefa.getHigieneId());
             values.put(SECONDCOL_TAREFAS, aTarefa.getIdFuncionario());
             values.put(THIRDCOL_TAREFAS, aTarefa.getIdAndar());
             values.put(FOURTHCOL_TAREFAS, aTarefa.getTitulo());

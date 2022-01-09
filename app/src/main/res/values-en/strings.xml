@@ -89,6 +89,11 @@
     <string name="createAddress">Input your address</string>
     <string name="createDateBirth">Input your day of birth</string>
     <string name="height">Height: </string>
-
+    <string name="title">Title: </string>
+    <string name="type">Type: </string>
+    <string name="status">Status: </string>
+    <string name="IdUtente">Client nr: </string>
+    <string name="IdAndar">Floor nr: </string>
+    <string name="IdFunc">Employee nr: </string>
 
 </resources>

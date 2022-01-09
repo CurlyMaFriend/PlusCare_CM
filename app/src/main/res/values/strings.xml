@@ -88,5 +88,11 @@
     <string name="createAddress">Introduza a sua morada</string>
     <string name="createDateBirth">Introduza a sua idade</string>
     <string name="height">Altura: </string>
+    <string name="title">Título: </string>
+    <string name="type">Tipo: </string>
+    <string name="status">Estado: </string>
+    <string name="IdUtente">Utente nr: </string>
+    <string name="IdAndar">Andar nr: </string>
+    <string name="IdFunc">Funcionario nr: </string>
 
 </resources>

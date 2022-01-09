@@ -9,21 +9,28 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-public class FragmentMedicamentosPorFazer extends Fragment {
+public class FragmentOcorrenciasNovas extends Fragment {
+
+    private TextView titulo, detalhes, data;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_medicamentos_por_fazer, container, false);
+        return inflater.inflate(R.layout.fragment_ocorrencias_novas, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        titulo = view.findViewById(R.id.tituloOcorrenciaNova);
+        detalhes = view.findViewById(R.id.descricaoOcorrenciaNova);
+        data = view.findViewById(R.id.dataInseridaOcorrenciaNova);
 
 
     }
+
 }

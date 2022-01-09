@@ -27,10 +27,11 @@
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/descritpion"
+                android:text="@string/title"
                 android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/tituloTarefa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -51,6 +52,7 @@
                 android:textSize="18sp" />
 
             <EditText
+                android:id="@+id/detalhesTarefa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -74,6 +76,7 @@
                 android:textSize="18sp" />
 
             <EditText
+                android:id="@+id/dataTarefa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -93,10 +96,11 @@
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/horaInicio"
+                android:text="@string/IdAndar"
                 android:textSize="18sp" />
 
             <EditText
+                android:id="@+id/idAndarTarefa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -107,10 +111,11 @@
                 android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/horaFim"
+                android:text="@string/IdFunc"
                 android:textSize="18sp" />
 
             <EditText
+                android:id="@+id/idFuncTarefa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -128,16 +133,32 @@
                 android:id="@+id/textView21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/comments"
+                android:text="@string/status"
                 android:textSize="18sp" />
 
             <EditText
+                android:id="@+id/estadoTarefa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:gravity="start|top"
                 android:inputType="textMultiLine" />
+
+            <TextView
+                android:id="@+id/textView49"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/IdUtente"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/idUtente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName" />
         </LinearLayout>
 
     </LinearLayout>

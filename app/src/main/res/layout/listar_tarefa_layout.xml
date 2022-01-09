@@ -47,7 +47,7 @@
                     android:id="@+id/textView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/descritpion"
+                    android:text="@string/title"
                     android:textSize="18sp" />
 
                 <TextView
@@ -71,15 +71,13 @@
                     android:text="@string/details"
                     android:textSize="18sp" />
 
-                <EditText
-                    android:id="@+id/detalhesIncompleta"
+                <TextView
+                    android:id="@+id/detalhesTarefaLista"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="start|top"
-                    android:inputType="textMultiLine"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -96,7 +94,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/dataInseridoIncompleta"
+                    android:id="@+id/dataInseridoOcorrencia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -114,7 +112,7 @@
                     android:id="@+id/textView15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/horaInicio"
+                    android:text="@string/IdAndar"
                     android:textSize="18sp" />
 
                 <TextView
@@ -128,7 +126,7 @@
                     android:id="@+id/textView16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/horaFim"
+                    android:text="@string/IdFunc"
                     android:textSize="18sp" />
 
                 <TextView
@@ -149,40 +147,32 @@
                     android:id="@+id/textView27"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/causas"
+                    android:text="@string/status"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/causas"
+                    android:id="@+id/estado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="18sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView30"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/justificacao"
+                    android:text="@string/IdUtente"
                     android:textSize="18sp" />
 
-                <EditText
-                    android:id="@+id/justificacoes"
+                <TextView
+                    android:id="@+id/utenteNr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:ems="10"
-                    android:gravity="start|top"
-                    android:inputType="textMultiLine"
-                    android:textSize="14sp" />
+                    android:textSize="18sp" />
+
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

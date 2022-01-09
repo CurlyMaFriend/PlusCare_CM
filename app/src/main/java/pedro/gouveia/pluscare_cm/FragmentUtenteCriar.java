@@ -37,7 +37,7 @@ public class FragmentUtenteCriar extends Fragment {
         return inflater.inflate(R.layout.fragment_utente_criar, container, false);
     }
 
-    protected void onViewCreated(@Nullable Bundle savedInstanceState, @Nullable View viewFrag) {
+    public void onViewCreated(@Nullable Bundle savedInstanceState, @Nullable View viewFrag) {
 
         super.onViewCreated(viewFrag,savedInstanceState);
 
@@ -84,13 +84,8 @@ public class FragmentUtenteCriar extends Fragment {
         });
 
         buttonCancel.setOnClickListener(view -> {
-            switchActivities(LoginActivity.class);
-        });
-    }
 
-    private void switchActivities(Class i) {
-        Intent switchActivityIntent = new Intent(getContext(), i);
-        startActivity(switchActivityIntent);
+        });
     }
 
 }

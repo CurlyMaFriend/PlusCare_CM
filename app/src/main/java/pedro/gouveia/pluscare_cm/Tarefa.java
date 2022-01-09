@@ -4,12 +4,14 @@ import java.util.Date;
 
 public class Tarefa {
 
-    private String titulo, descricao, id, idFuncionario, idAndar, estado, idUtente;
+    private String titulo, descricao, id, idFuncionario, idAndar, estado, idUtente, medicamentoId, higieneId;
     private Date dataTarefa;
 
     public Tarefa(String idFuncionario, String idAndar, String titulo, String descricao, String estado, String aIdUtente, Date aDateTarefa) {
         this.id = "";
         this.idFuncionario = idFuncionario;
+        this.medicamentoId = "";
+        this.higieneId = "";
         this.idAndar = idAndar;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -80,5 +82,21 @@ public class Tarefa {
 
     public void setIdUtente(String idUtente) {
         this.idUtente = idUtente;
+    }
+
+    public String getMedicamentoId() {
+        return medicamentoId;
+    }
+
+    public void setMedicamentoId(String medicamentoId) {
+        this.medicamentoId = medicamentoId;
+    }
+
+    public String getHigieneId() {
+        return higieneId;
+    }
+
+    public void setHigieneId(String higieneId) {
+        this.higieneId = higieneId;
     }
 }
