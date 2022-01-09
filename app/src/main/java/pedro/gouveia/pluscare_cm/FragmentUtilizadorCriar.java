@@ -81,7 +81,7 @@ public class FragmentUtilizadorCriar extends Fragment {
             } else {
 
                 if (verifyPassword.getText().equals(password.getText())) {
-                    new Utilizador(username.getText().toString(), email.getText().toString(), createAddress.getText().toString(), date1.toString());
+                    new Utilizador(username.getText().toString(), email.getText().toString(), createAddress.getText().toString(), date1);
                     Toast.makeText(getContext(),getString(R.string.createdAccountSuccess),Toast.LENGTH_LONG);
                     switchActivities(LoginActivity.class);
                 } else {

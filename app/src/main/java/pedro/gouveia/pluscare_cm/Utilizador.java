@@ -7,24 +7,16 @@ import java.util.Date;
 public class Utilizador {
 
     private String email, nome, morada, id;
-    private String data_nascimento;
+    private Date data_nascimento;
     private int tipo;
 
-    Utilizador(String aUsername, String aNome, String aMorada, String aDataNascimento) {
+    Utilizador(String aEmail, String aNome, String aMorada, Date aDataNascimento) {
         id = "0";
         nome = aNome;
         morada = aMorada;
-        email = aUsername;
+        email = aEmail;
         tipo = -1;
         data_nascimento = aDataNascimento;
-    }
-
-    public String getUsername() {
-        return email;
-    }
-
-    public void setUsername(String username) {
-        this.email = username;
     }
 
     public String getEmail() {
@@ -35,12 +27,28 @@ public class Utilizador {
         this.email = email;
     }
 
-    public String getDataNascimento() {
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getMorada() {
+        return morada;
+    }
+
+    public void setMorada(String morada) {
+        this.morada = morada;
+    }
+
+    public Date getData_nascimento() {
         return data_nascimento;
     }
 
-    public void setDataNascimento(String dataNascimento) {
-        this.data_nascimento = dataNascimento;
+    public void setData_nascimento(Date data_nascimento) {
+        this.data_nascimento = data_nascimento;
     }
 
     public int getTipo() {

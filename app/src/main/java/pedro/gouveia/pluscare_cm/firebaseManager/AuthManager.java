@@ -45,18 +45,20 @@ public class AuthManager {
     public FirebaseUser getUserLogin(){
         FirebaseUser user = mAuth.getCurrentUser();
 
-        user.getIdToken(true).addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
-            @Override
-            public void onComplete(@NonNull Task<GetTokenResult> task) {
-                if(task.isSuccessful()){
-                    sharedPreferences.edit().putString("user_token", task.getResult().getToken()).commit();
-                } else {
-                    Log.d(TAG, "Erro: ");
+        if(user != null) {
+            user.getIdToken(true).addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
+                @Override
+                public void onComplete(@NonNull Task<GetTokenResult> task) {
+                    if (task.isSuccessful()) {
+                        sharedPreferences.edit().putString("user_token", task.getResult().getToken()).commit();
+                    } else {
+                        Log.d(TAG, "Erro: ");
+                    }
                 }
-            }
-        });
-
+            });
+        }
         return user;
+
     }
 
     public void signOut(){

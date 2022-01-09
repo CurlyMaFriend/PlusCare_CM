@@ -4,8 +4,8 @@ public class Medicamento {
 
     private String id, nome, descricao, tipo;
 
-    public Medicamento(String aId, String aNome, String aDescricao, String aTipo){
-        this.id = aId;
+    public Medicamento(String aNome, String aDescricao, String aTipo){
+        this.id = "";
         this.nome = aNome;
         this.descricao = aDescricao;
         this.tipo = aTipo;

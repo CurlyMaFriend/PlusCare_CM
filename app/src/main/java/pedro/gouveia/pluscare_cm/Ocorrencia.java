@@ -4,23 +4,21 @@ import java.util.Date;
 
 public class Ocorrencia {
 
-    private int id;
-    private String titulo, descricao;
-    private Date dataInicio, dataFim;
+    private String titulo, descricao, id;
+    private Date dataInicio;
 
-    public Ocorrencia(int id, String titulo, String descricao, Date dataInicio, Date dataFim) {
-        this.id = id;
+    public Ocorrencia(String titulo, String descricao, Date dataInicio) {
+        this.id = "";
         this.titulo = titulo;
         this.descricao = descricao;
         this.dataInicio = dataInicio;
-        this.dataFim = dataFim;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -48,11 +46,4 @@ public class Ocorrencia {
         this.dataInicio = dataInicio;
     }
 
-    public Date getDataFim() {
-        return dataFim;
-    }
-
-    public void setDataFim(Date dataFim) {
-        this.dataFim = dataFim;
-    }
 }
