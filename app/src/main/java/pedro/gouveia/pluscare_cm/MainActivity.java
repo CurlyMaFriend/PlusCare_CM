@@ -15,7 +15,6 @@ import android.widget.Toast;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.Date;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -30,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     private FirebaseUser user;
 
-    private DBHandler dbHandler;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,15 +41,6 @@ public class MainActivity extends AppCompatActivity {
         authManager = new AuthManager(viewModel, sharedPreferences);
         functionsManager = new FunctionsManager(this, sharedPreferences, viewModel);
 
-        dbHandler = new DBHandler(this, viewModel);
-        /*
-        dbHandler.addMedicamento(new Medicamento("teste","teste","teste"));
-        dbHandler.addHigiene( new Higiene("teste","teste"));
-        dbHandler.addTarefa(new Tarefa("teste","teste","teste","teste","teste","asd",new Date()));
-        dbHandler.addUtilizador(new Utilizador("teste@teste","teste","teste",new Date()));
-        dbHandler.addOcorrencia(new Ocorrencia("teste","teste",new Date()));
-        dbHandler.addUtente(new Utente("teste","teste","teste",new Date(), "teste", "teste", "teste","teste",100,1,1, 100, 100000000));
-        */
         //switchActivities();
 
         viewModel.getUsers().observe(this, item ->{

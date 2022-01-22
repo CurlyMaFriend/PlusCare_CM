@@ -6,8 +6,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-public class FragmentAdapterOcorrencias extends FragmentStateAdapter {
-    public FragmentAdapterOcorrencias(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+public class FragmentAdapterMedicamento extends FragmentStateAdapter {
+
+    public FragmentAdapterMedicamento(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
     }
 
@@ -16,14 +17,17 @@ public class FragmentAdapterOcorrencias extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 1:
-                return new FragmentOcorrenciasArquivadas();
+                return new FragmentMedicamentosPorFazer();
+            case 2:
+                return new FragmentMedicamentosIncompletos();
             default:
-                return new FragmentOcorrenciasNovas();
+                return new FragmentMedicamentosCompletos();
         }
     }
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 3;
     }
+
 }

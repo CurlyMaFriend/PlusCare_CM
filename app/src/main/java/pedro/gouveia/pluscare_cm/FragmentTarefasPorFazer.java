@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class FragmentTarefasPorFazer extends Fragment {
 
-    private TextView titulo, detalhes, data;
+    private TextView descricaoPorFazer, detalhesPorFazer, dataInseridaPorFazer, dataInicialPorFazer, dataFimPorFazer, tempoRestantePorFazer;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,9 +26,12 @@ public class FragmentTarefasPorFazer extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        titulo = view.findViewById(R.id.tituloTarefaPorFazer);
-        detalhes = view.findViewById(R.id.descricaoTarefaPorFazer);
-        data = view.findViewById(R.id.dataInseridoTarefaPorFazer);
+        descricaoPorFazer = view.findViewById(R.id.descricaoPorFazer);
+        detalhesPorFazer = view.findViewById(R.id.detalhesPorFazer);
+        dataInseridaPorFazer = view.findViewById(R.id.dataInseridaPorFazer);
+        dataInicialPorFazer = view.findViewById(R.id.dataInicialPorFazer);
+        dataFimPorFazer = view.findViewById(R.id.dataInicialPorFazer);
+        tempoRestantePorFazer = view.findViewById(R.id.tempoRestantePorFazer);
 
     }
 }

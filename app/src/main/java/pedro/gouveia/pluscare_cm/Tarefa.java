@@ -4,43 +4,41 @@ import java.util.Date;
 
 public class Tarefa {
 
-    private String titulo, descricao, id, idFuncionario, idAndar, estado, idUtente, medicamentoId, higieneId;
-    private Date dataTarefa;
+    private int id, idFuncionario, idAndar;
+    private String titulo, descricao;
+    private Date dataFim, dataInicio;
 
-    public Tarefa(String idFuncionario, String idAndar, String titulo, String descricao, String estado, String aIdUtente, Date aDateTarefa) {
-        this.id = "";
+    public Tarefa(int id, int idFuncionario, int idAndar, String titulo, String descricao, Date dataFim, Date dataInicio) {
+        this.id = id;
         this.idFuncionario = idFuncionario;
-        this.medicamentoId = "";
-        this.higieneId = "";
         this.idAndar = idAndar;
         this.titulo = titulo;
         this.descricao = descricao;
-        this.estado = estado;
-        this.idUtente = aIdUtente;
-        this.dataTarefa = aDateTarefa;
+        this.dataInicio = dataInicio;
+        this.dataFim = dataFim;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getIdFuncionario() {
+    public int getIdFuncionario() {
         return idFuncionario;
     }
 
-    public void setIdFuncionario(String idFuncionario) {
+    public void setIdFuncionario(int idFuncionario) {
         this.idFuncionario = idFuncionario;
     }
 
-    public String getIdAndar() {
+    public int getIdAndar() {
         return idAndar;
     }
 
-    public void setIdAndar(String idAndar) {
+    public void setIdAndar(int idAndar) {
         this.idAndar = idAndar;
     }
 
@@ -60,43 +58,19 @@ public class Tarefa {
         this.descricao = descricao;
     }
 
-    public String getEstado() {
-        return estado;
+    public Date getDataFim() {
+        return dataFim;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setDataFim(Date dataFim) {
+        this.dataFim = dataFim;
     }
 
-    public Date getDataTarefa() {
-        return dataTarefa;
+    public Date getDataInicio() {
+        return dataInicio;
     }
 
-    public void setDataTarefa(Date dataTarefa) {
-        this.dataTarefa = dataTarefa;
-    }
-
-    public String getIdUtente() {
-        return idUtente;
-    }
-
-    public void setIdUtente(String idUtente) {
-        this.idUtente = idUtente;
-    }
-
-    public String getMedicamentoId() {
-        return medicamentoId;
-    }
-
-    public void setMedicamentoId(String medicamentoId) {
-        this.medicamentoId = medicamentoId;
-    }
-
-    public String getHigieneId() {
-        return higieneId;
-    }
-
-    public void setHigieneId(String higieneId) {
-        this.higieneId = higieneId;
+    public void setDataInicio(Date dataInicio) {
+        this.dataInicio = dataInicio;
     }
 }
