@@ -12,7 +12,7 @@ import com.google.android.material.tabs.TabLayout;
 public class OcorrenciasInfoActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
-    private FragmentAdapterHigiene fragmentAdapter;
+    private FragmentAdapterOcorrencias fragmentAdapter;
     private ViewPager2 viewPage;
 
     @Override
@@ -24,7 +24,7 @@ public class OcorrenciasInfoActivity extends AppCompatActivity {
         viewPage = findViewById(R.id.viewPager23);
 
         FragmentManager fm = getSupportFragmentManager();
-        fragmentAdapter = new FragmentAdapterHigiene(fm, getLifecycle());
+        fragmentAdapter = new FragmentAdapterOcorrencias(fm, getLifecycle());
         viewPage.setAdapter(fragmentAdapter);
 
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.novas)));

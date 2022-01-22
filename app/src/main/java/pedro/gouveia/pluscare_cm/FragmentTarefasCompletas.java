@@ -11,13 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.util.Date;
-
 public class FragmentTarefasCompletas extends Fragment {
 
-    private TextView descricao, detalhes, comentarios,dataInserida, dataInicial, dataFim;
+    private TextView titulo, detalhes, data;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,13 +26,10 @@ public class FragmentTarefasCompletas extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        dataInserida = view.findViewById(R.id.dataInserida);
-        dataInicial = view.findViewById(R.id.dataInicial);
-        dataFim = view.findViewById(R.id.dataFinal);
+        titulo = view.findViewById(R.id.tituloTarefaCompleta);
+        detalhes = view.findViewById(R.id.descricaoTarefaCompleta);
+        data = view.findViewById(R.id.dataInseridaTarefaCompleta);
 
-        descricao = view.findViewById(R.id.descricao);
-        detalhes = view.findViewById(R.id.detalhes);
-        comentarios = view.findViewById(R.id.comentarios);
 
     }
 }

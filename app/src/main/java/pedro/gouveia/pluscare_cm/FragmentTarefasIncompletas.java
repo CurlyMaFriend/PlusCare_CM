@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class FragmentTarefasIncompletas extends Fragment {
 
-    private TextView descricaoIncompleta, detalhesIncompleta, dataInseridoIncompleta, dataInicialIncompleta, dataFinalIncompleta, causas, justificacoes;
+    private TextView titulo, detalhes, data;
 
 
     @Override
@@ -27,13 +27,9 @@ public class FragmentTarefasIncompletas extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        descricaoIncompleta = view.findViewById(R.id.descricaoIncompleta);
-        detalhesIncompleta = view.findViewById(R.id.detalhesIncompleta);
-        dataInseridoIncompleta = view.findViewById(R.id.dataInseridoIncompleta);
-        dataInicialIncompleta = view.findViewById(R.id.dataInicialIncompleta);
-        dataFinalIncompleta = view.findViewById(R.id.dataFinalIncompleta);
-        causas = view.findViewById(R.id.causas);
-        justificacoes = view.findViewById(R.id.justificacoes);
+        titulo = view.findViewById(R.id.tituloTarefaIncompleta);
+        detalhes = view.findViewById(R.id.descricaoTarefaIncompleta);
+        data = view.findViewById(R.id.dataInseridoTarefaIncompleta);
 
 
     }
