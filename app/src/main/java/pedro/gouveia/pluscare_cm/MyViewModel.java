@@ -3,6 +3,7 @@ package pedro.gouveia.pluscare_cm;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
@@ -16,6 +17,25 @@ public class MyViewModel extends androidx.lifecycle.ViewModel {
     public MutableLiveData<FirebaseUser> currentUser = new MutableLiveData<>();
     public MutableLiveData<ArrayList<Utilizador>> users = new MutableLiveData<>();
     public MutableLiveData<ArrayList<Utente>> utentes = new MutableLiveData<>();
+    public MutableLiveData<AdminStats> adminStats = new MutableLiveData<>();
+    public MutableLiveData<String> userTokenReady = new MutableLiveData<>();
+
+    public MutableLiveData<String> getUserTokenReady() {
+        return userTokenReady;
+    }
+
+    public void setUserTokenReady(String userTokenReady) {
+        Log.d("teste", "entrou no set user token");
+        this.userTokenReady.setValue(userTokenReady);
+    }
+
+    public MutableLiveData<AdminStats> getAdminStats() {
+        return adminStats;
+    }
+
+    public void setAdminStats(AdminStats as) {
+        this.adminStats.setValue(as);
+    }
 
     public MutableLiveData<ArrayList<Utente>> getUtentes() {
         return utentes;

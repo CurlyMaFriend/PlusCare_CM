@@ -7,10 +7,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.concurrent.ExecutorService;
@@ -24,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private AuthManager authManager;
     private FunctionsManager functionsManager;
     private MyViewModel viewModel;
-    SharedPreferences sharedPreferences;
+    private SharedPreferences sharedPreferences;
+    private FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         viewModel = new ViewModelProvider(this).get(MyViewModel.class);
-        sharedPreferences = this.getPreferences(Context.MODE_PRIVATE);
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
 
         authManager = new AuthManager(viewModel, sharedPreferences);
         functionsManager = new FunctionsManager(this, sharedPreferences, viewModel);
@@ -46,19 +50,65 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 //switchActivities(MainActivity.class);
 
+                Executors.newSingleThreadExecutor().execute( () -> {
+                    functionsManager.addUtilizador(
+                            new Utilizador(
+                                    "email.test.test@gmail.com",
+                                    "password",
+                                    "Some name",
+                                    "Morada do gajo",
+                                    "24/12/1990"
+                            ));
+                });
                 Log.d("teste", "Users: " + item.toString());
             }
         });
 
-        viewModel.getUtentes().observe(this, item ->{
+       /* viewModel.getUtentes().observe(this, item ->{
 
             if(item == null){
                 Toast.makeText(this, "No utentes", Toast.LENGTH_LONG);
             } else {
                 //switchActivities(MainActivity.class);
 
+                Executors.newSingleThreadExecutor().execute( () -> {
+
+                    functionsManager.addUtente(
+                            new Utente(
+                                    "Mr Toni",
+                                    "Toni",
+                                    "Travessa do encostado n3",
+                                    "12/12/1966",
+                                    "Viuvo",
+                                    "Basico",
+                                    "carpinteiro",
+                                    "portuguesa",
+                                    154,
+                                    87654321,
+                                    987123654,
+                                    31245697801L,
+                                    123645789
+                            ));
+                });
                 Log.d("teste", "Utentes: " + item.toString());
             }
+        });*/
+
+        viewModel.getUserTokenReady().observe(this, item ->{
+
+            String userType = sharedPreferences.getString("user_type", "-1");
+
+            if(userType.equals("0")){
+                switchActivities(AdminMainActivity.class);
+            } else if(userType.equals("-1")){
+                Log.d("teste", "Type -1");
+            } else {
+                switchActivities(AuxiliarMainActivity.class);
+            }
+
+            Log.d("teste", "Bem vindo " + user.getDisplayName().substring(0, user.getDisplayName().indexOf('|')-1));
+            Log.d("teste", "Sessao ja iniciada: " + user.getEmail());
+
         });
 
     }
@@ -67,28 +117,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        FirebaseUser user = authManager.getUserLogin();
+        user = authManager.getUserLogin();
 
         if(user == null){
             switchActivities(LoginActivity.class);
-           /*if(viewModel.isNetworkAvailable(this)){
-                switchActivities(LoginActivity.class);
-            } else {
-
-            }*/
         } else {
 
-            Executors.newSingleThreadExecutor().execute( () -> {
-                try {
-                    Thread.sleep(5000);
-                    Log.d("teste", "Token do shared pref: " + sharedPreferences.getString("user_token", "none"));
-                    functionsManager.getUsers();
-                    functionsManager.getUtentes();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            });
-            Toast.makeText(this, "Bem vindo " + user.getDisplayName(), Toast.LENGTH_LONG);
+            String userType = sharedPreferences.getString("user_type", "-1");
+
+            if(userType.equals("0")){
+                switchActivities(AdminMainActivity.class);
+            } else if(userType.equals("-1")){
+                Log.d("teste", "Type -1");
+            } else {
+                switchActivities(AuxiliarMainActivity.class);
+            }
+
+            Log.d("teste", "Bem vindo " + user.getDisplayName().substring(0, user.getDisplayName().indexOf('|')-1));
             Log.d("teste", "Sessao ja iniciada: " + user.getEmail());
         }
     }

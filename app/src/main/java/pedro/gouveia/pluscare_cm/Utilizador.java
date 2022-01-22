@@ -6,17 +6,18 @@ import java.util.Date;
 
 public class Utilizador {
 
-    private String email, nome, morada, id;
+    private String email, nome, morada, id, password;
     private String data_nascimento;
     private int tipo;
 
-    Utilizador(String aUsername, String aNome, String aMorada, String aDataNascimento) {
+    Utilizador(String aEmail, String aPassword, String aNome, String aMorada, String aDataNascimento) {
         id = "0";
         nome = aNome;
         morada = aMorada;
-        email = aUsername;
-        tipo = -1;
+        email = aEmail;
+        tipo = 1;
         data_nascimento = aDataNascimento;
+        password = aPassword;
     }
 
     public String getUsername() {

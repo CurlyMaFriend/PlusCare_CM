@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,17 +13,25 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class FragmentAdminMain extends Fragment {
+public class FragmentAdminMain extends Fragment implements View.OnClickListener {
 
+    private View view;
     private ImageButton listarTarefas, listarMedicamentos, listarNotificacoes, listarHigienes, listarOcorrencias, listarUtentes;
     private TextView totalTarefas, totalMedicamentos, totalOcorrencias, totalHigiene;
+    private AdminStats adminStats;
+    private AdminMainActivity activityInstance;
 
+    public FragmentAdminMain(AdminStats as, AdminMainActivity activityInstance) {
+        adminStats = as;
+        this.activityInstance = activityInstance;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_admin_main, container, false);
+
+        view = inflater.inflate(R.layout.fragment_admin_main, container, false);
+        return view;
     }
 
     @Override
@@ -37,13 +46,24 @@ public class FragmentAdminMain extends Fragment {
         listarNotificacoes = view.findViewById(R.id.buttonListarNotificacoesDashboard);
 
         totalTarefas = view.findViewById(R.id.totalTarefasDashboard);
-        totalMedicamentos = view.findViewById(R.id.totalMedicamentosDashboard);
-        totalHigiene = view.findViewById(R.id.totalHigieneDashboard);
+//        totalMedicamentos = view.findViewById(R.id.totalMedicamentosDashboard);
+//        totalHigiene = view.findViewById(R.id.totalHigieneDashboard);
         totalOcorrencias = view.findViewById(R.id.totalOcorrenciasDashboard);
 
+        totalTarefas.setText(adminStats.getTarefas()+"");
+        totalOcorrencias.setText(adminStats.getOcorrencias()+"");
 
+        listarUtentes.setOnClickListener(this);
 
     }
 
-
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.buttonListarUtentesDashboard:{
+                activityInstance.switchActivities(UtentesListaActivity.class);
+                break;
+            }
+        }
+    }
 }

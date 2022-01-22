@@ -4,12 +4,13 @@ import java.util.Date;
 
 public class Utente {
 
-    private String nome, morada, estado_civil, profissao,grau_escolaridade, nacionalidade, nome_preferencia, tipoSangue, deficiencias, altura;
-    private long nif, niss, cc, nus, andar_id;
-    private String data_nascimento;
+    //, tipoSangue, deficiencias
+
+    private String nome, nome_preferencia, morada, data_nascimento, estado_civil, grau_escolaridade, profissao, nacionalidade;
+    private long altura, cc, nif, niss, nus, andar_id;
     private String id;
 
-    public Utente(String nome, String nomePreferencia, String morada, String dataNascimento, String estadoCivil,  String grauEscolaridade, String profissao, String nacionalidade, String altura, long cc, long nif, long niss, long nus) {
+    public Utente(String nome, String nomePreferencia, String morada, String dataNascimento, String estadoCivil,  String grauEscolaridade, String profissao, String nacionalidade, long altura, long cc, long nif, long niss, long nus) {
         this.id = "0";
         this.nome = nome;
         this.nome_preferencia = nomePreferencia;
@@ -125,8 +126,6 @@ public class Utente {
                 ", grau_escolaridade='" + grau_escolaridade + '\'' +
                 ", nacionalidade='" + nacionalidade + '\'' +
                 ", nome_preferencia='" + nome_preferencia + '\'' +
-                ", tipoSangue='" + tipoSangue + '\'' +
-                ", deficiencias='" + deficiencias + '\'' +
                 ", altura='" + altura + '\'' +
                 ", nif=" + nif +
                 ", niss=" + niss +
