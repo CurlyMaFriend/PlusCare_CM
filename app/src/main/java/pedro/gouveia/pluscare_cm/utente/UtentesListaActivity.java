@@ -1,34 +1,27 @@
 package pedro.gouveia.pluscare_cm;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.viewpager2.widget.ViewPager2;
-
-import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
-import java.util.concurrent.Executors;
 
+import pedro.gouveia.pluscare_cm.classes.Utente;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
 
 public class UtentesListaActivity extends AppCompatActivity {

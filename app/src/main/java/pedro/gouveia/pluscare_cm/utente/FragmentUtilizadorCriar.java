@@ -11,15 +11,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+
+import pedro.gouveia.pluscare_cm.classes.Utilizador;
+import pedro.gouveia.pluscare_cm.main.LoginActivity;
 
 public class FragmentUtilizadorCriar extends Fragment {
 

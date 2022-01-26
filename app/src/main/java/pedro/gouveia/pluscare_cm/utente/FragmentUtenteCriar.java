@@ -12,13 +12,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+
+import pedro.gouveia.pluscare_cm.classes.Utente;
+import pedro.gouveia.pluscare_cm.main.LoginActivity;
 
 public class FragmentUtenteCriar extends Fragment {
 
@@ -80,7 +82,7 @@ public class FragmentUtenteCriar extends Fragment {
         });
 
         buttonCreate.setOnClickListener(view -> {
-            new Utente (username.getText().toString(), alcunha.getText().toString(),morada.getText().toString(),date1.toString(),estadoCivil.getText().toString(),grauEscolaridade.getText().toString(),profissao.getText().toString(),nacionalidade.getText().toString(),Integer.parseInt(altura.getText().toString()),Integer.parseInt(cc.getText().toString()),Integer.parseInt(nif.getText().toString()),Integer.parseInt(niss.getText().toString()),Integer.parseInt(nus.getText().toString()));
+            new Utente(username.getText().toString(), alcunha.getText().toString(),morada.getText().toString(),date1.toString(),estadoCivil.getText().toString(),grauEscolaridade.getText().toString(),profissao.getText().toString(),nacionalidade.getText().toString(),Integer.parseInt(altura.getText().toString()),Integer.parseInt(cc.getText().toString()),Integer.parseInt(nif.getText().toString()),Integer.parseInt(niss.getText().toString()),Integer.parseInt(nus.getText().toString()));
         });
 
         buttonCancel.setOnClickListener(view -> {
