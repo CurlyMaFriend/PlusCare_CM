@@ -4,6 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Escolinha/Mestrado/2 Ano/1 Semestre/CM/PlusCare_CM/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Escolinha/Mestrado/2 Ano/1 Semestre/CM/PlusCare_CM/app/src/main/res/layout/fragment_admin_main.xml" value="0.30520833333333336" />
+        <entry key="..\:/Escolinha/Mestrado/2 Ano/1 Semestre/CM/PlusCare_CM/app/src/main/res/layout/lista_utentes_layout.xml" value="0.4161458333333333" />
+        <entry key="..\:/Escolinha/Mestrado/2 Ano/1 Semestre/CM/PlusCare_CM/app/src/main/res/layout/lista_utilizadores_layout.xml" value="0.4161458333333333" />
+        <entry key="..\:/Escolinha/Mestrado/2 Ano/1 Semestre/CM/PlusCare_CM/app/src/main/res/layout/task_card.xml" value="0.30520833333333336" />
+        <entry key="..\:/Escolinha/Mestrado/2 Ano/1 Semestre/CM/PlusCare_CM/app/src/main/res/layout/utente_card.xml" value="0.30520833333333336" />
+        <entry key="..\:/Escolinha/Mestrado/2 Ano/1 Semestre/CM/PlusCare_CM/app/src/main/res/layout/utente_info_layout.xml" value="0.47192028985507245" />
         <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/drawable/ic__09041_users_group_people_icon.xml" value="0.44583333333333336" />
         <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/drawable/ic__324183_ui_essential_app_bell_notification_icon.xml" value="0.44583333333333336" />
         <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/drawable/ic__602717_healthcare_medical_pill_icon.xml" value="0.44583333333333336" />

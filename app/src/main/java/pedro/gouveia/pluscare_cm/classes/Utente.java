@@ -1,8 +1,9 @@
-package pedro.gouveia.pluscare_cm;
+package pedro.gouveia.pluscare_cm.classes;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Utente {
+public class Utente implements Serializable {
 
     //, tipoSangue, deficiencias
 

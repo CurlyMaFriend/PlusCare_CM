@@ -1,9 +1,8 @@
-package pedro.gouveia.pluscare_cm;
+package pedro.gouveia.pluscare_cm.main;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +16,9 @@ import androidx.lifecycle.ViewModelProvider;
 
 import java.util.ArrayList;
 
+import pedro.gouveia.pluscare_cm.MyViewModel;
+import pedro.gouveia.pluscare_cm.R;
+import pedro.gouveia.pluscare_cm.classes.Utilizador;
 import pedro.gouveia.pluscare_cm.firebaseManager.AuthManager;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {

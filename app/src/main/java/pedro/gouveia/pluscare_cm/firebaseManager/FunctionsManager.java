@@ -4,8 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -16,20 +14,17 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import pedro.gouveia.pluscare_cm.AdminStats;
+import pedro.gouveia.pluscare_cm.admin.AdminStats;
 import pedro.gouveia.pluscare_cm.MyViewModel;
-import pedro.gouveia.pluscare_cm.Utente;
-import pedro.gouveia.pluscare_cm.Utilizador;
+import pedro.gouveia.pluscare_cm.classes.Utente;
+import pedro.gouveia.pluscare_cm.classes.Utilizador;
 
 public class FunctionsManager {
 

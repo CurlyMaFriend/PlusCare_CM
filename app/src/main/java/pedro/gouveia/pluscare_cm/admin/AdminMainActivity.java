@@ -1,6 +1,5 @@
-package pedro.gouveia.pluscare_cm;
+package pedro.gouveia.pluscare_cm.admin;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,7 +7,6 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,8 +15,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
-import java.util.concurrent.Executors;
-
+import pedro.gouveia.pluscare_cm.FragmentLoading;
+import pedro.gouveia.pluscare_cm.MyViewModel;
+import pedro.gouveia.pluscare_cm.R;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
 
 public class AdminMainActivity extends AppCompatActivity {

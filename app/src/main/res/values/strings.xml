@@ -90,6 +90,8 @@
     <string name="height">Altura: </string>
     <string name="loadingText">A obter dados... </string>
     <string name="detalhes">Detalhes</string>
+    <string name="tipo">Tipo: </string>
+    <string name="hora">Hora: </string>
     <!-- TODO: Remove or change this placeholder text -->
 
 </resources>

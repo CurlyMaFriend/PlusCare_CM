@@ -1,4 +1,4 @@
-package pedro.gouveia.pluscare_cm;
+package pedro.gouveia.pluscare_cm.classes;
 
 import com.google.gson.annotations.Expose;
 
@@ -10,7 +10,7 @@ public class Utilizador {
     private String data_nascimento;
     private int tipo;
 
-    Utilizador(String aEmail, String aPassword, String aNome, String aMorada, String aDataNascimento) {
+    public Utilizador(String aEmail, String aPassword, String aNome, String aMorada, String aDataNascimento) {
         id = "0";
         nome = aNome;
         morada = aMorada;

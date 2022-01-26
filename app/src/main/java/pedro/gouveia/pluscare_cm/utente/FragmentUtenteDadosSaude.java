@@ -1,4 +1,4 @@
-package pedro.gouveia.pluscare_cm;
+package pedro.gouveia.pluscare_cm.utente;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import pedro.gouveia.pluscare_cm.R;
 
 /**
  * A simple {@link Fragment} subclass.

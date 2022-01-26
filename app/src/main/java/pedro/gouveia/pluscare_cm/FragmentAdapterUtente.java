@@ -6,6 +6,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import pedro.gouveia.pluscare_cm.utente.FragmentUtenteDados;
+import pedro.gouveia.pluscare_cm.utente.FragmentUtenteDadosCuidados;
+import pedro.gouveia.pluscare_cm.utente.FragmentUtenteDadosSaude;
+
 public class FragmentAdapterUtente extends FragmentStateAdapter {
 
     public FragmentAdapterUtente(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {

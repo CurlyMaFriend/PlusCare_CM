@@ -12,6 +12,10 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import pedro.gouveia.pluscare_cm.admin.AdminStats;
+import pedro.gouveia.pluscare_cm.classes.Utente;
+import pedro.gouveia.pluscare_cm.classes.Utilizador;
+
 public class MyViewModel extends androidx.lifecycle.ViewModel {
 
     public MutableLiveData<FirebaseUser> currentUser = new MutableLiveData<>();

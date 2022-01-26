@@ -1,4 +1,4 @@
-package pedro.gouveia.pluscare_cm;
+package pedro.gouveia.pluscare_cm.classes;
 
 public class Higiene {
 

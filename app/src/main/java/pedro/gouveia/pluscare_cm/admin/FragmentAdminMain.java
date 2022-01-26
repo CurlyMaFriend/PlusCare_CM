@@ -1,17 +1,19 @@
-package pedro.gouveia.pluscare_cm;
+package pedro.gouveia.pluscare_cm.admin;
 
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import pedro.gouveia.pluscare_cm.R;
+import pedro.gouveia.pluscare_cm.utente.UtentesListaActivity;
 
 public class FragmentAdminMain extends Fragment implements View.OnClickListener {
 

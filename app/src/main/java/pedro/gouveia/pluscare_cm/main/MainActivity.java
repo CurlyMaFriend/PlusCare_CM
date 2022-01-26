@@ -1,23 +1,24 @@
-package pedro.gouveia.pluscare_cm;
+package pedro.gouveia.pluscare_cm.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseUser;
 
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import pedro.gouveia.pluscare_cm.MyViewModel;
+import pedro.gouveia.pluscare_cm.R;
+import pedro.gouveia.pluscare_cm.admin.AdminMainActivity;
+import pedro.gouveia.pluscare_cm.auxiliar.AuxiliarMainActivity;
+import pedro.gouveia.pluscare_cm.classes.Utilizador;
 import pedro.gouveia.pluscare_cm.firebaseManager.AuthManager;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
 

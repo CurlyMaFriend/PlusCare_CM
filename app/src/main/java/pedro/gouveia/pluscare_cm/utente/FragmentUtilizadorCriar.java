@@ -1,4 +1,4 @@
-package pedro.gouveia.pluscare_cm;
+package pedro.gouveia.pluscare_cm.utente;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import pedro.gouveia.pluscare_cm.R;
 import pedro.gouveia.pluscare_cm.classes.Utilizador;
 import pedro.gouveia.pluscare_cm.main.LoginActivity;
 

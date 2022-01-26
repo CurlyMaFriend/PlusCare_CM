@@ -1,5 +1,6 @@
-package pedro.gouveia.pluscare_cm;
+package pedro.gouveia.pluscare_cm.utente;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -21,6 +22,10 @@ import androidx.lifecycle.ViewModelProvider;
 
 import java.util.ArrayList;
 
+import pedro.gouveia.pluscare_cm.FragmentAdapterUtente;
+import pedro.gouveia.pluscare_cm.FragmentLoading;
+import pedro.gouveia.pluscare_cm.MyViewModel;
+import pedro.gouveia.pluscare_cm.R;
 import pedro.gouveia.pluscare_cm.classes.Utente;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
 
@@ -69,6 +74,7 @@ public class UtentesListaActivity extends AppCompatActivity {
                 utentesFrame.setVisibility(View.GONE);
                 utentesScroll.setVisibility(View.VISIBLE);
                 utentes = item;
+                containerUtentes.removeAllViews();
                 for (Utente ut : utentes) {
                     addCardUtente(ut);
                 }
@@ -83,6 +89,7 @@ public class UtentesListaActivity extends AppCompatActivity {
         replaceFragment(new FragmentLoading());
         functionsManager.getUtentes();
 
+        containerUtentes.removeAllViews();
         for (Utente ut : utentes) {
             addCardUtente(ut);
         }
@@ -107,8 +114,16 @@ public class UtentesListaActivity extends AppCompatActivity {
 
         btnDetailsUtente.setOnClickListener(v -> {
             Log.d("teste", utente.toString());
+            userDetails(utente);
         });
 
         containerUtentes.addView(view);
+    }
+
+    private void userDetails(Utente aUtente){
+        Log.d("teste", "chegou");
+        Intent i = new Intent(getBaseContext(), UtenteInfo.class);
+        i.putExtra("utente", aUtente);
+        startActivity(i);
     }
 }

@@ -1,10 +1,10 @@
-package pedro.gouveia.pluscare_cm;
+package pedro.gouveia.pluscare_cm.classes;
 
 import java.util.Date;
 
 public class Tarefa {
 
-    private int id, idFuncionario, idAndar;
+    private int id, idFuncionario, idAndar, idMedicamento, idHigiene;
     private String titulo, descricao;
     private Date dataFim, dataInicio;
 
@@ -72,5 +72,21 @@ public class Tarefa {
 
     public void setDataInicio(Date dataInicio) {
         this.dataInicio = dataInicio;
+    }
+
+    public int getIdMedicamento() {
+        return idMedicamento;
+    }
+
+    public void setIdMedicamento(int idMedicamento) {
+        this.idMedicamento = idMedicamento;
+    }
+
+    public int getIdHigiene() {
+        return idHigiene;
+    }
+
+    public void setIdHigiene(int idHigiene) {
+        this.idHigiene = idHigiene;
     }
 }

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PlusCare_CM">
         <activity
-            android:name=".MainActivity"
+            android:name=".main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,10 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".AdminMainActivity"></activity>
-        <activity android:name=".AuxiliarMainActivity"></activity>
-        <activity android:name=".UtentesListaActivity"></activity>
+        <activity android:name=".main.LoginActivity"></activity>
+        <activity android:name=".admin.AdminMainActivity"></activity>
+        <activity android:name=".auxiliar.AuxiliarMainActivity"></activity>
+        <activity android:name=".utente.UtentesListaActivity"></activity>
+        <activity android:name=".utente.UtenteInfo"></activity>
         <activity android:name=".TarefasInfoActivity"></activity>
         <activity android:name=".HigienesInfoActivity"></activity>
         <activity android:name=".MedicamentosInfoActivity"></activity>
