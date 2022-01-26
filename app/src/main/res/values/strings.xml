@@ -92,6 +92,9 @@
     <string name="detalhes">Detalhes</string>
     <string name="tipo">Tipo: </string>
     <string name="hora">Hora: </string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="function">Função: </string>
+    <string name="id">Id: </string>
+    <string name="piso">Andar: </string>
+    <string name="email">Email: </string>
 
 </resources>

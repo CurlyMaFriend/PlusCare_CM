@@ -2,9 +2,10 @@ package pedro.gouveia.pluscare_cm.classes;
 
 import com.google.gson.annotations.Expose;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Utilizador {
+public class Utilizador implements Serializable {
 
     private String email, nome, morada, id, password;
     private String data_nascimento;

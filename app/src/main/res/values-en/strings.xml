@@ -93,6 +93,9 @@
     <string name="detalhes">Details</string>
     <string name="tipo">Type: </string>
     <string name="hora">Time: </string>
-
+    <string name="function">Role: </string>
+    <string name="id">Id: </string>
+    <string name="piso">Floor: </string>
+    <string name="email">Email: </string>
 
 </resources>

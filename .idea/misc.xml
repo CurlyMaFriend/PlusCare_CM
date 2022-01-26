@@ -3,70 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Escolinha/Mestrado/2 Ano/1 Semestre/CM/PlusCare_CM/app/src/main/res/layout/activity_main.xml" value="0.3625" />
-        <entry key="..\:/Escolinha/Mestrado/2 Ano/1 Semestre/CM/PlusCare_CM/app/src/main/res/layout/fragment_admin_main.xml" value="0.30520833333333336" />
-        <entry key="..\:/Escolinha/Mestrado/2 Ano/1 Semestre/CM/PlusCare_CM/app/src/main/res/layout/lista_utentes_layout.xml" value="0.4161458333333333" />
-        <entry key="..\:/Escolinha/Mestrado/2 Ano/1 Semestre/CM/PlusCare_CM/app/src/main/res/layout/lista_utilizadores_layout.xml" value="0.4161458333333333" />
-        <entry key="..\:/Escolinha/Mestrado/2 Ano/1 Semestre/CM/PlusCare_CM/app/src/main/res/layout/task_card.xml" value="0.30520833333333336" />
-        <entry key="..\:/Escolinha/Mestrado/2 Ano/1 Semestre/CM/PlusCare_CM/app/src/main/res/layout/utente_card.xml" value="0.30520833333333336" />
-        <entry key="..\:/Escolinha/Mestrado/2 Ano/1 Semestre/CM/PlusCare_CM/app/src/main/res/layout/utente_info_layout.xml" value="0.47192028985507245" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/drawable/ic__09041_users_group_people_icon.xml" value="0.44583333333333336" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/drawable/ic__324183_ui_essential_app_bell_notification_icon.xml" value="0.44583333333333336" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/drawable/ic__602717_healthcare_medical_pill_icon.xml" value="0.44583333333333336" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/drawable/ic__665909_shower_bathroom_icon.xml" value="0.44583333333333336" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/drawable/ic__679809_spam_warning_icon.xml" value="0.44583333333333336" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/drawable/ic__741139_hand_hygiene_soap_soap_pump_detergent_icon.xml" value="0.44583333333333336" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/drawable/ic__803966_checklist_clipboard_task_todo_icon.xml" value="0.44583333333333336" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/drawable/my_custom_linearlayout.xml" value="0.44583333333333336" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/activity_main.xml" value="0.4296875" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/admin_activity_layout.xml" value="0.4296875" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/admin_gere_layout.xml" value="0.4148550724637681" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/admin_main_activity.xml" value="0.4296875" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/auxiliar_main_activity.xml" value="0.4296875" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_admin_lista.xml" value="0.4148550724637681" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_admin_lista_dia.xml" value="0.20896656534954408" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_admin_main.xml" value="0.20896656534954408" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_dados_utente.xml" value="0.4296875" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_dados_utente_atividades.xml" value="0.4296875" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_dados_utente_cuidados.xml" value="0.4296875" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_dados_utente_saude.xml" value="0.4296875" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_higiene_criar.xml" value="0.24739583333333334" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_higienes_completas.xml" value="0.4296875" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_higienes_incompletas.xml" value="0.4296875" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_higienes_por_fazer.xml" value="0.1947463768115942" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_loading.xml" value="0.4296875" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_medicamentos_completos.xml" value="0.24739583333333334" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_medicamentos_incompletos.xml" value="0.1947463768115942" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_medicamentos_por_fazer.xml" value="0.1947463768115942" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_ocorrencias_arquivadas.xml" value="0.24739583333333334" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_ocorrencias_novas.xml" value="0.24739583333333334" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_tarefa_completas_list.xml" value="0.24739583333333334" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_tarefas_completas.xml" value="0.24739583333333334" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_tarefas_incompletas.xml" value="0.4296875" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_tarefas_por_fazer.xml" value="0.4296875" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_utente_criar.xml" value="0.375" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/fragment_utente_criar2.xml" value="0.19722222222222222" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/higienes_info_layout.xml" value="0.16018518518518518" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/lista_utentes_layout.xml" value="0.375" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/lista_utilizadores_layout.xml" value="0.24375" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/listar_higiene_layout.xml" value="0.4148550724637681" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/listar_medicamento_layout.xml" value="0.4148550724637681" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/listar_ocorrencia_layout.xml" value="0.4148550724637681" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/listar_tarefa_layout.xml" value="0.4148550724637681" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/login_activity_layout.xml" value="0.41163793103448276" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/login_layout.xml" value="0.4296875" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/medicamentos_info_layout.xml" value="0.16018518518518518" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/nova_conta_layout.xml" value="0.24375" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/nova_higiene_layout.xml" value="0.335" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/nova_ocorrencia_layout.xml" value="0.4148550724637681" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/nova_tarefa_layout.xml" value="0.4148550724637681" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/novo_medicamento_layout.xml" value="0.25" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/ocorrencias_info_layout.xml" value="0.16018518518518518" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/tarefas_info_layout.xml" value="0.4296875" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/utente_activity_main.xml" value="0.4296875" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/utente_card.xml" value="0.4296875" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/utente_info_layout.xml" value="0.335" />
-        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/utentes_lista_layout.xml" value="0.4296875" />
+        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/lista_utentes_layout.xml" value="0.3220108695652174" />
+        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/lista_utilizadores_layout.xml" value="0.3220108695652174" />
+        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/listar_higiene_layout.xml" value="0.3220108695652174" />
+        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/utente_card.xml" value="0.20896656534954408" />
+        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/utente_info_layout.xml" value="0.3220108695652174" />
+        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/utilizador_card.xml" value="0.45" />
+        <entry key="..\:/Users/Kurit/AndroidStudioProjects/PlusCare_CM/app/src/main/res/layout/utilizador_info_layout.xml" value="0.3220108695652174" />
       </map>
     </option>
   </component>
