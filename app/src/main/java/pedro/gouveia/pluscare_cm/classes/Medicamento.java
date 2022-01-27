@@ -44,4 +44,14 @@ public class Medicamento implements Serializable {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+    @Override
+    public String toString() {
+        return "Medicamento{" +
+                "id='" + id + '\'' +
+                ", nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", tipo='" + tipo + '\'' +
+                '}';
+    }
 }

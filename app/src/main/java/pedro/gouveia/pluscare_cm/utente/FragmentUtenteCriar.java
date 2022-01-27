@@ -83,7 +83,7 @@ public class FragmentUtenteCriar extends Fragment {
         });
 
         buttonCreate.setOnClickListener(view -> {
-            new Utente(username.getText().toString(), alcunha.getText().toString(),morada.getText().toString(),date1.toString(),estadoCivil.getText().toString(),grauEscolaridade.getText().toString(),profissao.getText().toString(),nacionalidade.getText().toString(),Integer.parseInt(altura.getText().toString()),Integer.parseInt(cc.getText().toString()),Integer.parseInt(nif.getText().toString()),Integer.parseInt(niss.getText().toString()),Integer.parseInt(nus.getText().toString()));
+            new Utente(username.getText().toString(), alcunha.getText().toString(),morada.getText().toString(),date1.toString(),estadoCivil.getText().toString(),grauEscolaridade.getText().toString(),profissao.getText().toString(),nacionalidade.getText().toString(),Integer.parseInt(altura.getText().toString()),Integer.parseInt(cc.getText().toString()),Integer.parseInt(nif.getText().toString()),Integer.parseInt(niss.getText().toString()),Integer.parseInt(nus.getText().toString()), "");
         });
 
         buttonCancel.setOnClickListener(view -> {

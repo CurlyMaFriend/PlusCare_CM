@@ -1,24 +1,36 @@
 package pedro.gouveia.pluscare_cm.utente;
 
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 import pedro.gouveia.pluscare_cm.FragmentAdapterTarefa;
+import pedro.gouveia.pluscare_cm.MyViewModel;
 import pedro.gouveia.pluscare_cm.R;
+import pedro.gouveia.pluscare_cm.classes.Tarefa;
 import pedro.gouveia.pluscare_cm.classes.Utente;
+import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
 
 public class UtenteInfo extends AppCompatActivity {
 
@@ -26,19 +38,33 @@ public class UtenteInfo extends AppCompatActivity {
     private TextView nomePrefUtente, nomeUtente, idadeUtente;
     private FragmentAdapterTarefa fragmentAdapter;
     private ViewPager2 viewPage2;
+
+    private MyViewModel viewModel;
+    private FunctionsManager functionsManager;
+
     private Utente utente;
+    private ArrayList<Tarefa> tarefasCompletas, tarefasPorFazer, tarefasFeitas;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.utente_info_layout);
 
+        tarefasCompletas = new ArrayList<>();
+        tarefasPorFazer = new ArrayList<>();
+        tarefasFeitas = new ArrayList<>();
+
         tabLayout = findViewById(R.id.tabLayout2);
         viewPage2 = findViewById(R.id.viewPager2);
+
+        viewModel = new ViewModelProvider(this).get(MyViewModel.class);
+
+        functionsManager = new FunctionsManager(this, PreferenceManager.getDefaultSharedPreferences(getApplicationContext()), viewModel);
 
         FragmentManager fm = getSupportFragmentManager();
         fragmentAdapter = new FragmentAdapterTarefa(fm, getLifecycle());
         viewPage2.setAdapter(fragmentAdapter);
+        setLoading();
 
         nomeUtente = findViewById(R.id.nomeUtente);
         nomePrefUtente = findViewById(R.id.nomePrefUtente);
@@ -50,7 +76,22 @@ public class UtenteInfo extends AppCompatActivity {
 
         utente = (Utente) getIntent().getSerializableExtra("utente");
 
+        setLoading();
+
+        viewModel.getTarefasUtenteComp().observe(this, tarefasArray ->{
+            Log.d("teste", "Entrou no observer tarefas utente completas com: " + tarefasArray.size());
+
+            tarefasCompletas = tarefasArray;
+
+            fragmentAdapter.isLoading(false);
+            fragmentAdapter.setTarefas(tarefasCompletas);
+            viewPage2.setCurrentItem(1);
+            viewPage2.setCurrentItem(0);
+        });
+
         if(utente != null){
+            functionsManager.getTarefasUtente(utente.getId(), "completa");
+            Log.d("teste", "Depois do functionsManager get tarefas utente");
             nomeUtente.setText(utente.getNome());
             nomePrefUtente.setText(utente.getNomePreferencia());
 
@@ -96,6 +137,17 @@ public class UtenteInfo extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+
+    }
+
+    private void setLoading(){
+        fragmentAdapter.isLoading(true);
     }
 
 

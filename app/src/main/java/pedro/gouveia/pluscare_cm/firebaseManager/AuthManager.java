@@ -51,7 +51,9 @@ public class AuthManager {
                 @Override
                 public void onComplete(@NonNull Task<GetTokenResult> task) {
                     if(task.isSuccessful()){
-                        sharedPreferences.edit().putString("user_token", task.getResult().getToken()).commit();
+                        String token = task.getResult().getToken();
+                        Log.d(TAG,"Token: " + token);
+                        sharedPreferences.edit().putString("user_token", token).commit();
                         sharedPreferences.edit().putString("user_type", user.getDisplayName().substring(user.getDisplayName().indexOf('|')+1)).commit();
                         viewModel.setUserTokenReady("token");
                     } else {

@@ -1,6 +1,9 @@
 package pedro.gouveia.pluscare_cm.main;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
@@ -14,6 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.concurrent.Executors;
 
+import pedro.gouveia.pluscare_cm.FragmentLoading;
 import pedro.gouveia.pluscare_cm.MyViewModel;
 import pedro.gouveia.pluscare_cm.R;
 import pedro.gouveia.pluscare_cm.admin.AdminMainActivity;
@@ -29,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private MyViewModel viewModel;
     private SharedPreferences sharedPreferences;
     private FirebaseUser user;
+    private FragmentManager fm;
+    private FragmentTransaction ft;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,11 +124,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        replaceFragment(new FragmentLoading());
+
         user = authManager.getUserLogin();
 
         if(user == null){
             switchActivities(LoginActivity.class);
-        } else {
+        } /*else {
 
             String userType = sharedPreferences.getString("user_type", "-1");
 
@@ -136,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
 
             Log.d("teste", "Bem vindo " + user.getDisplayName().substring(0, user.getDisplayName().indexOf('|')-1));
             Log.d("teste", "Sessao ja iniciada: " + user.getEmail());
-        }
+        }*/
     }
 
     private void switchActivities(Class c) {
@@ -144,4 +152,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(switchActivityIntent);
     }
 
+    public void replaceFragment(Fragment frag){
+        fm = getSupportFragmentManager();
+        ft = fm.beginTransaction();
+        ft.replace(R.id.frameLayout, frag);
+        ft.commit();
+    }
 }

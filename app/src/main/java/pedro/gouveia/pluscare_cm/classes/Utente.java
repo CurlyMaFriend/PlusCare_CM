@@ -8,10 +8,10 @@ public class Utente implements Serializable {
     //, tipoSangue, deficiencias
 
     private String nome, nome_preferencia, morada, data_nascimento, estado_civil, grau_escolaridade, profissao, nacionalidade;
-    private long altura, cc, nif, niss, nus, andar_id;
-    private String id;
+    private long altura, cc, nif, niss, nus;
+    private String id, andar_id;
 
-    public Utente(String nome, String nomePreferencia, String morada, String dataNascimento, String estadoCivil,  String grauEscolaridade, String profissao, String nacionalidade, long altura, long cc, long nif, long niss, long nus) {
+    public Utente(String nome, String nomePreferencia, String morada, String dataNascimento, String estadoCivil,  String grauEscolaridade, String profissao, String nacionalidade, long altura, long cc, long nif, long niss, long nus, String andar_id) {
         this.id = "0";
         this.nome = nome;
         this.nome_preferencia = nomePreferencia;
@@ -26,7 +26,11 @@ public class Utente implements Serializable {
         this.nif = nif;
         this.niss = niss;
         this.nus = nus;
-        this.andar_id = -1;
+        this.andar_id = andar_id;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getNome() {

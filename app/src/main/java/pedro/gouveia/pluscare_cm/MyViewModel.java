@@ -14,6 +14,7 @@ import java.util.Arrays;
 
 import pedro.gouveia.pluscare_cm.admin.AdminStats;
 import pedro.gouveia.pluscare_cm.classes.Medicamento;
+import pedro.gouveia.pluscare_cm.classes.Tarefa;
 import pedro.gouveia.pluscare_cm.classes.Utente;
 import pedro.gouveia.pluscare_cm.classes.Utilizador;
 
@@ -25,6 +26,33 @@ public class MyViewModel extends androidx.lifecycle.ViewModel {
     public MutableLiveData<AdminStats> adminStats = new MutableLiveData<>();
     public MutableLiveData<String> userTokenReady = new MutableLiveData<>();
     public MutableLiveData<ArrayList<Medicamento>> medicamentos = new MutableLiveData<>();
+    public MutableLiveData<ArrayList<Tarefa>> tarefasUtenteComp = new MutableLiveData<>();
+    public MutableLiveData<ArrayList<Tarefa>> tarefasUtenteFaz = new MutableLiveData<>();
+    public MutableLiveData<ArrayList<Tarefa>> tarefasUtentePassadas = new MutableLiveData<>();
+
+    public MutableLiveData<ArrayList<Tarefa>> getTarefasUtenteComp() {
+        return tarefasUtenteComp;
+    }
+
+    public void setTarefasUtenteComp(Tarefa[] tarefasUtenteComp) {
+        this.tarefasUtenteComp.setValue(new ArrayList<Tarefa>(Arrays.asList(tarefasUtenteComp)));
+    }
+
+    public MutableLiveData<ArrayList<Tarefa>> getTarefasUtenteFaz() {
+        return tarefasUtenteFaz;
+    }
+
+    public void setTarefasUtenteFaz(Tarefa[] tarefasUtenteFaz) {
+        this.tarefasUtenteFaz.setValue(new ArrayList<Tarefa>(Arrays.asList(tarefasUtenteFaz)));
+    }
+
+    public MutableLiveData<ArrayList<Tarefa>> getTarefasUtentePassadas() {
+        return tarefasUtentePassadas;
+    }
+
+    public void setTarefasUtentePassadas(Tarefa[] tarefasUtentePassadas) {
+        this.tarefasUtentePassadas.setValue(new ArrayList<Tarefa>(Arrays.asList(tarefasUtentePassadas)));
+    }
 
     public MutableLiveData<String> getUserTokenReady() {
         return userTokenReady;

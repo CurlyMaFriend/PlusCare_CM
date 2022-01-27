@@ -17,4 +17,5 @@
     <color name="secondaryTextColor">#000000</color>
     <color name="loadingBackground">#fffbf2</color>
     <color name="kindaWhite">#e5e5e5</color>
+    <color name="greyOutline">#CDCDCD</color>
 </resources>

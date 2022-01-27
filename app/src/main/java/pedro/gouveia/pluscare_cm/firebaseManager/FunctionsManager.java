@@ -23,20 +23,25 @@ import java.util.concurrent.Executors;
 
 import pedro.gouveia.pluscare_cm.admin.AdminStats;
 import pedro.gouveia.pluscare_cm.MyViewModel;
+import pedro.gouveia.pluscare_cm.classes.Medicamento;
+import pedro.gouveia.pluscare_cm.classes.Tarefa;
 import pedro.gouveia.pluscare_cm.classes.Utente;
 import pedro.gouveia.pluscare_cm.classes.Utilizador;
 
 public class FunctionsManager {
 
     private MyViewModel viewModel;
-    private String apiUrl = "https://us-central1-plus-care-api.cloudfunctions.net/api";
+    private String apiUrl = "https://europe-west1-plus-care-api.cloudfunctions.net/api";
     private String TAG = "functions";
     private RequestQueue requestQueue;
     private SharedPreferences sharedPreferences;
     private Gson gson = new GsonBuilder().create();
     private final String utenteUrl = apiUrl + "/utente";
     private final String utilizadorUrl = apiUrl + "/utilizador";
+    private final String tarefasUrl = apiUrl + "/tarefa";
+    private final String tarefasFiltrosUrl = apiUrl + "/tarefa/filters";
     private final String adminStatsUrl = apiUrl + "/admin/stats";
+    private final String medicamentosUrl = apiUrl + "/medicamento";
 
     private ExecutorService executorService = Executors.newFixedThreadPool(5);
 
@@ -47,19 +52,172 @@ public class FunctionsManager {
         viewModel = viewModelInstance;
     }
 
-    public void getUsers(){
+
+    /*---------------------------------------------*/
+    /*-------------------TAREFAS-------------------*/
+    /*---------------------------------------------*/
+
+    /**
+     * Obter tarefas associadas a um utente com um determinado estado
+     * @param utente_id id do utente cujas tarefas estao associadas
+     * @param estado estado == "" -> devolve todas
+     *               estado == "completa" -> devolve tarefas terminadas...
+     */
+    public void getTarefasUtente(String utente_id, String estado){
+
+        String tempBody = "{\"utente_id\": \"" + utente_id + "\"";
+
+        if(estado.equals("")){
+            tempBody += "}";
+        } else {
+            tempBody += ",\"estado\":\"" + estado + "\"}";
+        }
+
+        final String reqBody = tempBody;
+
+        String user_token = sharedPreferences.getString("user_token", "none");
+
+        if(!user_token.equals("none") && !utente_id.equals("")){
+
+            // Request a string response from the provided URL.
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, tarefasFiltrosUrl,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+
+                            Tarefa[] tarefas = gson.fromJson(response, Tarefa[].class);
+
+                            if(estado.equals("completa")){
+                                viewModel.setTarefasUtenteComp(tarefas);
+                            } else if (estado.equals("por fazer")){
+                                viewModel.setTarefasUtenteFaz(tarefas);
+                            }
+
+                            //Log.d(TAG, "Response: " + response);
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.d(TAG, "Error: " + error.toString());
+                }
+            }) {
+                /**
+                 * Passing some request headers
+                 * */
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+                    headers.put("Authorization", "Bearer " + user_token);
+                    return headers;
+                }
+                @Override
+                public String getBodyContentType() {
+                    return "application/json; charset=utf-8";
+                }
+                @Override
+                public byte[] getBody() throws AuthFailureError {
+                    try {
+                        return reqBody.getBytes("utf-8");
+                    } catch (UnsupportedEncodingException uee) {
+                        VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", reqBody, "utf-8");
+                        return null;
+                    }
+                }
+
+            };
+
+            Log.d("teste", "req: " + stringRequest);
+
+            // Add the request to the RequestQueue.
+            requestQueue.add(stringRequest);
+        }
+    }
+
+  /*  public void getTarefasFuncionario(String estado){
+
+        String tempBody = "";
+
+        if(!estado.equals("")){
+            tempBody += "{\"estado\":\"" + estado + "\"}";
+        }
+
+        final String reqBody = tempBody;
 
         String user_token = sharedPreferences.getString("user_token", "none");
 
         if(!user_token.equals("none")){
 
             // Request a string response from the provided URL.
-            StringRequest stringRequest = new StringRequest(Request.Method.GET, utilizadorUrl,
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, tarefasFiltrosUrl,
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-                            Utilizador[] users = gson.fromJson(response, Utilizador[].class);
-                            viewModel.setUsers(users);
+
+                            Tarefa[] tarefas = gson.fromJson(response, Tarefa[].class);
+
+                            if(estado.equals("completa")){
+                                viewModel.setTarefasUtenteComp(tarefas);
+                            } else if (estado.equals("por fazer")){
+                                viewModel.setTarefasUtenteFaz(tarefas);
+                            }
+
+                            //Log.d(TAG, "Response: " + response);
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.d(TAG, "Error: " + error.toString());
+                }
+            }) {
+                *//**
+                 * Passing some request headers
+                 * *//*
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+                    headers.put("Authorization", "Bearer " + user_token);
+                    return headers;
+                }
+                @Override
+                public String getBodyContentType() {
+                    return "application/json; charset=utf-8";
+                }
+                @Override
+                public byte[] getBody() throws AuthFailureError {
+                    try {
+                        return reqBody.getBytes("utf-8");
+                    } catch (UnsupportedEncodingException uee) {
+                        VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", reqBody, "utf-8");
+                        return null;
+                    }
+                }
+
+            };
+
+            Log.d("teste", "req: " + stringRequest);
+
+            // Add the request to the RequestQueue.
+            requestQueue.add(stringRequest);
+        }
+    }*/
+
+    /*----------------------------------------------*/
+    /*-----------------MEDICAMENTOS-----------------*/
+    /*----------------------------------------------*/
+
+    public void getMedicamentos(){
+
+        String user_token = sharedPreferences.getString("user_token", "none");
+
+        if(!user_token.equals("none")){
+
+            // Request a string response from the provided URL.
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, medicamentosUrl,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            Medicamento[] medicamentos = gson.fromJson(response, Medicamento[].class);
+                            viewModel.setMedicamentos(medicamentos);
                             //Log.d(TAG, "Response: " + response);
                         }
                     }, new Response.ErrorListener() {
@@ -84,6 +242,133 @@ public class FunctionsManager {
             requestQueue.add(stringRequest);
         }
     }
+
+    public void addMedicamento(Medicamento med){
+
+        String user_token = sharedPreferences.getString("user_token", "none");
+
+        String medicamentoJson = gson.toJson(med);
+
+        Log.d(TAG, medicamentoJson);
+
+        if(!user_token.equals("none")){
+
+            // Request a string response from the provided URL.
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, medicamentosUrl,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            Log.d(TAG, "Response add medicamento: " + response);
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                    String statusCode = String.valueOf(error.networkResponse.statusCode);
+                    String body = "";
+                    if(error.networkResponse.data!=null) {
+                        try {
+                            body = new String(error.networkResponse.data,"UTF-8");
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    Log.d(TAG, "Error - " + statusCode + ": " + body);
+                }
+            }) {
+                /**
+                 * Passing some request headers
+                 * */
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+                    headers.put("Authorization", "Bearer " + user_token);
+                    headers.put("Content-Type", "application/json");
+                    return headers;
+                }
+                @Override
+                public byte[] getBody() throws AuthFailureError {
+                    try {
+                        return medicamentoJson == null ? null : medicamentoJson.getBytes("utf-8");
+                    } catch (UnsupportedEncodingException uee) {
+                        VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", medicamentoJson, "utf-8");
+                        return null;
+                    }
+                }
+
+            };
+
+            // Add the request to the RequestQueue.
+            requestQueue.add(stringRequest);
+        }
+    }
+
+    public void updateMedicamento(Medicamento med){
+
+        String user_token = sharedPreferences.getString("user_token", "none");
+
+        String medicamentoJson = gson.toJson(med);
+
+        Log.d(TAG, medicamentoJson);
+
+        if(!user_token.equals("none")){
+
+            // Request a string response from the provided URL.
+            StringRequest stringRequest = new StringRequest(Request.Method.PUT, medicamentosUrl+"/"+med.getId(),
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            Log.d(TAG, "Response update medicamento: " + response);
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                    String statusCode = String.valueOf(error.networkResponse.statusCode);
+                    String body = "";
+                    if(error.networkResponse.data!=null) {
+                        try {
+                            body = new String(error.networkResponse.data,"UTF-8");
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    Log.d(TAG, "Error - " + statusCode + ": " + body);
+                }
+            }) {
+                /**
+                 * Passing some request headers
+                 * */
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+                    headers.put("Authorization", "Bearer " + user_token);
+                    headers.put("Content-Type", "application/json");
+                    return headers;
+                }
+                @Override
+                public byte[] getBody() throws AuthFailureError {
+                    try {
+                        return medicamentoJson == null ? null : medicamentoJson.getBytes("utf-8");
+                    } catch (UnsupportedEncodingException uee) {
+                        VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", medicamentoJson, "utf-8");
+                        return null;
+                    }
+                }
+
+            };
+
+            // Add the request to the RequestQueue.
+            requestQueue.add(stringRequest);
+        }
+    }
+
+
+    /*---------------------------------------------*/
+    /*-------------------UTENTES-------------------*/
+    /*---------------------------------------------*/
 
     public void getUtentes(){
 
@@ -184,6 +469,48 @@ public class FunctionsManager {
         }
     }
 
+    /*--------------------------------------------*/
+    /*----------------UTILIZADORES----------------*/
+    /*--------------------------------------------*/
+
+    public void getUsers(){
+
+        String user_token = sharedPreferences.getString("user_token", "none");
+
+        if(!user_token.equals("none")){
+
+            // Request a string response from the provided URL.
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, utilizadorUrl,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            Utilizador[] users = gson.fromJson(response, Utilizador[].class);
+                            viewModel.setUsers(users);
+                            //Log.d(TAG, "Response: " + response);
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.d(TAG, "Error: " + error.toString());
+                }
+            }) {
+                /**
+                 * Passing some request headers
+                 * */
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+                    headers.put("Authorization", "Bearer " + user_token);
+                    return headers;
+                }
+
+            };
+
+            // Add the request to the RequestQueue.
+            requestQueue.add(stringRequest);
+        }
+    }
+
     public void addUtilizador(Utilizador user){
 
         String user_token = sharedPreferences.getString("user_token", "none");
@@ -247,6 +574,11 @@ public class FunctionsManager {
             requestQueue.add(stringRequest);
         }
     }
+
+
+    /*------------------------------------------------*/
+    /*-------------------ADMINSTATS-------------------*/
+    /*------------------------------------------------*/
 
     public boolean getAdminStats(){
 

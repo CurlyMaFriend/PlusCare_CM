@@ -6,18 +6,46 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
+
+import pedro.gouveia.pluscare_cm.classes.Tarefa;
 
 public class FragmentTarefasCompletas extends Fragment {
 
-    private TextView descricao, detalhes, comentarios,dataInserida, dataInicial, dataFim;
+    private ArrayList<Tarefa> tarefas;
+    private LinearLayout containerTarefas;
+
+    FragmentTarefasCompletas(ArrayList<Tarefa> aTarefas){
+        tarefas = aTarefas;
+
+        if(tarefas == null){
+            tarefas = new ArrayList<>();
+        }
+    }
+
+    public void setTarefas(ArrayList<Tarefa> tarefas) {
+        this.tarefas = tarefas;
+        containerTarefas.removeAllViews();
+        for (Tarefa tarefa: tarefas){
+            addCardTarefa(tarefa);
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,13 +58,72 @@ public class FragmentTarefasCompletas extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        dataInserida = view.findViewById(R.id.dataInserida);
-        dataInicial = view.findViewById(R.id.dataInicial);
-        dataFim = view.findViewById(R.id.dataFinal);
+        containerTarefas = view.findViewById(R.id.tarefasCompletasContainer);
+        containerTarefas.removeAllViews();
+        for (Tarefa tarefa: tarefas){
+            addCardTarefa(tarefa);
+        }
 
-        descricao = view.findViewById(R.id.descricao);
-        detalhes = view.findViewById(R.id.detalhes);
-        comentarios = view.findViewById(R.id.comentarios);
+    }
 
+    private void addCardTarefa(Tarefa tarefa){
+
+        View view = getLayoutInflater().inflate(R.layout.task_card, null);
+
+        TextView txtTaskName = view.findViewById(R.id.txtTaskName);
+        TextView txtTaskType = view.findViewById(R.id.txtTaskType);
+        TextView txtTaskTime = view.findViewById(R.id.txtTaskTime);
+        Button btnDetailsTarefa = view.findViewById(R.id.btn_details_task);
+
+        txtTaskName.setText(tarefa.getTitulo());
+
+        String tipo = "";
+
+        if(tarefa.getHigiene_id() != null && !tarefa.getHigiene_id().equals("")){
+            tipo = "Higiene";
+        } else if(tarefa.getMedicamento_id() != null && !tarefa.getMedicamento_id().equals("")){
+            tipo = "Medicamento";
+        } else {
+            tipo = "Outro";
+        }
+
+        txtTaskType.setText(tipo);
+
+        String time = "";
+
+        try {
+            LocalDateTime dateTime = LocalDateTime.parse(tarefa.getDataInicio());
+
+            String minutes = "";
+
+            if(dateTime.getMinute() < 10){
+                minutes = "0" + dateTime.getMinute();
+            } else {
+                minutes = dateTime.getMinute()+"";
+            }
+
+            time = dateTime.getHour() + ":" + minutes;
+
+            /*Calendar dataIO = Calendar.getInstance();
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss", Locale.ENGLISH);
+            dataIO.setTime(sdf.parse(tarefa.getDataInicio()));
+
+            time = dataIO.get(Calendar.HOUR) + ":" + dataIO.get(Calendar.MINUTE);*/
+        } catch (Exception e) {
+            time = "--:--";
+            e.printStackTrace();
+        }
+
+
+
+
+        txtTaskTime.setText(time);
+
+        btnDetailsTarefa.setOnClickListener(v -> {
+            Log.d("teste", tarefa.toString());
+            //userDetails(utente);
+        });
+
+        containerTarefas.addView(view);
     }
 }

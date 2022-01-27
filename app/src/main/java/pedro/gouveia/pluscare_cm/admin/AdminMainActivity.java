@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProvider;
 import pedro.gouveia.pluscare_cm.FragmentLoading;
 import pedro.gouveia.pluscare_cm.MyViewModel;
 import pedro.gouveia.pluscare_cm.R;
+import pedro.gouveia.pluscare_cm.classes.Medicamento;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
 
 public class AdminMainActivity extends AppCompatActivity {
@@ -48,6 +49,15 @@ public class AdminMainActivity extends AppCompatActivity {
             }
         });
 
+        viewModel.getMedicamentos().observe(this, item ->{
+
+            if(item == null){
+                Log.d("teste", "Get medicamentos returned null");
+            } else {
+                Log.d("teste", "Get medicamentos returned meds: " + item);
+            }
+        });
+
         replaceFragment(new FragmentLoading());
 
     }
@@ -55,10 +65,13 @@ public class AdminMainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
         if(functionsManager.getAdminStats()){
+           // functionsManager.getMedicamentos();
+            //functionsManager.updateMedicamento(new Medicamento("zGNK6th6BcwwEsNU3d2X", "Tosseina updated", "", ""));
+            //functionsManager.addMedicamento(new Medicamento("", "Tosseina", "Xarope para a tosse", "xarope"));
             Log.d("teste", "admin stats true");
         } else {
-
             Log.d("teste", "admin stats false");
         }
     }

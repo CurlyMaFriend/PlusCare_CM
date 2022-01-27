@@ -4,42 +4,59 @@ import java.util.Date;
 
 public class Tarefa {
 
-    private int id, idFuncionario, idAndar, idMedicamento, idHigiene;
+    private String id, funcionario_id, utente_id, andar_id, medicamento_id, higiene_id;
     private String titulo, descricao;
-    private Date dataFim, dataInicio;
+    private String dataFim, dataInicio, estado, tipo;
 
-    public Tarefa(int id, int idFuncionario, int idAndar, String titulo, String descricao, Date dataFim, Date dataInicio) {
+    public Tarefa(String id, String funcionario_id, String utente_id, String andar_id, String titulo, String descricao, Date dataFim, Date dataInicio) {
         this.id = id;
-        this.idFuncionario = idFuncionario;
-        this.idAndar = idAndar;
+        this.funcionario_id = funcionario_id;
+        this.andar_id = andar_id;
+        this.utente_id = utente_id;
         this.titulo = titulo;
         this.descricao = descricao;
-        this.dataInicio = dataInicio;
-        this.dataFim = dataFim;
+        this.dataInicio = dataInicio.toString();
+        this.dataFim = dataFim.toString();
     }
 
-    public int getId() {
+    public String getTipo() {
+        return estado;
+    }
+
+    public void setTipo(String estado) {
+        this.estado = estado;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getIdFuncionario() {
-        return idFuncionario;
+    public String getFuncionario_id() {
+        return funcionario_id;
     }
 
-    public void setIdFuncionario(int idFuncionario) {
-        this.idFuncionario = idFuncionario;
+    public void setFuncionario_id(String funcionario_id) {
+        this.funcionario_id = funcionario_id;
     }
 
-    public int getIdAndar() {
-        return idAndar;
+    public String getAndar_id() {
+        return andar_id;
     }
 
-    public void setIdAndar(int idAndar) {
-        this.idAndar = idAndar;
+    public void setAndar_id(String andar_id) {
+        this.andar_id = andar_id;
     }
 
     public String getTitulo() {
@@ -58,35 +75,52 @@ public class Tarefa {
         this.descricao = descricao;
     }
 
-    public Date getDataFim() {
+    public String getDataFim() {
         return dataFim;
     }
 
     public void setDataFim(Date dataFim) {
-        this.dataFim = dataFim;
+        this.dataFim = dataFim.toString();
     }
 
-    public Date getDataInicio() {
+    public String getDataInicio() {
         return dataInicio;
     }
 
     public void setDataInicio(Date dataInicio) {
-        this.dataInicio = dataInicio;
+        this.dataInicio = dataInicio.toString();
     }
 
-    public int getIdMedicamento() {
-        return idMedicamento;
+    public String getMedicamento_id() {
+        return medicamento_id;
     }
 
-    public void setIdMedicamento(int idMedicamento) {
-        this.idMedicamento = idMedicamento;
+    public void setMedicamento_id(String medicamento_id) {
+        this.medicamento_id = medicamento_id;
     }
 
-    public int getIdHigiene() {
-        return idHigiene;
+    public String getHigiene_id() {
+        return higiene_id;
     }
 
-    public void setIdHigiene(int idHigiene) {
-        this.idHigiene = idHigiene;
+    public void setHigiene_id(String higiene_id) {
+        this.higiene_id = higiene_id;
+    }
+
+    @Override
+    public String toString() {
+        return "Tarefa{" +
+                "id='" + id + '\'' +
+                ", funcionario_id='" + funcionario_id + '\'' +
+                ", utente_id='" + utente_id + '\'' +
+                ", andar_id='" + andar_id + '\'' +
+                ", medicamento_id='" + medicamento_id + '\'' +
+                ", higiene_id='" + higiene_id + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", dataFim='" + dataFim + '\'' +
+                ", dataInicio='" + dataInicio + '\'' +
+                ", estado='" + estado + '\'' +
+                '}';
     }
 }
