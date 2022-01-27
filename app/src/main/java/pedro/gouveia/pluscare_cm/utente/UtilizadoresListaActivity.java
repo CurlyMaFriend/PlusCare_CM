@@ -59,15 +59,21 @@ public class UtilizadoresListaActivity extends AppCompatActivity {
         utilizadoresScroll = findViewById(R.id.utilizadoresScroll);
         utilizadoresFrame = findViewById(R.id.utilizadoresFrame);
 
-        utilizadoresScroll.setVisibility(View.GONE);
+        //utilizadoresScroll.setVisibility(View.GONE);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        functionsManager = new FunctionsManager(this, sharedPreferences, viewModel);
+        utilizadores.add(new Utilizador("teste","teste","teste","teste","teste"));
+        utilizadores.add(new Utilizador("teste","teste","teste","teste","teste"));
+        utilizadores.add(new Utilizador("teste","teste","teste","teste","teste"));
+
+
+
+        //functionsManager = new FunctionsManager(this, sharedPreferences, viewModel);
 
         //FragmentManager fm = getSupportFragmentManager();
         //fragmentAdapter = new FragmentAdapterUtilizador(fm, getLifecycle());
 
-        viewModel.getUsers().observe(this, item ->{
+        /*viewModel.getUsers().observe(this, item ->{
 
             if(item == null){
                 Toast.makeText(this, "No users", Toast.LENGTH_LONG);
@@ -80,15 +86,15 @@ public class UtilizadoresListaActivity extends AppCompatActivity {
                     addCardUtilizador(ut);
                 }
             }
-        });
+        });*/
 
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        replaceFragment(new FragmentLoading());
-        functionsManager.getUsers();
+        //replaceFragment(new FragmentLoading());
+        //functionsManager.getUsers();
 
         containerUtilizadores.removeAllViews();
         for (Utilizador ut : utilizadores) {

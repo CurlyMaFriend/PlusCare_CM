@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import pedro.gouveia.pluscare_cm.admin.AdminStats;
+import pedro.gouveia.pluscare_cm.classes.Medicamento;
 import pedro.gouveia.pluscare_cm.classes.Utente;
 import pedro.gouveia.pluscare_cm.classes.Utilizador;
 
@@ -23,6 +24,7 @@ public class MyViewModel extends androidx.lifecycle.ViewModel {
     public MutableLiveData<ArrayList<Utente>> utentes = new MutableLiveData<>();
     public MutableLiveData<AdminStats> adminStats = new MutableLiveData<>();
     public MutableLiveData<String> userTokenReady = new MutableLiveData<>();
+    public MutableLiveData<ArrayList<Medicamento>> medicamentos = new MutableLiveData<>();
 
     public MutableLiveData<String> getUserTokenReady() {
         return userTokenReady;
@@ -67,6 +69,14 @@ public class MyViewModel extends androidx.lifecycle.ViewModel {
 
     public void setUsers(Utilizador[] users) {
         this.users.setValue(new ArrayList<Utilizador>(Arrays.asList(users)));
+    }
+
+    public MutableLiveData<ArrayList<Medicamento>> getMedicamentos() {
+        return medicamentos;
+    }
+
+    public void setMedicamentos(Medicamento[] medicamentos){
+        this.medicamentos.setValue(new ArrayList<Medicamento>(Arrays.asList(medicamentos)));
     }
 
     public MutableLiveData<FirebaseUser> getCurrentUser() {

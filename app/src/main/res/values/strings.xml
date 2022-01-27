@@ -96,5 +96,5 @@
     <string name="id">Id: </string>
     <string name="piso">Andar: </string>
     <string name="email">Email: </string>
-
+    <string name="nrConsumidores">Utentes que consomem: </string>
 </resources>

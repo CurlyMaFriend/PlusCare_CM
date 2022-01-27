@@ -27,6 +27,8 @@
         <activity android:name=".HigienesInfoActivity"></activity>
         <activity android:name=".MedicamentosInfoActivity"></activity>
         <activity android:name=".OcorrenciasInfoActivity"></activity>
+        <activity android:name=".MedicamentosListaActivity"></activity>
+        <activity android:name=".utente.UtilizadoresListaActivity"></activity>
 
     </application>
 
