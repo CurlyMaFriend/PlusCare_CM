@@ -9,11 +9,16 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.ArrayList;
+
+import pedro.gouveia.pluscare_cm.classes.MedicamentoUtente;
+
 public class MedicamentosInfoActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private FragmentAdapterMedicamento fragmentAdapter;
     private ViewPager2 viewPage;
+    private ArrayList<MedicamentoUtente> medicamentos;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,9 +32,9 @@ public class MedicamentosInfoActivity extends AppCompatActivity {
         fragmentAdapter = new FragmentAdapterMedicamento(fm, getLifecycle());
         viewPage.setAdapter(fragmentAdapter);
 
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.Completas)));
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.PorFazer)));
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.Incompletas)));
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.details)));
+        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.tasksDay)));
+        //tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

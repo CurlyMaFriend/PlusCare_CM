@@ -11,7 +11,6 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,10 +22,8 @@ import androidx.lifecycle.ViewModelProvider;
 import java.util.ArrayList;
 
 import pedro.gouveia.pluscare_cm.FragmentAdapterUtente;
-import pedro.gouveia.pluscare_cm.FragmentLoading;
 import pedro.gouveia.pluscare_cm.MyViewModel;
 import pedro.gouveia.pluscare_cm.R;
-import pedro.gouveia.pluscare_cm.classes.Utente;
 import pedro.gouveia.pluscare_cm.classes.Utilizador;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
 
@@ -114,7 +111,7 @@ public class UtilizadoresListaActivity extends AppCompatActivity {
         Log.d("teste", "Entrou on card utilizador");
         View view = getLayoutInflater().inflate(R.layout.utilizador_card, null);
 
-        TextView txtNomeUtilizador = view.findViewById(R.id.nome_utilizador);
+        TextView txtNomeUtilizador = view.findViewById(R.id.nome_utente);
         Button btnDetailsUtilizador = view.findViewById(R.id.btn_details_utilizador);
 
         txtNomeUtilizador.setText(utilizador.getUsername());

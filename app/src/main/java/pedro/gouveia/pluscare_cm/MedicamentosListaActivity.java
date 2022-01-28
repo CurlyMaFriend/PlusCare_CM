@@ -33,7 +33,7 @@ import pedro.gouveia.pluscare_cm.utente.UtilizadorInfo;
 
 public class MedicamentosListaActivity extends AppCompatActivity {
 
-    private FragmentAdapterUtente fragmentAdapter;
+    private FragmentAdapterMedicamento fragmentAdapter;
     private LinearLayout containerMedicamentos;
     private MyViewModel viewModel;
     private FragmentManager fm;
@@ -52,7 +52,7 @@ public class MedicamentosListaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listar_medicamento_layout);
 
-        //viewModel = new ViewModelProvider(this).get(MyViewModel.class);
+        viewModel = new ViewModelProvider(this).get(MyViewModel.class);
 
         medicamentos = new ArrayList<>();
 
@@ -60,23 +60,23 @@ public class MedicamentosListaActivity extends AppCompatActivity {
         medicamentosScroll = findViewById(R.id.medicamentosScroll);
         medicamentosFrame = findViewById(R.id.medicamentosFrame);
 
-        //medicamentosScroll.setVisibility(View.GONE);
+        medicamentosScroll.setVisibility(View.GONE);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
+   /*     medicamentos.add(new Medicamento("teste","teste","teste","teste"));
         medicamentos.add(new Medicamento("teste","teste","teste","teste"));
         medicamentos.add(new Medicamento("teste","teste","teste","teste"));
         medicamentos.add(new Medicamento("teste","teste","teste","teste"));
-        medicamentos.add(new Medicamento("teste","teste","teste","teste"));
+*/
+        functionsManager = new FunctionsManager(this, sharedPreferences, viewModel);
 
-        //functionsManager = new FunctionsManager(this, sharedPreferences, viewModel);
+        FragmentManager fm = getSupportFragmentManager();
+        fragmentAdapter = new FragmentAdapterMedicamento(fm, getLifecycle());
 
-        //FragmentManager fm = getSupportFragmentManager();
-        //fragmentAdapter = new FragmentAdapterUtilizador(fm, getLifecycle());
-
-        /*viewModel.getMedicamentos().observe(this, item ->{
+        viewModel.getMedicamentos().observe(this, item ->{
 
             if(item == null){
-                Toast.makeText(this, "No users", Toast.LENGTH_LONG);
+                Toast.makeText(this, "No medicamentos", Toast.LENGTH_LONG);
             } else if (item.size() > 0) {
                 medicamentosFrame.setVisibility(View.GONE);
                 medicamentosScroll.setVisibility(View.VISIBLE);
@@ -86,26 +86,22 @@ public class MedicamentosListaActivity extends AppCompatActivity {
                     addCardMedicamento(med);
                 }
             }
-        });*/
+        });
 
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        //replaceFragment(new FragmentLoading());
-        //functionsManager.getUsers();
+        replaceFragment(new FragmentLoading());
+        functionsManager.getMedicamentos();
 
-        containerMedicamentos.removeAllViews();
-        for (Medicamento med : medicamentos) {
-            addCardMedicamento(med);
-        }
     }
 
     public void replaceFragment(Fragment frag){
         fm = getSupportFragmentManager();
         ft = fm.beginTransaction();
-        ft.replace(R.id.utentesFrame, frag);
+        ft.replace(R.id.medicamentosFrame, frag);
         ft.commit();
     }
 
