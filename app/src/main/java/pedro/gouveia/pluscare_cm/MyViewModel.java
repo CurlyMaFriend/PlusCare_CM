@@ -5,6 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.google.firebase.auth.FirebaseUser;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import pedro.gouveia.pluscare_cm.admin.AdminStats;
+import pedro.gouveia.pluscare_cm.classes.Higiene;
 import pedro.gouveia.pluscare_cm.classes.Medicamento;
 import pedro.gouveia.pluscare_cm.classes.Ocorrencia;
 import pedro.gouveia.pluscare_cm.classes.Tarefa;
@@ -30,6 +32,7 @@ public class MyViewModel extends androidx.lifecycle.ViewModel {
     public MutableLiveData<ArrayList<Tarefa>> tarefasUtenteComp = new MutableLiveData<>();
     public MutableLiveData<ArrayList<Tarefa>> tarefasUtenteFaz = new MutableLiveData<>();
     public MutableLiveData<ArrayList<Tarefa>> tarefasUtentePassadas = new MutableLiveData<>();
+    public MutableLiveData<ArrayList<Higiene>> higienes = new MutableLiveData<>();
 
     public MutableLiveData<ArrayList<Tarefa>> getTarefasUtenteComp() {
         return tarefasUtenteComp;
@@ -134,4 +137,13 @@ public class MyViewModel extends androidx.lifecycle.ViewModel {
     public void setOcorrencias(Ocorrencia[] ocorrencias) {
 
     }
+
+    public MutableLiveData<ArrayList<Higiene>> getHigienes() {
+        return higienes;
+    }
+
+    public void setHigienes(Higiene[] higienes) {
+        this.higienes.setValue(new ArrayList<Higiene>(Arrays.asList(higienes)));
+    }
+
 }

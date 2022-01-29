@@ -27,7 +27,6 @@ public class FragmentMedicamentosUtente extends Fragment {
     FragmentMedicamentosUtente(){
         medicamentoUtentes = new ArrayList<>();
 
-
         medicamentoUtentes.add(new MedicamentoUtente("teste","teste","teste","teste","teste","teste","teste"));
         medicamentoUtentes.add(new MedicamentoUtente("teste","teste","teste","teste","teste","teste","teste"));
         medicamentoUtentes.add(new MedicamentoUtente("teste","teste","teste","teste","teste","teste","teste"));
@@ -42,6 +41,7 @@ public class FragmentMedicamentosUtente extends Fragment {
             addCardMedicamentoUtentes(medicamentoUt);
         }
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

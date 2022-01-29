@@ -667,4 +667,6 @@ public class FunctionsManager {
         }
     }
 
+    public void getHigienes() {
+    }
 }

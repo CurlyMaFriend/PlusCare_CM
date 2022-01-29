@@ -24,13 +24,12 @@
         <activity android:name=".utente.UtentesListaActivity"></activity>
         <activity android:name=".utente.UtenteInfo"></activity>
         <activity android:name=".TarefasInfoActivity"></activity>
-        <activity android:name=".HigienesInfoActivity"></activity>
         <activity android:name=".MedicamentosInfoActivity"></activity>
         <activity android:name=".OcorrenciasInfoActivity"></activity>
         <activity android:name=".MedicamentosListaActivity"></activity>
         <activity android:name=".utente.UtilizadoresListaActivity"></activity>
         <activity android:name=".utente.UtilizadorInfo"></activity>
-
+        <activity android:name=".HigieneListaActivity"></activity>
     </application>
 
 </manifest>

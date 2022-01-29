@@ -105,5 +105,6 @@
     <string name="Admin">Admin</string>
     <string name="Auxiliar">Assistant</string>
     <string name="Enfermeira">Nurse</string>
+    <string name="titulo">Title: </string>
 
 </resources>

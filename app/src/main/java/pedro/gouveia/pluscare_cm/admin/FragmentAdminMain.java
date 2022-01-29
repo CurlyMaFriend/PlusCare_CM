@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import pedro.gouveia.pluscare_cm.HigieneListaActivity;
 import pedro.gouveia.pluscare_cm.MedicamentosListaActivity;
 import pedro.gouveia.pluscare_cm.R;
 import pedro.gouveia.pluscare_cm.utente.UtentesListaActivity;
@@ -83,6 +84,9 @@ public class FragmentAdminMain extends Fragment implements View.OnClickListener 
             case R.id.buttonListarUtilizadoresDashboard:
                 Log.d("botaoClick","clicou botao utilizadores");
                 activityInstance.switchActivities(UtilizadoresListaActivity.class);
+            case R.id.buttonListarHigieneDashboard:
+                Log.d("botaoClick","clicou botao higiene");
+                activityInstance.switchActivities(HigieneListaActivity.class);
         }
     }
 }
