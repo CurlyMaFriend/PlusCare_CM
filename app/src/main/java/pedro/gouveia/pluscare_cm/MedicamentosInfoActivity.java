@@ -26,8 +26,8 @@ public class MedicamentosInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.medicamentos_info_layout);
 
-        tabLayout = findViewById(R.id.tabLayout4);
-        viewPage = findViewById(R.id.viewPager24);
+        tabLayout = findViewById(R.id.tabMedsLayout);
+        viewPage = findViewById(R.id.viewPagerMeds);
 
         FragmentManager fm = getSupportFragmentManager();
         fragmentAdapter = new FragmentAdapterMedicamento(fm, getLifecycle());
@@ -35,11 +35,6 @@ public class MedicamentosInfoActivity extends AppCompatActivity {
 
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.details)));
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.tasksDay)));
-
-        medicamentos.add(new MedicamentoUtente("teste","teste","teste","teste","teste","teste","teste"));
-        medicamentos.add(new MedicamentoUtente("teste","teste","teste","teste","teste","teste","teste"));
-        medicamentos.add(new MedicamentoUtente("teste","teste","teste","teste","teste","teste","teste"));
-        medicamentos.add(new MedicamentoUtente("teste","teste","teste","teste","teste","teste","teste"));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -64,8 +59,6 @@ public class MedicamentosInfoActivity extends AppCompatActivity {
                 tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
-
-        fragmentAdapter.setMedicamentoUtentes(medicamentos);
 
     }
 

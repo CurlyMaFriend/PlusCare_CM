@@ -24,12 +24,15 @@ public class FragmentMedicamentosUtente extends Fragment {
     private ArrayList<MedicamentoUtente> medicamentoUtentes;
     private LinearLayout containerMedicamentoUtentes;
 
-    FragmentMedicamentosUtente(ArrayList<MedicamentoUtente> aMedicamentoUtentes){
-        medicamentoUtentes = aMedicamentoUtentes;
+    FragmentMedicamentosUtente(){
+        medicamentoUtentes = new ArrayList<>();
 
-        if(medicamentoUtentes == null){
-            medicamentoUtentes = new ArrayList<>();
-        }
+
+        medicamentoUtentes.add(new MedicamentoUtente("teste","teste","teste","teste","teste","teste","teste"));
+        medicamentoUtentes.add(new MedicamentoUtente("teste","teste","teste","teste","teste","teste","teste"));
+        medicamentoUtentes.add(new MedicamentoUtente("teste","teste","teste","teste","teste","teste","teste"));
+        medicamentoUtentes.add(new MedicamentoUtente("teste","teste","teste","teste","teste","teste","teste"));
+
     }
 
     public void setMedicamentoUtentes(ArrayList<MedicamentoUtente> medicamentoUtente) {
@@ -49,6 +52,8 @@ public class FragmentMedicamentosUtente extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        Log.d("teste", "Chegou ao onViewCreated do frag medutente");
 
         containerMedicamentoUtentes = view.findViewById(R.id.medicamentosDetalhesContainer);
         containerMedicamentoUtentes.removeAllViews();

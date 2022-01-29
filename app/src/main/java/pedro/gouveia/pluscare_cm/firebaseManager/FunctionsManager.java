@@ -24,6 +24,7 @@ import java.util.concurrent.Executors;
 import pedro.gouveia.pluscare_cm.admin.AdminStats;
 import pedro.gouveia.pluscare_cm.MyViewModel;
 import pedro.gouveia.pluscare_cm.classes.Medicamento;
+import pedro.gouveia.pluscare_cm.classes.Ocorrencia;
 import pedro.gouveia.pluscare_cm.classes.Tarefa;
 import pedro.gouveia.pluscare_cm.classes.Utente;
 import pedro.gouveia.pluscare_cm.classes.Utilizador;
@@ -42,6 +43,7 @@ public class FunctionsManager {
     private final String tarefasFiltrosUrl = apiUrl + "/tarefa/filters";
     private final String adminStatsUrl = apiUrl + "/admin/stats";
     private final String medicamentosUrl = apiUrl + "/medicamento";
+    private final String ocorrenciasUrl = apiUrl + "/ocorrencia";
 
     private ExecutorService executorService = Executors.newFixedThreadPool(5);
 
@@ -356,6 +358,49 @@ public class FunctionsManager {
                         VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", medicamentoJson, "utf-8");
                         return null;
                     }
+                }
+
+            };
+
+            // Add the request to the RequestQueue.
+            requestQueue.add(stringRequest);
+        }
+    }
+
+    /*-------------------------------------------------*/
+    /*-------------------OCORRENCIAS-------------------*/
+    /*-------------------------------------------------*/
+
+
+    public void getOcorrencias(){
+
+        String user_token = sharedPreferences.getString("user_token", "none");
+
+        if(!user_token.equals("none")){
+
+            // Request a string response from the provided URL.
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, ocorrenciasUrl,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            Ocorrencia[] ocorrencias = gson.fromJson(response, Ocorrencia[].class);
+                            viewModel.setOcorrencias(ocorrencias);
+                            //Log.d(TAG, "Response: " + response);
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.d(TAG, "Error: " + error.toString());
+                }
+            }) {
+                /**
+                 * Passing some request headers
+                 * */
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+                    headers.put("Authorization", "Bearer " + user_token);
+                    return headers;
                 }
 
             };

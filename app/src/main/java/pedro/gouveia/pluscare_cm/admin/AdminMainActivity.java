@@ -67,8 +67,8 @@ public class AdminMainActivity extends AppCompatActivity {
         super.onStart();
 
         if(functionsManager.getAdminStats()){
-           // functionsManager.getMedicamentos();
-            //functionsManager.updateMedicamento(new Medicamento("zGNK6th6BcwwEsNU3d2X", "Tosseina updated", "", ""));
+            functionsManager.getMedicamentos();
+            functionsManager.updateMedicamento(new Medicamento("zGNK6th6BcwwEsNU3d2X", "Tosseina updated", "", ""));
             //functionsManager.addMedicamento(new Medicamento("", "Tosseina", "Xarope para a tosse", "xarope"));
             Log.d("teste", "admin stats true");
         } else {

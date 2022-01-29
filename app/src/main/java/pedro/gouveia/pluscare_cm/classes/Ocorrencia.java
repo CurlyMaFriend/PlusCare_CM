@@ -5,15 +5,14 @@ import java.util.Date;
 public class Ocorrencia {
 
     private int id;
-    private String titulo, descricao;
-    private Date dataInicio, dataFim;
+    private String titulo, descricao, utente_id, utente_nome;
+    private String data;
 
-    public Ocorrencia(int id, String titulo, String descricao, Date dataInicio, Date dataFim) {
+    public Ocorrencia(int id, String titulo, String descricao, String data) {
         this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
-        this.dataInicio = dataInicio;
-        this.dataFim = dataFim;
+        this.data = data;
     }
 
     public int getId() {
@@ -40,19 +39,11 @@ public class Ocorrencia {
         this.descricao = descricao;
     }
 
-    public Date getDataInicio() {
-        return dataInicio;
+    public String getData() {
+        return data;
     }
 
-    public void setDataInicio(Date dataInicio) {
-        this.dataInicio = dataInicio;
-    }
-
-    public Date getDataFim() {
-        return dataFim;
-    }
-
-    public void setDataFim(Date dataFim) {
-        this.dataFim = dataFim;
+    public void setData(String data) {
+        this.data = data;
     }
 }

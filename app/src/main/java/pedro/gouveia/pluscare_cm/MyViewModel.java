@@ -14,6 +14,7 @@ import java.util.Arrays;
 
 import pedro.gouveia.pluscare_cm.admin.AdminStats;
 import pedro.gouveia.pluscare_cm.classes.Medicamento;
+import pedro.gouveia.pluscare_cm.classes.Ocorrencia;
 import pedro.gouveia.pluscare_cm.classes.Tarefa;
 import pedro.gouveia.pluscare_cm.classes.Utente;
 import pedro.gouveia.pluscare_cm.classes.Utilizador;
@@ -128,5 +129,9 @@ public class MyViewModel extends androidx.lifecycle.ViewModel {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public void setOcorrencias(Ocorrencia[] ocorrencias) {
+
     }
 }

@@ -23,7 +23,7 @@ public class FragmentAdapterMedicamento extends FragmentStateAdapter {
     public FragmentAdapterMedicamento(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
 
-        fragmentMedicamentosUtente = new FragmentMedicamentosUtente(null);
+        fragmentMedicamentosUtente = new FragmentMedicamentosUtente();
 
     }
 
@@ -39,11 +39,14 @@ public class FragmentAdapterMedicamento extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
+        Log.d("teste", "Create fragment position: " + position);
         switch (position) {
-            case 0:
+    /*        case 0:
+                return fragmentMedicamentosUtente;*/
+            default:
                 return fragmentMedicamentosUtente;
+
         }
-        return null;
     }
 
     @Override
