@@ -63,11 +63,6 @@ public class MedicamentosListaActivity extends AppCompatActivity {
         medicamentosScroll.setVisibility(View.GONE);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-   /*     medicamentos.add(new Medicamento("teste","teste","teste","teste"));
-        medicamentos.add(new Medicamento("teste","teste","teste","teste"));
-        medicamentos.add(new Medicamento("teste","teste","teste","teste"));
-        medicamentos.add(new Medicamento("teste","teste","teste","teste"));
-*/
         functionsManager = new FunctionsManager(this, sharedPreferences, viewModel);
 
         FragmentManager fm = getSupportFragmentManager();

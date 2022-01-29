@@ -25,7 +25,7 @@ public class FragmentAdminMain extends Fragment implements View.OnClickListener 
     private AdminStats adminStats;
     private AdminMainActivity activityInstance;
 
-    public FragmentAdminMain(AdminStats as, AdminMainActivity activityInstance) {
+    FragmentAdminMain(AdminStats as, AdminMainActivity activityInstance) {
         adminStats = as;
         this.activityInstance = activityInstance;
     }
@@ -50,7 +50,7 @@ public class FragmentAdminMain extends Fragment implements View.OnClickListener 
         listarNotificacoes = view.findViewById(R.id.buttonListarNotificacoesDashboard);
 
         totalTarefas = view.findViewById(R.id.totalTarefasDashboard);
-//        totalMedicamentos = view.findViewById(R.id.totalMedicamentosDashboard);
+//       totalMedicamentos = view.findViewById(R.id.totalMedicamentosDashboard);
 //        totalHigiene = view.findViewById(R.id.totalHigieneDashboard);
         totalOcorrencias = view.findViewById(R.id.totalOcorrenciasDashboard);
 

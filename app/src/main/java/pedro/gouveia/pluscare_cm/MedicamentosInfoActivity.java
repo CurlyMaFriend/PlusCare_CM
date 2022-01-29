@@ -11,6 +11,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
+import pedro.gouveia.pluscare_cm.classes.Medicamento;
 import pedro.gouveia.pluscare_cm.classes.MedicamentoUtente;
 
 public class MedicamentosInfoActivity extends AppCompatActivity {
@@ -18,7 +19,7 @@ public class MedicamentosInfoActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private FragmentAdapterMedicamento fragmentAdapter;
     private ViewPager2 viewPage;
-    private ArrayList<MedicamentoUtente> medicamentos;
+    private ArrayList<MedicamentoUtente> medicamentos = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,7 +35,11 @@ public class MedicamentosInfoActivity extends AppCompatActivity {
 
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.details)));
         tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.tasksDay)));
-        //tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.));
+
+        medicamentos.add(new MedicamentoUtente("teste","teste","teste","teste","teste","teste","teste"));
+        medicamentos.add(new MedicamentoUtente("teste","teste","teste","teste","teste","teste","teste"));
+        medicamentos.add(new MedicamentoUtente("teste","teste","teste","teste","teste","teste","teste"));
+        medicamentos.add(new MedicamentoUtente("teste","teste","teste","teste","teste","teste","teste"));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -59,6 +64,8 @@ public class MedicamentosInfoActivity extends AppCompatActivity {
                 tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
+
+        fragmentAdapter.setMedicamentoUtentes(medicamentos);
 
     }
 
