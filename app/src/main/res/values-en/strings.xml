@@ -56,15 +56,17 @@
     <string name="listarHigiene">List Hygiene</string>
     <string name="listarOcorrencias">List Occurrences</string>
     <string name="tasksDay">Daily Tasks: </string>
+    <string name="tasksDay2">DailyTasks </string>
     <string name="hygieneDay">Daily Hygiene: </string>
     <string name="medicineDay">Daily Medicine: </string>
     <string name="ocorrenciasDay">Daily occurrences: </string>
+    <string name="ocorrenciasDay2">Daily occurrences </string>
     <string name="Tarefas">Tasks</string>
     <string name="Tarefa">Task</string>
     <string name="Medicamentos">Medicine</string>
     <string name="Ocorrencias">Occorrunces</string>
     <string name="Higiene">Hygiene</string>
-    <string name="Utentes">Utentes</string>
+    <string name="Utentes">Clients</string>
     <string name="Notificacoes">Notifications</string>
     <string name="todayStats">Today\'s Statistics</string>
     <string name="PorFazer">To be Done</string>
@@ -98,5 +100,10 @@
     <string name="piso">Floor: </string>
     <string name="email">Email: </string>
     <string name="nrConsumidores">Clients that consume: </string>
+    <string name="ver">View </string>
+    <string name="Utilizadores">Utilizadores</string>
+    <string name="Admin">Admin</string>
+    <string name="Auxiliar">Assistant</string>
+    <string name="Enfermeira">Nurse</string>
 
 </resources>

@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,9 +20,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 import pedro.gouveia.pluscare_cm.FragmentAdapterUtente;
+import pedro.gouveia.pluscare_cm.FragmentLoading;
 import pedro.gouveia.pluscare_cm.MyViewModel;
 import pedro.gouveia.pluscare_cm.R;
 import pedro.gouveia.pluscare_cm.classes.Utilizador;
@@ -29,7 +33,6 @@ import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
 
 public class UtilizadoresListaActivity extends AppCompatActivity {
 
-    private FragmentAdapterUtente fragmentAdapter;
     private LinearLayout containerUtilizadores;
     private MyViewModel viewModel;
     private FragmentManager fm;
@@ -56,21 +59,20 @@ public class UtilizadoresListaActivity extends AppCompatActivity {
         utilizadoresScroll = findViewById(R.id.utilizadoresScroll);
         utilizadoresFrame = findViewById(R.id.utilizadoresFrame);
 
-        //utilizadoresScroll.setVisibility(View.GONE);
+        utilizadoresScroll.setVisibility(View.GONE);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
+        /*utilizadores.add(new Utilizador("teste","teste","teste","teste","teste"));
         utilizadores.add(new Utilizador("teste","teste","teste","teste","teste"));
         utilizadores.add(new Utilizador("teste","teste","teste","teste","teste"));
-        utilizadores.add(new Utilizador("teste","teste","teste","teste","teste"));
+*/
 
 
+        functionsManager = new FunctionsManager(this, sharedPreferences, viewModel);
 
-        //functionsManager = new FunctionsManager(this, sharedPreferences, viewModel);
+        FragmentManager fm = getSupportFragmentManager();
 
-        //FragmentManager fm = getSupportFragmentManager();
-        //fragmentAdapter = new FragmentAdapterUtilizador(fm, getLifecycle());
-
-        /*viewModel.getUsers().observe(this, item ->{
+        viewModel.getUsers().observe(this, item ->{
 
             if(item == null){
                 Toast.makeText(this, "No users", Toast.LENGTH_LONG);
@@ -83,15 +85,15 @@ public class UtilizadoresListaActivity extends AppCompatActivity {
                     addCardUtilizador(ut);
                 }
             }
-        });*/
+        });
 
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        //replaceFragment(new FragmentLoading());
-        //functionsManager.getUsers();
+        replaceFragment(new FragmentLoading());
+        functionsManager.getUsers();
 
         containerUtilizadores.removeAllViews();
         for (Utilizador ut : utilizadores) {
@@ -102,7 +104,7 @@ public class UtilizadoresListaActivity extends AppCompatActivity {
     public void replaceFragment(Fragment frag){
         fm = getSupportFragmentManager();
         ft = fm.beginTransaction();
-        ft.replace(R.id.utentesFrame, frag);
+        ft.replace(R.id.utilizadoresFrame, frag);
         ft.commit();
     }
 
@@ -111,10 +113,22 @@ public class UtilizadoresListaActivity extends AppCompatActivity {
         Log.d("teste", "Entrou on card utilizador");
         View view = getLayoutInflater().inflate(R.layout.utilizador_card, null);
 
-        TextView txtNomeUtilizador = view.findViewById(R.id.nome_utente);
+        TextView txtNomeUtilizador = view.findViewById(R.id.nomeUtilizador);
+        TextView txtFuncaoUtilizador = view.findViewById(R.id.funcaoUtilizador);
         Button btnDetailsUtilizador = view.findViewById(R.id.btn_details_utilizador);
 
-        txtNomeUtilizador.setText(utilizador.getUsername());
+        txtNomeUtilizador.setText(utilizador.getNome());
+        switch(utilizador.getTipo()){
+            case 0:
+                txtFuncaoUtilizador.setText(getString(R.string.Admin));
+                break;
+            case 1:
+                txtFuncaoUtilizador.setText(getString(R.string.Enfermeira));
+                break;
+            case 2:
+                txtFuncaoUtilizador.setText(R.string.Auxiliar);
+                break;
+        }
 
         btnDetailsUtilizador.setOnClickListener(v -> {
             Log.d("teste", utilizador.toString());

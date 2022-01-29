@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class Utilizador implements Serializable {
 
-    private String email, nome, morada, id, password;
+    private String email, nome, morada, id, password, andar;
     private String data_nascimento;
     private int tipo;
 
@@ -16,17 +16,9 @@ public class Utilizador implements Serializable {
         nome = aNome;
         morada = aMorada;
         email = aEmail;
-        tipo = 1;
+        tipo = 2;
         data_nascimento = aDataNascimento;
         password = aPassword;
-    }
-
-    public String getUsername() {
-        return email;
-    }
-
-    public void setUsername(String username) {
-        this.email = username;
     }
 
     public String getEmail() {
@@ -37,12 +29,52 @@ public class Utilizador implements Serializable {
         this.email = email;
     }
 
-    public String getDataNascimento() {
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getMorada() {
+        return morada;
+    }
+
+    public void setMorada(String morada) {
+        this.morada = morada;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getAndar() {
+        return andar;
+    }
+
+    public void setAndar(String andar) {
+        this.andar = andar;
+    }
+
+    public String getData_nascimento() {
         return data_nascimento;
     }
 
-    public void setDataNascimento(String dataNascimento) {
-        this.data_nascimento = dataNascimento;
+    public void setData_nascimento(String data_nascimento) {
+        this.data_nascimento = data_nascimento;
     }
 
     public int getTipo() {
@@ -53,19 +85,18 @@ public class Utilizador implements Serializable {
         this.tipo = tipo;
     }
 
-    public String getId() {
-        return id;
-    }
-
     @Override
     public String toString() {
         return "Utilizador{" +
                 "email='" + email + '\'' +
                 ", nome='" + nome + '\'' +
                 ", morada='" + morada + '\'' +
-                ", data_nascimento=" + data_nascimento +
+                ", id='" + id + '\'' +
+                ", password='" + password + '\'' +
+                ", andar='" + andar + '\'' +
+                ", data_nascimento='" + data_nascimento + '\'' +
                 ", tipo=" + tipo +
-                ", id=" + id +
                 '}';
     }
+
 }

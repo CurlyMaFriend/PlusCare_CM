@@ -55,9 +55,11 @@
     <string name="listarHigiene">Listar Higiene</string>
     <string name="listarOcorrencias">Listar Ocorrências</string>
     <string name="tasksDay">Tarefas do dia: </string>
+    <string name="tasksDay2">Tarefas </string>
     <string name="hygieneDay">Higiene do dia: </string>
     <string name="medicineDay">Medicamentos do dia: </string>
     <string name="ocorrenciasDay">Ocorrências do dia: </string>
+    <string name="ocorrenciasDay2">Ocorrências </string>
     <string name="Tarefas">Tarefas</string>
     <string name="Tarefa">Tarefa</string>
     <string name="Medicamentos">Medicamentos</string>
@@ -97,4 +99,10 @@
     <string name="piso">Andar: </string>
     <string name="email">Email: </string>
     <string name="nrConsumidores">Utentes que consomem: </string>
+    <string name="ver">Ver</string>
+    <string name="Utilizadores">Utilizadores</string>
+    <string name="Admin">Admin</string>
+    <string name="Auxiliar">Auxiliar</string>
+    <string name="Enfermeira">Enfermeira</string>
+
 </resources>

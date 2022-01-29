@@ -29,6 +29,7 @@
         <activity android:name=".OcorrenciasInfoActivity"></activity>
         <activity android:name=".MedicamentosListaActivity"></activity>
         <activity android:name=".utente.UtilizadoresListaActivity"></activity>
+        <activity android:name=".utente.UtilizadorInfo"></activity>
 
     </application>
 

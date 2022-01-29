@@ -19,45 +19,34 @@ import java.util.concurrent.TimeUnit;
 import pedro.gouveia.pluscare_cm.FragmentAdapterTarefa;
 import pedro.gouveia.pluscare_cm.R;
 import pedro.gouveia.pluscare_cm.classes.Utente;
+import pedro.gouveia.pluscare_cm.classes.Utilizador;
 
 public class UtilizadorInfo extends AppCompatActivity {
 
-    private TabLayout tabLayout;
-    private TextView nomePrefUtente, nomeUtente, idadeUtente;
+    private TextView andar, nomeUtilizador, idadeUtilizador, email, funcao;
     private FragmentAdapterTarefa fragmentAdapter;
-    private ViewPager2 viewPage2;
-    private Utente utente;
+    private Utilizador utilizador;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.utilizador_info_layout);
 
-        tabLayout = findViewById(R.id.tabLayout2);
-        viewPage2 = findViewById(R.id.viewPager2);
+        nomeUtilizador = findViewById(R.id.nomeUtilizador);
+        idadeUtilizador = findViewById(R.id.idadeUtilizador);
+        andar = findViewById(R.id.andarUtilizador);
+        email = findViewById(R.id.utilizadorEmail);
+        funcao = findViewById(R.id.funcaoUtilizador);
 
-        FragmentManager fm = getSupportFragmentManager();
-        fragmentAdapter = new FragmentAdapterTarefa(fm, getLifecycle());
-        viewPage2.setAdapter(fragmentAdapter);
+        utilizador = (Utilizador) getIntent().getSerializableExtra("utilizador");
 
-        nomeUtente = findViewById(R.id.nomeUtente);
-        nomePrefUtente = findViewById(R.id.nomePrefUtente);
-        idadeUtente = findViewById(R.id.idadeUtente);
-
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.Completas)));
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.PorFazer)));
-        tabLayout.addTab(tabLayout.newTab().setText(getString(R.string.Incompletas)));
-
-        utente = (Utente) getIntent().getSerializableExtra("utente");
-
-        if(utente != null){
-            nomeUtente.setText(utente.getNome());
-            nomePrefUtente.setText(utente.getNomePreferencia());
-
+        if(utilizador != null){
+            nomeUtilizador.setText(utilizador.getNome());
+            andar.setText(utilizador.getAndar());
             String idade = "Nao determinado";
 
             try {
-                Date d = new SimpleDateFormat("dd/MM/yyyy").parse(utente.getDataNascimento());
+                Date d = new SimpleDateFormat("dd/MM/yyyy").parse(utilizador.getData_nascimento());
                 Date today = Calendar.getInstance().getTime();
                 long diffInMillies = Math.abs(today.getTime() - d.getTime());
 
@@ -69,32 +58,8 @@ public class UtilizadorInfo extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            idadeUtente.setText(idade);
+            idadeUtilizador.setText(idade);
         }
-
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPage2.setCurrentItem(tab.getPosition());
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-
-        viewPage2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                tabLayout.selectTab(tabLayout.getTabAt(position));
-            }
-        });
 
     }
 

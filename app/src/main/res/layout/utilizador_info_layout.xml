@@ -57,7 +57,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/nomeUtente"
+                    android:id="@+id/nomeUtilizador"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="José Pedro Luz de Sousa Cruz"
@@ -77,7 +77,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/idadeUtente"
+                    android:id="@+id/idadeUtilizador"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="24"
@@ -97,7 +97,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/nomePrefUtente"
+                    android:id="@+id/andarUtilizador"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Zé"
@@ -152,7 +152,8 @@
                     android:id="@+id/textView70"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="@string/email" />
+                    android:text="@string/email"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/utilizadorEmail"

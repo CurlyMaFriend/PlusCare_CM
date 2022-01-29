@@ -10,17 +10,20 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import pedro.gouveia.pluscare_cm.MedicamentosListaActivity;
 import pedro.gouveia.pluscare_cm.R;
 import pedro.gouveia.pluscare_cm.utente.UtentesListaActivity;
+import pedro.gouveia.pluscare_cm.utente.UtilizadoresListaActivity;
 
 public class FragmentAdminMain extends Fragment implements View.OnClickListener {
 
     private View view;
-    private ImageButton listarTarefas, listarMedicamentos, listarNotificacoes, listarHigienes, listarOcorrencias, listarUtentes;
+    private Button listarTarefas, listarOcorrencias;
+    private ImageButton listarMedicamentos, listarUtilizadores, listarHigienes, listarUtentes;
     private TextView totalTarefas, totalMedicamentos, totalOcorrencias, totalHigiene;
     private AdminStats adminStats;
     private AdminMainActivity activityInstance;
@@ -47,7 +50,8 @@ public class FragmentAdminMain extends Fragment implements View.OnClickListener 
         listarHigienes = view.findViewById(R.id.buttonListarHigieneDashboard);
         listarOcorrencias = view.findViewById(R.id.buttonListarOcorrenciasDashboard);
         listarUtentes = view.findViewById(R.id.buttonListarUtentesDashboard);
-        listarNotificacoes = view.findViewById(R.id.buttonListarNotificacoesDashboard);
+        listarUtilizadores = view.findViewById(R.id.buttonListarUtilizadoresDashboard);
+
 
         totalTarefas = view.findViewById(R.id.totalTarefasDashboard);
 //       totalMedicamentos = view.findViewById(R.id.totalMedicamentosDashboard);
@@ -59,7 +63,7 @@ public class FragmentAdminMain extends Fragment implements View.OnClickListener 
 
         listarUtentes.setOnClickListener(this);
         listarMedicamentos.setOnClickListener(this);
-        listarNotificacoes.setOnClickListener(this);
+        listarUtilizadores.setOnClickListener(this);
         listarOcorrencias.setOnClickListener(this);
         listarHigienes.setOnClickListener(this);
         listarTarefas.setOnClickListener(this);
@@ -76,6 +80,9 @@ public class FragmentAdminMain extends Fragment implements View.OnClickListener 
                 Log.d("botaoClick","clicou no botao medicine");
                 activityInstance.switchActivities(MedicamentosListaActivity.class);
                 break;
+            case R.id.buttonListarUtilizadoresDashboard:
+                Log.d("botaoClick","clicou botao utilizadores");
+                activityInstance.switchActivities(UtilizadoresListaActivity.class);
         }
     }
 }
