@@ -89,7 +89,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <Button
-                    android:id="@+id/btn_higiene"
+                    android:id="@+id/btn_higiene_delete"
                     style="@style/Widget.App.Button.OutlinedButton.IconOnly"
                     android:layout_width="55dp"
                     android:layout_height="wrap_content"
@@ -102,13 +102,13 @@
                     app:iconTint="#A20707" />
 
                 <Button
-                    android:id="@+id/btn_higiene3"
+                    android:id="@+id/btn_higiene_edit"
                     style="@style/Widget.App.Button.OutlinedButton.IconOnly"
                     android:layout_width="55dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="0dp"
-                    android:layout_toStartOf="@+id/btn_higiene"
+                    android:layout_toStartOf="@+id/btn_higiene_delete"
                     app:icon="@drawable/ic_baseline_create_24"
                     app:iconTint="#5C84F3" />
 

@@ -1,6 +1,7 @@
 package pedro.gouveia.pluscare_cm;
 
-import android.content.Intent;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -23,7 +24,6 @@ import androidx.lifecycle.ViewModelProvider;
 import java.util.ArrayList;
 
 import pedro.gouveia.pluscare_cm.classes.Higiene;
-import pedro.gouveia.pluscare_cm.classes.Medicamento;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
 
 public class HigieneListaActivity extends AppCompatActivity {
@@ -108,15 +108,14 @@ public class HigieneListaActivity extends AppCompatActivity {
         TextView txtNomeHigiene = view.findViewById(R.id.nomeHigieneCard);
         TextView txtDescricaoHigiene = view.findViewById(R.id.descricaoHigieneCard);
 
-        Button btnHigiene = view.findViewById(R.id.btn_higiene);
+
+        Button editarHigiene = view.findViewById(R.id.btn_higiene_edit);
+        Button deleteHigiene = view.findViewById(R.id.btn_higiene_delete);
+
+        Button btnHigiene = view.findViewById(R.id.btn_higiene_delete);
 
         txtNomeHigiene.setText(aHigiene.getTitulo());
         txtDescricaoHigiene.setText(aHigiene.getDescricao());
-
-
-        btnHigiene.setOnClickListener(v -> {
-            Log.d("teste", aHigiene.toString());
-        });
 
         containerHigiene.addView(view);
     }
