@@ -8,8 +8,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -28,13 +26,11 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import java.util.ArrayList;
-import java.util.Locale;
 
 import pedro.gouveia.pluscare_cm.FragmentAdapterUtente;
 import pedro.gouveia.pluscare_cm.FragmentLoading;
 import pedro.gouveia.pluscare_cm.MyViewModel;
 import pedro.gouveia.pluscare_cm.R;
-import pedro.gouveia.pluscare_cm.admin.CustomDialog;
 import pedro.gouveia.pluscare_cm.classes.Utente;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
 
@@ -134,11 +130,6 @@ public class UtentesListaActivity extends AppCompatActivity {
 
         if(id == R.id.create){
             //viewModel.setNavigateNewNote();
-            CustomDialog cdd=new CustomDialog(this);
-            cdd.show();
-
-            Window window = cdd.getWindow();
-            window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
             Log.d("teste", "Criar utente pressed");
         }
         return true;

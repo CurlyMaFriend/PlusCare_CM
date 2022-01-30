@@ -1,7 +1,5 @@
 package pedro.gouveia.pluscare_cm;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -25,8 +23,9 @@ import androidx.lifecycle.ViewModelProvider;
 
 import java.util.ArrayList;
 
-import pedro.gouveia.pluscare_cm.admin.CustomDialog;
 import pedro.gouveia.pluscare_cm.classes.Higiene;
+import pedro.gouveia.pluscare_cm.dialogs.CustomDialogDelete;
+import pedro.gouveia.pluscare_cm.dialogs.CustomDialogEdit;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
 
 public class HigieneListaActivity extends AppCompatActivity {
@@ -109,13 +108,23 @@ public class HigieneListaActivity extends AppCompatActivity {
         Button editarHigiene = view.findViewById(R.id.btn_higiene_edit);
         Button deleteHigiene = view.findViewById(R.id.btn_higiene_delete);
 
-        editarHigiene.setOnClickListener(view1 -> {
-            CustomDialog cdd=new CustomDialog(this);
+        deleteHigiene.setOnClickListener(view1 -> {
+            CustomDialogDelete cdd=new CustomDialogDelete(this, aHigiene);
             cdd.show();
 
             Window window = cdd.getWindow();
             window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
         });
+
+        editarHigiene.setOnClickListener(view1 -> {
+            CustomDialogEdit cdd=new CustomDialogEdit(this, aHigiene);
+            cdd.show();
+
+            Window window = cdd.getWindow();
+            window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+        });
+
+
 
         Button btnHigiene = view.findViewById(R.id.btn_higiene_delete);
 

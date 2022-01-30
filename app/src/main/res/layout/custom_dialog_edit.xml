@@ -20,13 +20,24 @@
             android:backgroundTint="#00FFFFFF"
             app:srcCompat="@drawable/ic_baseline_close_24" />
 
+        <TextView
+            android:id="@+id/dialog_Info2"
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:gravity="center"
+            android:text="@string/dialog_Info"
+            android:textSize="20sp"
+            android:visibility="gone" />
+
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutTitulo"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="25sp"
             android:layout_marginRight="25sp"
-            android:hint="@string/introduzirTituloHigiene">
+            android:hint="@string/introduzirTituloHigiene"
+            android:visibility="visible">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/higieneTitleText"
@@ -36,12 +47,14 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutDescription"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25sp"
             android:layout_marginRight="25sp"
-            android:hint="@string/introduzirDescricaoHigiene">
+            android:hint="@string/introduzirDescricaoHigiene"
+            android:visibility="visible">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/higieneDescriptionText"
@@ -63,6 +76,14 @@
                 android:layout_marginRight="10sp"
                 android:text="@string/editarHigiene"
                 android:visibility="visible" />
+
+            <Button
+                android:id="@+id/btn_Delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10sp"
+                android:text="@string/apagar"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/btn_Cancel"
