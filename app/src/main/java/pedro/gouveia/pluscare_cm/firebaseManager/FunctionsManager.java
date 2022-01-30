@@ -23,6 +23,7 @@ import java.util.concurrent.Executors;
 
 import pedro.gouveia.pluscare_cm.admin.AdminStats;
 import pedro.gouveia.pluscare_cm.MyViewModel;
+import pedro.gouveia.pluscare_cm.classes.Higiene;
 import pedro.gouveia.pluscare_cm.classes.Medicamento;
 import pedro.gouveia.pluscare_cm.classes.Ocorrencia;
 import pedro.gouveia.pluscare_cm.classes.Tarefa;
@@ -43,6 +44,7 @@ public class FunctionsManager {
     private final String tarefasFiltrosUrl = apiUrl + "/tarefa/filters";
     private final String adminStatsUrl = apiUrl + "/admin/stats";
     private final String medicamentosUrl = apiUrl + "/medicamento";
+    private final String higieneUrl = apiUrl + "/higiene";
     private final String ocorrenciasUrl = apiUrl + "/ocorrencia";
 
     private ExecutorService executorService = Executors.newFixedThreadPool(5);
@@ -367,6 +369,170 @@ public class FunctionsManager {
         }
     }
 
+    /*-----------------------------------------*/
+    /*-----------------HIGIENE-----------------*/
+    /*-----------------------------------------*/
+
+    public void getHigiene(){
+
+        String user_token = sharedPreferences.getString("user_token", "none");
+
+        if(!user_token.equals("none")){
+
+            // Request a string response from the provided URL.
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, higieneUrl,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            Higiene[] higienes = gson.fromJson(response, Higiene[].class);
+                            viewModel.setHigiene(higienes);
+                            //Log.d(TAG, "Response: " + response);
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.d(TAG, "Error: " + error.toString());
+                }
+            }) {
+                /**
+                 * Passing some request headers
+                 * */
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+                    headers.put("Authorization", "Bearer " + user_token);
+                    return headers;
+                }
+
+            };
+
+            // Add the request to the RequestQueue.
+            requestQueue.add(stringRequest);
+        }
+    }
+
+    public void addHigiene(Higiene hg){
+
+        String user_token = sharedPreferences.getString("user_token", "none");
+
+        String higieneJson = gson.toJson(hg);
+
+        Log.d(TAG, higieneJson);
+
+        if(!user_token.equals("none")){
+
+            // Request a string response from the provided URL.
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, higieneUrl,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            Log.d(TAG, "Response add higiene: " + response);
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                    String statusCode = String.valueOf(error.networkResponse.statusCode);
+                    String body = "";
+                    if(error.networkResponse.data!=null) {
+                        try {
+                            body = new String(error.networkResponse.data,"UTF-8");
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    Log.d(TAG, "Error - " + statusCode + ": " + body);
+                }
+            }) {
+                /**
+                 * Passing some request headers
+                 * */
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+                    headers.put("Authorization", "Bearer " + user_token);
+                    headers.put("Content-Type", "application/json");
+                    return headers;
+                }
+                @Override
+                public byte[] getBody() throws AuthFailureError {
+                    try {
+                        return higieneJson == null ? null : higieneJson.getBytes("utf-8");
+                    } catch (UnsupportedEncodingException uee) {
+                        VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", higieneJson, "utf-8");
+                        return null;
+                    }
+                }
+
+            };
+
+            // Add the request to the RequestQueue.
+            requestQueue.add(stringRequest);
+        }
+    }
+/*
+    public void updateHigiene(Higiene hg){
+
+        String user_token = sharedPreferences.getString("user_token", "none");
+
+        String higieneJson = gson.toJson(hg);
+
+        Log.d(TAG, higieneJson);
+
+        if(!user_token.equals("none")){
+
+            // Request a string response from the provided URL.
+            StringRequest stringRequest = new StringRequest(Request.Method.PUT, higieneUrl+"/"+hg.getId(),
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            Log.d(TAG, "Response update higiene: " + response);
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                    String statusCode = String.valueOf(error.networkResponse.statusCode);
+                    String body = "";
+                    if(error.networkResponse.data!=null) {
+                        try {
+                            body = new String(error.networkResponse.data,"UTF-8");
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    Log.d(TAG, "Error - " + statusCode + ": " + body);
+                }
+            }) {
+                *//**
+                 * Passing some request headers
+                 * *//*
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+                    headers.put("Authorization", "Bearer " + user_token);
+                    headers.put("Content-Type", "application/json");
+                    return headers;
+                }
+                @Override
+                public byte[] getBody() throws AuthFailureError {
+                    try {
+                        return higieneJson == null ? null : higieneJson.getBytes("utf-8");
+                    } catch (UnsupportedEncodingException uee) {
+                        VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", higieneJson, "utf-8");
+                        return null;
+                    }
+                }
+
+            };
+
+            // Add the request to the RequestQueue.
+            requestQueue.add(stringRequest);
+        }
+    }*/
+
     /*-------------------------------------------------*/
     /*-------------------OCORRENCIAS-------------------*/
     /*-------------------------------------------------*/
@@ -401,6 +567,67 @@ public class FunctionsManager {
                     HashMap<String, String> headers = new HashMap<String, String>();
                     headers.put("Authorization", "Bearer " + user_token);
                     return headers;
+                }
+
+            };
+
+            // Add the request to the RequestQueue.
+            requestQueue.add(stringRequest);
+        }
+    }
+
+    public void addOcorrencia(Ocorrencia ocorrencia){
+
+        String user_token = sharedPreferences.getString("user_token", "none");
+
+        String ocorrenciaJson = gson.toJson(ocorrencia);
+
+        Log.d(TAG, ocorrenciaJson);
+
+        if(!user_token.equals("none")){
+
+            // Request a string response from the provided URL.
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, ocorrenciasUrl,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            Log.d(TAG, "Response add ocorrencia: " + response);
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                    String statusCode = String.valueOf(error.networkResponse.statusCode);
+                    String body = "";
+                    if(error.networkResponse.data!=null) {
+                        try {
+                            body = new String(error.networkResponse.data,"UTF-8");
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    Log.d(TAG, "Error - " + statusCode + ": " + body);
+                }
+            }) {
+                /**
+                 * Passing some request headers
+                 * */
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+                    headers.put("Authorization", "Bearer " + user_token);
+                    headers.put("Content-Type", "application/json");
+                    return headers;
+                }
+                @Override
+                public byte[] getBody() throws AuthFailureError {
+                    try {
+                        return ocorrenciaJson == null ? null : ocorrenciaJson.getBytes("utf-8");
+                    } catch (UnsupportedEncodingException uee) {
+                        VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", ocorrenciaJson, "utf-8");
+                        return null;
+                    }
                 }
 
             };
@@ -665,8 +892,5 @@ public class FunctionsManager {
         } else {
             return false;
         }
-    }
-
-    public void getHigienes() {
     }
 }

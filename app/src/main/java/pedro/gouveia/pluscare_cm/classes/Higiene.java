@@ -38,6 +38,7 @@ public class Higiene implements Serializable {
     @Override
     public String toString() {
         return "Higiene{" +
+                "id='" + id + '\'' +
                 ", titulo='" + titulo + '\'' +
                 ", descricao='" + descricao + '\'' +
                 '}';

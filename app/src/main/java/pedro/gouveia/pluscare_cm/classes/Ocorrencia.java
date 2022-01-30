@@ -4,22 +4,22 @@ import java.util.Date;
 
 public class Ocorrencia {
 
-    private int id;
+    private String id;
     private String titulo, descricao, utente_id, utente_nome;
     private String data;
 
-    public Ocorrencia(int id, String titulo, String descricao, String data) {
-        this.id = id;
+    public Ocorrencia(String utente_id, String titulo, String descricao, String data) {
+        this.utente_id = utente_id;
         this.titulo = titulo;
         this.descricao = descricao;
         this.data = data;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -45,5 +45,17 @@ public class Ocorrencia {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    @Override
+    public String toString() {
+        return "Ocorrencia{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", utente_id='" + utente_id + '\'' +
+                ", utente_nome='" + utente_nome + '\'' +
+                ", data='" + data + '\'' +
+                '}';
     }
 }

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -23,6 +25,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import java.util.ArrayList;
 
+import pedro.gouveia.pluscare_cm.admin.CustomDialog;
 import pedro.gouveia.pluscare_cm.classes.Higiene;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
 
@@ -54,21 +57,18 @@ public class HigieneListaActivity extends AppCompatActivity {
         higieneScroll = findViewById(R.id.higieneScroll);
         higieneFrame = findViewById(R.id.higieneFrame);
 
-        higienes.add(new Higiene("teste","teste"));
-        higienes.add(new Higiene("teste","teste"));
-        higienes.add(new Higiene("teste","teste"));
-        higienes.add(new Higiene("teste","teste"));
-
-        //higieneScroll.setVisibility(View.GONE);
+        higieneScroll.setVisibility(View.GONE);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         functionsManager = new FunctionsManager(this, sharedPreferences, viewModel);
 
         FragmentManager fm = getSupportFragmentManager();
 
-        viewModel.getHigienes().observe(this, item ->{
+        viewModel.getHigiene().observe(this, item ->{
 
             if(item == null){
+                higieneFrame.setVisibility(View.GONE);
+                higieneScroll.setVisibility(View.VISIBLE);
                 Toast.makeText(this, "No higiene", Toast.LENGTH_LONG);
             } else if (item.size() > 0) {
                 higieneFrame.setVisibility(View.GONE);
@@ -86,11 +86,8 @@ public class HigieneListaActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        //replaceFragment(new FragmentLoading());
-        //functionsManager.getHigienes();
-        for (Higiene heg : higienes) {
-            addCardHigiene(heg);
-        }
+        replaceFragment(new FragmentLoading());
+        functionsManager.getHigiene();
     }
 
     public void replaceFragment(Fragment frag){
@@ -111,6 +108,14 @@ public class HigieneListaActivity extends AppCompatActivity {
 
         Button editarHigiene = view.findViewById(R.id.btn_higiene_edit);
         Button deleteHigiene = view.findViewById(R.id.btn_higiene_delete);
+
+        editarHigiene.setOnClickListener(view1 -> {
+            CustomDialog cdd=new CustomDialog(this);
+            cdd.show();
+
+            Window window = cdd.getWindow();
+            window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+        });
 
         Button btnHigiene = view.findViewById(R.id.btn_higiene_delete);
 

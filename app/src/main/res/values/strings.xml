@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PlusCare_CM</string>
+    <string name="app_name">PlusCare</string>
     <string name="loginUsername">Nome de Utilizador</string>
     <string name="loginPassword">Password</string>
     <string name="confirmarLogin">Autenticar</string>
@@ -105,6 +105,9 @@
     <string name="Auxiliar">Auxiliar</string>
     <string name="Enfermeira">Enfermeira</string>
     <string name="titulo">Título: </string>
+    <string name="lblSearch">Procurar </string>
+    <string name="lblCreate">Criar </string>
+    <string name="txtSearch">Escreva para procurar na lista</string>
     <string name="editarHigiene">Editar</string>
     <string name="cancelar">Cancelar</string>
     <string name="apagar">Apagar</string>

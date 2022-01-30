@@ -18,7 +18,9 @@ import androidx.lifecycle.ViewModelProvider;
 import pedro.gouveia.pluscare_cm.FragmentLoading;
 import pedro.gouveia.pluscare_cm.MyViewModel;
 import pedro.gouveia.pluscare_cm.R;
+import pedro.gouveia.pluscare_cm.classes.Higiene;
 import pedro.gouveia.pluscare_cm.classes.Medicamento;
+import pedro.gouveia.pluscare_cm.classes.Ocorrencia;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
 
 public class AdminMainActivity extends AppCompatActivity {
@@ -57,7 +59,25 @@ public class AdminMainActivity extends AppCompatActivity {
                 Log.d("teste", "Get medicamentos returned meds: " + item);
             }
         });
+        
+        viewModel.getOcorrencias().observe(this, item ->{
 
+            if(item == null){
+                Log.d("teste", "Get ocorrencias returned null");
+            } else {
+                Log.d("teste", "Get ocorrencias returned ocorrencias: " + item);
+            }
+        });
+
+        viewModel.getHigiene().observe(this, item ->{
+
+            if(item == null){
+                Log.d("teste", "Get higiene returned null");
+            } else {
+                Log.d("teste", "Get higiene returned ocorrencias: " + item);
+            }
+        });
+        
         replaceFragment(new FragmentLoading());
 
     }
@@ -65,10 +85,14 @@ public class AdminMainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
+        Log.d("functions", "onstart admin main activity");
         if(functionsManager.getAdminStats()){
-            functionsManager.getMedicamentos();
-            functionsManager.updateMedicamento(new Medicamento("zGNK6th6BcwwEsNU3d2X", "Tosseina updated", "", ""));
+           /* functionsManager.addHigiene(new Higiene("Outra cena", ""));
+            functionsManager.getHigiene();*/
+            //functionsManager.getMedicamentos();
+            /*functionsManager.addOcorrencia(new Ocorrencia("5xyQYeKri6Dxu9LG4465", "Caiu pah", "Queda grave pelas escadas a baixo", "2022-01-29T22:00:00"));
+            functionsManager.getOcorrencias();*/
+            //functionsManager.updateMedicamento(new Medicamento("zGNK6th6BcwwEsNU3d2X", "Tosseina updated", "", ""));
             //functionsManager.addMedicamento(new Medicamento("", "Tosseina", "Xarope para a tosse", "xarope"));
             Log.d("teste", "admin stats true");
         } else {

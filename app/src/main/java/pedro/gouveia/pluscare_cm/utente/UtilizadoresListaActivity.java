@@ -62,12 +62,6 @@ public class UtilizadoresListaActivity extends AppCompatActivity {
         utilizadoresScroll.setVisibility(View.GONE);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        /*utilizadores.add(new Utilizador("teste","teste","teste","teste","teste"));
-        utilizadores.add(new Utilizador("teste","teste","teste","teste","teste"));
-        utilizadores.add(new Utilizador("teste","teste","teste","teste","teste"));
-*/
-
-
         functionsManager = new FunctionsManager(this, sharedPreferences, viewModel);
 
         FragmentManager fm = getSupportFragmentManager();
@@ -95,10 +89,6 @@ public class UtilizadoresListaActivity extends AppCompatActivity {
         replaceFragment(new FragmentLoading());
         functionsManager.getUsers();
 
-        containerUtilizadores.removeAllViews();
-        for (Utilizador ut : utilizadores) {
-            addCardUtilizador(ut);
-        }
     }
 
     public void replaceFragment(Fragment frag){
@@ -110,13 +100,14 @@ public class UtilizadoresListaActivity extends AppCompatActivity {
 
     private void addCardUtilizador(Utilizador utilizador){
 
-        Log.d("teste", "Entrou on card utilizador");
+        Log.d("teste", "Entrou on card utilizador teste");
         View view = getLayoutInflater().inflate(R.layout.utilizador_card, null);
 
         TextView txtNomeUtilizador = view.findViewById(R.id.nomeUtilizador);
         TextView txtFuncaoUtilizador = view.findViewById(R.id.funcaoUtilizador);
         Button btnDetailsUtilizador = view.findViewById(R.id.btn_details_utilizador);
 
+        Log.d("teste", "Utilizador nome: " + utilizador.getNome());
         txtNomeUtilizador.setText(utilizador.getNome());
         switch(utilizador.getTipo()){
             case 0:

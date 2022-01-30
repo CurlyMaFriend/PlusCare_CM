@@ -5,7 +5,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.google.firebase.auth.FirebaseUser;
@@ -32,7 +31,18 @@ public class MyViewModel extends androidx.lifecycle.ViewModel {
     public MutableLiveData<ArrayList<Tarefa>> tarefasUtenteComp = new MutableLiveData<>();
     public MutableLiveData<ArrayList<Tarefa>> tarefasUtenteFaz = new MutableLiveData<>();
     public MutableLiveData<ArrayList<Tarefa>> tarefasUtentePassadas = new MutableLiveData<>();
-    public MutableLiveData<ArrayList<Higiene>> higienes = new MutableLiveData<>();
+    public MutableLiveData<ArrayList<Ocorrencia>> ocorrencias = new MutableLiveData<>();
+    public MutableLiveData<ArrayList<Higiene>> higiene = new MutableLiveData<>();
+
+
+
+    public MutableLiveData<ArrayList<Ocorrencia>> getOcorrencias() {
+        return ocorrencias;
+    }
+
+    public void setOcorrencias(Ocorrencia[] ocorrencias) {
+        this.ocorrencias.setValue(new ArrayList<Ocorrencia>(Arrays.asList(ocorrencias)));
+    }
 
     public MutableLiveData<ArrayList<Tarefa>> getTarefasUtenteComp() {
         return tarefasUtenteComp;
@@ -119,6 +129,14 @@ public class MyViewModel extends androidx.lifecycle.ViewModel {
         this.currentUser.setValue(currentUser);
     }
 
+    public MutableLiveData<ArrayList<Higiene>> getHigiene() {
+        return higiene;
+    }
+
+    public void setHigiene(Higiene[] higiene) {
+        this.higiene.setValue(new ArrayList<Higiene>(Arrays.asList(higiene)));
+    }
+
     public static boolean isNetworkAvailable(Context con) {
         try {
             ConnectivityManager cm = (ConnectivityManager) con
@@ -133,17 +151,4 @@ public class MyViewModel extends androidx.lifecycle.ViewModel {
         }
         return false;
     }
-
-    public void setOcorrencias(Ocorrencia[] ocorrencias) {
-
-    }
-
-    public MutableLiveData<ArrayList<Higiene>> getHigienes() {
-        return higienes;
-    }
-
-    public void setHigienes(Higiene[] higienes) {
-        this.higienes.setValue(new ArrayList<Higiene>(Arrays.asList(higienes)));
-    }
-
 }

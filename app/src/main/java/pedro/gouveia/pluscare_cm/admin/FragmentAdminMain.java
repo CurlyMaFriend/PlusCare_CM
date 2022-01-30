@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import pedro.gouveia.pluscare_cm.HigieneListaActivity;
@@ -26,6 +27,7 @@ public class FragmentAdminMain extends Fragment implements View.OnClickListener 
     private Button listarTarefas, listarOcorrencias;
     private ImageButton listarMedicamentos, listarUtilizadores, listarHigienes, listarUtentes;
     private TextView totalTarefas, totalMedicamentos, totalOcorrencias, totalHigiene;
+    private LinearLayout layoutListarUtilizadoresDashboard, layoutListarUtentesDashboard, layoutListarHigieneDashboard, layoutListarMedicamentosDashboard;
     private AdminStats adminStats;
     private AdminMainActivity activityInstance;
 
@@ -52,7 +54,10 @@ public class FragmentAdminMain extends Fragment implements View.OnClickListener 
         listarOcorrencias = view.findViewById(R.id.buttonListarOcorrenciasDashboard);
         listarUtentes = view.findViewById(R.id.buttonListarUtentesDashboard);
         listarUtilizadores = view.findViewById(R.id.buttonListarUtilizadoresDashboard);
-
+        layoutListarUtilizadoresDashboard = view.findViewById(R.id.layoutListarUtilizadoresDashboard);
+        layoutListarUtentesDashboard = view.findViewById(R.id.layoutListarUtentesDashboard);
+        layoutListarHigieneDashboard = view.findViewById(R.id.layoutListarHigieneDashboard);
+        layoutListarMedicamentosDashboard = view.findViewById(R.id.layoutListarMedicamentosDashboard);
 
         totalTarefas = view.findViewById(R.id.totalTarefasDashboard);
 //       totalMedicamentos = view.findViewById(R.id.totalMedicamentosDashboard);
@@ -68,25 +73,34 @@ public class FragmentAdminMain extends Fragment implements View.OnClickListener 
         listarOcorrencias.setOnClickListener(this);
         listarHigienes.setOnClickListener(this);
         listarTarefas.setOnClickListener(this);
-
+        layoutListarUtilizadoresDashboard.setOnClickListener(this);
+        layoutListarUtentesDashboard.setOnClickListener(this);
+        layoutListarHigieneDashboard.setOnClickListener(this);
+        layoutListarMedicamentosDashboard.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
+            case R.id.layoutListarUtentesDashboard:
             case R.id.buttonListarUtentesDashboard:
                 activityInstance.switchActivities(UtentesListaActivity.class);
                 break;
+            case R.id.layoutListarMedicamentosDashboard:
             case R.id.buttonListarMedicamentosDashboard:
                 Log.d("botaoClick","clicou no botao medicine");
                 activityInstance.switchActivities(MedicamentosListaActivity.class);
                 break;
             case R.id.buttonListarUtilizadoresDashboard:
+            case R.id.layoutListarUtilizadoresDashboard:
                 Log.d("botaoClick","clicou botao utilizadores");
                 activityInstance.switchActivities(UtilizadoresListaActivity.class);
+                break;
+            case R.id.layoutListarHigieneDashboard:
             case R.id.buttonListarHigieneDashboard:
                 Log.d("botaoClick","clicou botao higiene");
                 activityInstance.switchActivities(HigieneListaActivity.class);
+                break;
         }
     }
 }
