@@ -105,4 +105,14 @@
     <string name="Auxiliar">Auxiliar</string>
     <string name="Enfermeira">Enfermeira</string>
     <string name="titulo">Título: </string>
+    <string name="editarHigiene">Editar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="apagar">Apagar</string>
+    <string name="dialog_Info">Tem a certeza que pretende apagar?</string>
+    <string name="introduzirTituloHigiene">Novo Título da Higiene</string>
+    <string name="introduzirDescricaoHigiene">Nova Descrição da Higiene</string>
+
+
+
+
 </resources>
