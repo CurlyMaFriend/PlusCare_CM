@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:id="@+id/context_view">
+
+    <FrameLayout
+        android:id="@+id/utentesFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"></FrameLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_height="match_parent"
@@ -22,26 +30,40 @@
                 android:layout_width="match_parent"
                 android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/imgUtenteCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+             <!--   <androidx.cardview.widget.CardView
+                    android:id="@+id/card_image_utente"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:cardCornerRadius="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/imgUtente"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        tools:srcCompat="@tools:sample/avatars" />
-                </androidx.cardview.widget.CardView>
+                        android:id="@+id/image_utente"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/default_profile"
+                        android:scaleType="centerCrop"/>
 
+                </androidx.cardview.widget.CardView>-->
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/criarUtente"
+                    android:layout_marginTop="20dp"
+                    android:textSize="30dp"/>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/nomeUtente"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/nomeUtente"
+                    android:hint="@string/lblNome"
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="5dp"
                     android:layout_marginHorizontal="20dp">
@@ -54,16 +76,16 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/loginUsername"
+                    android:id="@+id/nomePrefUtente"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/nomePrefUtente"
+                    android:hint="@string/lblAlcunha"
                     android:layout_marginVertical="5dp"
                     android:layout_marginHorizontal="20dp">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/usernameText"
+                        android:id="@+id/txtNomePrefUtente"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName" />
@@ -74,7 +96,7 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/dateOfBirth"
+                    android:hint="@string/lblDataNascimento"
                     android:layout_marginVertical="5dp"
                     android:layout_marginHorizontal="20dp">
 
@@ -90,15 +112,31 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/morada"
                     android:layout_marginVertical="5dp"
+                    android:hint="@string/lblMorada"
                     android:layout_marginHorizontal="20dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/txtMoradaUtente"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="date" />
+                        android:inputType="text" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/selectAndar"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:hint="@string/piso">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/txtAndar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="none"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -108,7 +146,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="5dp"
                     android:layout_marginHorizontal="20dp"
-                    android:hint="@string/estadoCivil">
+                    android:hint="@string/lblEstadoCivil">
 
                     <AutoCompleteTextView
                         android:id="@+id/txtEstadoCivil"
@@ -124,7 +162,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="5dp"
                     android:layout_marginHorizontal="20dp"
-                    android:hint="@string/escolaridade">
+                    android:hint="@string/lblEscolaridade">
 
                     <AutoCompleteTextView
                         android:id="@+id/txtEscolaridade"
@@ -138,7 +176,7 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/profession"
+                    android:hint="@string/lblProfissao"
                     android:layout_marginVertical="5dp"
                     android:layout_marginHorizontal="20dp">
 
@@ -155,7 +193,7 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/nationatility"
+                    android:hint="@string/lblNationatility"
                     android:layout_marginVertical="5dp"
                     android:layout_marginHorizontal="20dp">
 
@@ -190,7 +228,7 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/CC"
+                    android:hint="@string/lblCC"
                     android:layout_marginVertical="5dp"
                     android:layout_marginHorizontal="20dp">
 
@@ -203,6 +241,60 @@
                         android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nifUtente"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/lblNIF"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="20dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtNIF"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:maxLength="9"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nissUtente"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/lblNISS"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="20dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtNISS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:maxLength="11"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nusUtente"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/lblNUS"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="20dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtNUS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:maxLength="9"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
             </LinearLayout>
 
         </ScrollView>
@@ -210,38 +302,42 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="20dp"
+            android:padding="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
             <Button
                 android:id="@+id/buttonCriarUtente"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_column="1"
                 android:text="@string/buttonCriar"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/buttonCancelarUtente"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginRight="5dp"
+                android:textSize="15dp"/>
 
             <Button
                 android:id="@+id/buttonCancelarUtente"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_column="2"
                 android:text="@string/buttonCancel"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/buttonCriarUtente"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="5dp"
+                android:textSize="15dp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</FrameLayout>
+</LinearLayout>

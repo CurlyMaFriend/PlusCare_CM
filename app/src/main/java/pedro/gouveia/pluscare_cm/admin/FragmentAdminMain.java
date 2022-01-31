@@ -19,6 +19,7 @@ import pedro.gouveia.pluscare_cm.FragmentAdapterTarefa;
 import pedro.gouveia.pluscare_cm.HigieneListaActivity;
 import pedro.gouveia.pluscare_cm.MedicamentosListaActivity;
 import pedro.gouveia.pluscare_cm.R;
+import pedro.gouveia.pluscare_cm.classes.AdminStats;
 import pedro.gouveia.pluscare_cm.TarefasInfoActivity;
 import pedro.gouveia.pluscare_cm.utente.UtentesListaActivity;
 import pedro.gouveia.pluscare_cm.utente.UtilizadoresListaActivity;

@@ -12,7 +12,7 @@
     <item
         android:title="@string/lblCreate"
         android:id="@+id/create"
-        android:icon="@drawable/ic_note_add"
+        android:icon="@drawable/ic__add"
         app:showAsAction="ifRoom"/>
 
 </menu>

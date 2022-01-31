@@ -97,7 +97,7 @@
     <string name="hora">Time: </string>
     <string name="function">Role: </string>
     <string name="id">Id: </string>
-    <string name="piso">Floor: </string>
+    <string name="piso">Section</string>
     <string name="email">Email: </string>
     <string name="nrConsumidores">Clients that consume: </string>
     <string name="ver">View </string>
@@ -106,10 +106,10 @@
     <string name="Auxiliar">Assistant</string>
     <string name="Enfermeira">Nurse</string>
     <string name="titulo">Title: </string>
-    <string name="estadoCivil">Marital status</string>
+    <string name="estadoCivil">Marital status: </string>
     <string name="voltar">Go back</string>
     <string name="morada">Address</string>
-    <string name="escolaridade">Schooling</string>
+    <string name="escolaridade">Schooling: </string>
     <string name="lblSearch">Search </string>
     <string name="lblCreate">Create </string>
     <string name="txtSearch">Type to search the list</string>
@@ -119,6 +119,23 @@
     <string name="dialog_Info">Are you sure you want to delete?</string>
     <string name="introduzirTituloHigiene">New Title for Hygiene</string>
     <string name="introduzirDescricaoHigiene">New Description for Hygiene</string>
+    <string name="selecionarImagem">Please select a image</string>
+    <string name="criarUtente">Create client</string>
+
+
+    <string name="lblNome">Nome</string>
+    <string name="lblAlcunha">Alcunha</string>
+    <string name="lblDataNascimento">Data nascimento</string>
+    <string name="lblMorada">Morada</string>
+    <string name="lblProfissao">Profession</string>
+    <string name="lblEscolaridade">Schooling</string>
+    <string name="lblNIF">NIF</string>
+    <string name="lblNISS">NISS</string>
+    <string name="lblCC">CC</string>
+    <string name="lblNUS">NUS</string>
+    <string name="lblNationatility">Nationality</string>
+    <string name="lblEstadoCivil">Marital status</string>
+
     <string-array name="tipoUtilizador">
         <item>Admin</item>
         <item>Nurse</item>

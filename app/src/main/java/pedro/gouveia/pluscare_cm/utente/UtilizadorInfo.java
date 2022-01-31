@@ -1,10 +1,18 @@
 package pedro.gouveia.pluscare_cm.utente;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.SearchView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
@@ -12,6 +20,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -26,11 +35,15 @@ public class UtilizadorInfo extends AppCompatActivity {
     private TextView andar, nomeUtilizador, idadeUtilizador, email, funcao;
     private FragmentAdapterTarefa fragmentAdapter;
     private Utilizador utilizador;
+    private Toolbar toolbarListUtilizadores;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.utilizador_info_layout);
+
+        toolbarListUtilizadores = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbarListUtilizadores);
 
         nomeUtilizador = findViewById(R.id.nomeUtilizador);
         andar = findViewById(R.id.andarUtilizador);
@@ -43,7 +56,29 @@ public class UtilizadorInfo extends AppCompatActivity {
             nomeUtilizador.setText(utilizador.getNome());
             andar.setText(utilizador.getAndar());
         }
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.fragment_menu, menu);
+
+        return(super.onCreateOptionsMenu(menu));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if(id == R.id.goBack){
+            Log.d("teste", "Goback pressed");
+            goBack();
+        }
+        return true;
+    }
+
+    private void goBack(){
+        Intent i = new Intent(getBaseContext(), UtilizadoresListaActivity.class);
+        startActivity(i);
     }
 
 

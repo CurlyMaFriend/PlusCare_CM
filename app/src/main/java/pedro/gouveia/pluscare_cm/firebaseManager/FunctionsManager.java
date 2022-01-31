@@ -21,7 +21,8 @@ import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import pedro.gouveia.pluscare_cm.admin.AdminStats;
+import pedro.gouveia.pluscare_cm.classes.AdminStats;
+import pedro.gouveia.pluscare_cm.classes.Andar;
 import pedro.gouveia.pluscare_cm.viewModels.MyViewModel;
 import pedro.gouveia.pluscare_cm.classes.Higiene;
 import pedro.gouveia.pluscare_cm.classes.Medicamento;
@@ -29,6 +30,7 @@ import pedro.gouveia.pluscare_cm.classes.Ocorrencia;
 import pedro.gouveia.pluscare_cm.classes.Tarefa;
 import pedro.gouveia.pluscare_cm.classes.Utente;
 import pedro.gouveia.pluscare_cm.classes.Utilizador;
+import pedro.gouveia.pluscare_cm.viewModels.ViewModelUtente;
 
 public class FunctionsManager {
 
@@ -46,6 +48,7 @@ public class FunctionsManager {
     private final String medicamentosUrl = apiUrl + "/medicamento";
     private final String higieneUrl = apiUrl + "/higiene";
     private final String ocorrenciasUrl = apiUrl + "/ocorrencia";
+    private final String andarUrl = apiUrl + "/andar";
 
     private ExecutorService executorService = Executors.newFixedThreadPool(5);
 
@@ -262,6 +265,7 @@ public class FunctionsManager {
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
+                            getMedicamentos();
                             Log.d(TAG, "Response add medicamento: " + response);
                             getMedicamentos();
                         }
@@ -682,7 +686,7 @@ public class FunctionsManager {
         }
     }
 
-    public void addUtente(Utente utente){
+    public void addUtente(Utente utente, ViewModelUtente vmUtente){
 
         String user_token = sharedPreferences.getString("user_token", "none");
 
@@ -698,6 +702,7 @@ public class FunctionsManager {
                         @Override
                         public void onResponse(String response) {
                             Log.d(TAG, "Response add utente: " + response);
+                            vmUtente.setAddUtenteSuccess(response);
                         }
                     }, new Response.ErrorListener() {
                         @Override
@@ -708,6 +713,7 @@ public class FunctionsManager {
                             if(error.networkResponse.data!=null) {
                                 try {
                                     body = new String(error.networkResponse.data,"UTF-8");
+                                    vmUtente.setAddUtenteError(body);
                                 } catch (UnsupportedEncodingException e) {
                                     e.printStackTrace();
                                 }
@@ -846,6 +852,53 @@ public class FunctionsManager {
 
             // Add the request to the RequestQueue.
             requestQueue.add(stringRequest);
+        }
+    }
+
+
+    /*-------------------------------------------------*/
+    /*-------------------ANDAR-SECCAO------------------*/
+    /*-------------------------------------------------*/
+
+    public boolean getSeccoes(){
+
+        String user_token = sharedPreferences.getString("user_token", "none");
+
+        if(!user_token.equals("none")){
+
+            // Request a string response from the provided URL.
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, andarUrl,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            Andar[] seccoes = gson.fromJson(response, Andar[].class);
+                            viewModel.setSeccoes(seccoes);
+                            //Log.d(TAG, "Response: " + response);
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.d(TAG, "Error: " + error.toString());
+                }
+            }) {
+                /**
+                 * Passing some request headers
+                 * */
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+                    headers.put("Authorization", "Bearer " + user_token);
+                    return headers;
+                }
+
+            };
+
+            // Add the request to the RequestQueue.
+            requestQueue.add(stringRequest);
+
+            return true;
+        } else {
+            return false;
         }
     }
 

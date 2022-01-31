@@ -53,6 +53,7 @@ public class UtentesListaActivity extends AppCompatActivity {
     private Menu menuBar;
 
     private Toolbar toolbarListUtentes;
+    private FragmentUtenteCriar fragUtente;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -132,13 +133,8 @@ public class UtentesListaActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if(id == R.id.create){
-            //viewModel.setNavigateNewNote();
-            utentesFrame.setVisibility(View.VISIBLE);
-            utentesScroll.setVisibility(View.GONE);
-
-            replaceFragment(new FragmentUtenteCriar());
-
             Log.d("teste", "Criar utente pressed");
+            addUtente();
         }
         if(id == R.id.goBack){
             Log.d("teste", "Goback pressed");
@@ -198,6 +194,11 @@ public class UtentesListaActivity extends AppCompatActivity {
         Log.d("teste", "chegou");
         Intent i = new Intent(getBaseContext(), UtenteInfo.class);
         i.putExtra("utente", aUtente);
+        startActivity(i);
+    }
+
+    private void addUtente(){
+        Intent i = new Intent(getBaseContext(), CriarUtente.class);
         startActivity(i);
     }
 }

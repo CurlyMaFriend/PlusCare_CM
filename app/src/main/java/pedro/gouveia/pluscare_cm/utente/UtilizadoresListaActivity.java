@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -15,8 +17,10 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -27,6 +31,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 import pedro.gouveia.pluscare_cm.FragmentLoading;
+import pedro.gouveia.pluscare_cm.admin.AdminMainActivity;
 import pedro.gouveia.pluscare_cm.viewModels.MyViewModel;
 import pedro.gouveia.pluscare_cm.R;
 import pedro.gouveia.pluscare_cm.classes.Utilizador;
@@ -48,6 +53,7 @@ public class UtilizadoresListaActivity extends AppCompatActivity {
     private ArrayList<Utilizador> utilizadores;
 
     private FloatingActionButton fab;
+    private Toolbar toolbarListUtilizadores;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -55,6 +61,9 @@ public class UtilizadoresListaActivity extends AppCompatActivity {
         setContentView(R.layout.lista_utilizadores_layout);
 
         viewModel = new ViewModelProvider(this).get(MyViewModel.class);
+
+        toolbarListUtilizadores = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbarListUtilizadores);
 
         utilizadores = new ArrayList<>();
 
@@ -151,6 +160,29 @@ public class UtilizadoresListaActivity extends AppCompatActivity {
         Log.d("teste", "chegou");
         Intent i = new Intent(getBaseContext(), UtilizadorInfo.class);
         i.putExtra("utilizador", aUtilizador);
+        startActivity(i);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.fragment_menu, menu);
+
+        return(super.onCreateOptionsMenu(menu));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if(id == R.id.goBack){
+            Log.d("teste", "Goback pressed");
+            goBack();
+        }
+        return true;
+    }
+
+    private void goBack(){
+        Intent i = new Intent(getBaseContext(), AdminMainActivity.class);
         startActivity(i);
     }
 }

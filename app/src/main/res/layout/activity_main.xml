@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:background="@color/primaryColor"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:title="Notes"
+        app:title="PlusCare"
         app:titleMarginStart="20dp">
 
     </androidx.appcompat.widget.Toolbar>

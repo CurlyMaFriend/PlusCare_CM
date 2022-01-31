@@ -16,23 +16,23 @@
     <string name="createdAccountSuccess">Conta criada com sucesso</string>
     <string name="loginSuccessfully">Login efetuado com sucesso</string>
     <string name="errorOnLogin">As credenciais estão erradas</string>
-    <string name="nomeUtente">Nome</string>
+    <string name="nomeUtente">Nome: </string>
     <string name="sobrenomeUtente">Sobrenome: </string>
     <string name="idadeUtente">Idade: </string>
-    <string name="nomePrefUtente">Alcunha</string>
+    <string name="nomePrefUtente">Alcunha: </string>
     <string name="dadosUtente">Dados</string>
     <string name="dadosSaudeUtente">Saúde</string>
     <string name="address">Morada: </string>
     <string name="bloodType">Tipo sanguíneo: </string>
     <string name="profession">Profissão</string>
     <string name="educationLevel">Grau de Escolaridade: </string>
-    <string name="NIF">NIF</string>
-    <string name="NISS">NISS</string>
-    <string name="CC">CC</string>
-    <string name="NUS">NUS</string>
-    <string name="nationatility">Nacionalidade</string>
+    <string name="NIF">NIF: </string>
+    <string name="NISS">NISS: </string>
+    <string name="CC">CC: </string>
+    <string name="NUS">NUS: </string>
+    <string name="nationatility">Nacionalidade: </string>
     <string name="socialSituation">Estado Civil: </string>
-    <string name="dateOfBirth">Data de Nascimento</string>
+    <string name="dateOfBirth">Data de Nascimento: </string>
     <string name="diseases">Doenças: </string>
     <string name="desabilities">Deficiências: </string>
     <string name="dadosCuidadosUtente">Cuidados</string>
@@ -96,7 +96,7 @@
     <string name="hora">Hora: </string>
     <string name="function">Função: </string>
     <string name="id">Id: </string>
-    <string name="piso">Andar: </string>
+    <string name="piso">Secção</string>
     <string name="email">Email: </string>
     <string name="nrConsumidores">Utentes que consomem: </string>
     <string name="ver">Ver</string>
@@ -118,6 +118,21 @@
     <string name="voltar">Voltar</string>
     <string name="morada">Morada</string>
     <string name="escolaridade">Escolaridade</string>
+    <string name="selecionarImagem">Selecione uma imagem</string>
+    <string name="criarUtente">Criar utente</string>
+
+    <string name="lblNome">Nome</string>
+    <string name="lblAlcunha">Alcunha</string>
+    <string name="lblDataNascimento">Data nascimento</string>
+    <string name="lblMorada">Morada</string>
+    <string name="lblProfissao">Profissão</string>
+    <string name="lblEscolaridade">Grau de Escolaridade: </string>
+    <string name="lblNIF">NIF</string>
+    <string name="lblNISS">NISS</string>
+    <string name="lblCC">CC</string>
+    <string name="lblNUS">NUS</string>
+    <string name="lblNationatility">Nacionalidade</string>
+    <string name="lblEstadoCivil">Estado Civil</string>
 
     <string-array name="estadoCivil">
         <item>Solteiro</item>

@@ -12,13 +12,7 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import pedro.gouveia.pluscare_cm.admin.AdminStats;
-import pedro.gouveia.pluscare_cm.classes.Higiene;
-import pedro.gouveia.pluscare_cm.classes.Medicamento;
-import pedro.gouveia.pluscare_cm.classes.Ocorrencia;
-import pedro.gouveia.pluscare_cm.classes.Tarefa;
-import pedro.gouveia.pluscare_cm.classes.Utente;
-import pedro.gouveia.pluscare_cm.classes.Utilizador;
+import pedro.gouveia.pluscare_cm.classes.*;
 
 public class MyViewModel extends androidx.lifecycle.ViewModel {
 
@@ -33,8 +27,15 @@ public class MyViewModel extends androidx.lifecycle.ViewModel {
     public MutableLiveData<ArrayList<Tarefa>> tarefasUtentePassadas = new MutableLiveData<>();
     public MutableLiveData<ArrayList<Ocorrencia>> ocorrencias = new MutableLiveData<>();
     public MutableLiveData<ArrayList<Higiene>> higiene = new MutableLiveData<>();
+    public MutableLiveData<ArrayList<Andar>> seccoes = new MutableLiveData<>();
 
+    public MutableLiveData<ArrayList<Andar>> getSeccoes() {
+        return seccoes;
+    }
 
+    public void setSeccoes(Andar[] seccoes) {
+        this.seccoes.setValue(new ArrayList<Andar>(Arrays.asList(seccoes)));
+    }
 
     public MutableLiveData<ArrayList<Ocorrencia>> getOcorrencias() {
         return ocorrencias;
