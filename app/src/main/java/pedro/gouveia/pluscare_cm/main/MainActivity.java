@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.concurrent.Executors;
 
 import pedro.gouveia.pluscare_cm.FragmentLoading;
-import pedro.gouveia.pluscare_cm.MyViewModel;
+import pedro.gouveia.pluscare_cm.viewModels.MyViewModel;
 import pedro.gouveia.pluscare_cm.R;
 import pedro.gouveia.pluscare_cm.admin.AdminMainActivity;
 import pedro.gouveia.pluscare_cm.auxiliar.AuxiliarMainActivity;

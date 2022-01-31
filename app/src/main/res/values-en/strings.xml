@@ -17,21 +17,21 @@
     <string name="createdAccountSuccess">Account created successfully</string>
     <string name="loginSuccessfully">Successfully logged in</string>
     <string name="errorOnLogin">Credentials don\'t exist</string>
-    <string name="nomeUtente">Name: </string>
+    <string name="nomeUtente">Name</string>
     <string name="sobrenomeUtente">Surname: </string>
     <string name="idadeUtente">Age: </string>
-    <string name="nomePrefUtente">Nickname: </string>
+    <string name="nomePrefUtente">Nickname</string>
     <string name="dadosUtente">Data</string>
     <string name="dadosSaudeUtente">Health</string>
     <string name="address">Address: </string>
     <string name="bloodType">Blood type: </string>
-    <string name="profession">Job: </string>
+    <string name="profession">Job</string>
     <string name="educationLevel">Education level: </string>
-    <string name="NIF">NIF: </string>
-    <string name="NISS">NISS: </string>
-    <string name="CC">CC: </string>
-    <string name="NUS">NUS: </string>
-    <string name="nationatility">Nationality: </string>
+    <string name="NIF">NIF</string>
+    <string name="NISS">NISS</string>
+    <string name="CC">CC</string>
+    <string name="NUS">NUS</string>
+    <string name="nationatility">Nationality</string>
     <string name="socialSituation">Social Situation: </string>
     <string name="dateOfBirth">Date of Birth: </string>
     <string name="diseases">Diseases: </string>
@@ -90,7 +90,7 @@
     <string name="listHigienes">Hygiene List</string>
     <string name="createAddress">Input your address</string>
     <string name="createDateBirth">Input your day of birth</string>
-    <string name="height">Height: </string>
+    <string name="height">Height (cm)</string>
     <string name="loadingText">Fetching data... </string>
     <string name="detalhes">Details</string>
     <string name="tipo">Type: </string>
@@ -106,6 +106,10 @@
     <string name="Auxiliar">Assistant</string>
     <string name="Enfermeira">Nurse</string>
     <string name="titulo">Title: </string>
+    <string name="estadoCivil">Marital status</string>
+    <string name="voltar">Go back</string>
+    <string name="morada">Address</string>
+    <string name="escolaridade">Schooling</string>
     <string name="lblSearch">Search </string>
     <string name="lblCreate">Create </string>
     <string name="txtSearch">Type to search the list</string>
@@ -127,4 +131,16 @@
         <item>Cream</item>
     </string-array>
 
+    <string-array name="estadoCivil">
+        <item>Single</item>
+        <item>Married</item>
+        <item>Widow</item>
+        <item>Divorced</item>
+    </string-array>
+
+    <string-array name="escolaridadeArray">
+        <item>Primary school</item>
+        <item>Secundary school</item>
+        <item>Higher education</item>
+    </string-array>
 </resources>

@@ -16,11 +16,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import pedro.gouveia.pluscare_cm.FragmentLoading;
-import pedro.gouveia.pluscare_cm.MyViewModel;
+import pedro.gouveia.pluscare_cm.viewModels.MyViewModel;
 import pedro.gouveia.pluscare_cm.R;
-import pedro.gouveia.pluscare_cm.classes.Higiene;
-import pedro.gouveia.pluscare_cm.classes.Medicamento;
-import pedro.gouveia.pluscare_cm.classes.Ocorrencia;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
 
 public class AdminMainActivity extends AppCompatActivity {

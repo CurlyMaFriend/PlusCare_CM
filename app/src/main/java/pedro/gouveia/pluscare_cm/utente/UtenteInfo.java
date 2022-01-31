@@ -3,11 +3,7 @@ package pedro.gouveia.pluscare_cm.utente;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,11 +18,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 import pedro.gouveia.pluscare_cm.FragmentAdapterTarefa;
-import pedro.gouveia.pluscare_cm.MyViewModel;
+import pedro.gouveia.pluscare_cm.viewModels.MyViewModel;
 import pedro.gouveia.pluscare_cm.R;
 import pedro.gouveia.pluscare_cm.classes.Tarefa;
 import pedro.gouveia.pluscare_cm.classes.Utente;

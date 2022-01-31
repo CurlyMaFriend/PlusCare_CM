@@ -16,23 +16,23 @@
     <string name="createdAccountSuccess">Conta criada com sucesso</string>
     <string name="loginSuccessfully">Login efetuado com sucesso</string>
     <string name="errorOnLogin">As credenciais estão erradas</string>
-    <string name="nomeUtente">Nome: </string>
+    <string name="nomeUtente">Nome</string>
     <string name="sobrenomeUtente">Sobrenome: </string>
     <string name="idadeUtente">Idade: </string>
-    <string name="nomePrefUtente">Alcunha: </string>
+    <string name="nomePrefUtente">Alcunha</string>
     <string name="dadosUtente">Dados</string>
     <string name="dadosSaudeUtente">Saúde</string>
     <string name="address">Morada: </string>
     <string name="bloodType">Tipo sanguíneo: </string>
-    <string name="profession">Profissão: </string>
+    <string name="profession">Profissão</string>
     <string name="educationLevel">Grau de Escolaridade: </string>
-    <string name="NIF">NIF: </string>
-    <string name="NISS">NISS: </string>
-    <string name="CC">CC: </string>
-    <string name="NUS">NUS: </string>
-    <string name="nationatility">Nacionalidade: </string>
+    <string name="NIF">NIF</string>
+    <string name="NISS">NISS</string>
+    <string name="CC">CC</string>
+    <string name="NUS">NUS</string>
+    <string name="nationatility">Nacionalidade</string>
     <string name="socialSituation">Estado Civil: </string>
-    <string name="dateOfBirth">Data de Nascimento: </string>
+    <string name="dateOfBirth">Data de Nascimento</string>
     <string name="diseases">Doenças: </string>
     <string name="desabilities">Deficiências: </string>
     <string name="dadosCuidadosUtente">Cuidados</string>
@@ -89,7 +89,7 @@
     <string name="listHigienes">Lista de Higienes</string>
     <string name="createAddress">Introduza a sua morada</string>
     <string name="createDateBirth">Introduza a sua idade</string>
-    <string name="height">Altura: </string>
+    <string name="height">Altura (cm)</string>
     <string name="loadingText">A obter dados... </string>
     <string name="detalhes">Detalhes</string>
     <string name="tipo">Tipo: </string>
@@ -105,6 +105,7 @@
     <string name="Auxiliar">Auxiliar</string>
     <string name="Enfermeira">Enfermeira</string>
     <string name="titulo">Título: </string>
+    <string name="estadoCivil">Estado civil</string>
     <string name="lblSearch">Procurar </string>
     <string name="lblCreate">Criar </string>
     <string name="txtSearch">Escreva para procurar na lista</string>
@@ -114,6 +115,24 @@
     <string name="dialog_Info">Tem a certeza que pretende apagar?</string>
     <string name="introduzirTituloHigiene">Novo Título da Higiene</string>
     <string name="introduzirDescricaoHigiene">Nova Descrição da Higiene</string>
+    <string name="voltar">Voltar</string>
+    <string name="morada">Morada</string>
+    <string name="escolaridade">Escolaridade</string>
+
+    <string-array name="estadoCivil">
+        <item>Solteiro</item>
+        <item>Casado</item>
+        <item>Viuvo</item>
+        <item>Divorciado</item>
+    </string-array>
+
+    <string-array name="escolaridadeArray">
+        <item>Ensino primário</item>
+        <item>Ensino secundário</item>
+        <item>Ensino superior</item>
+    </string-array>
+
+
     <string-array name="tipoUtilizador">
         <item>Admin</item>
         <item>Enfermeira</item>

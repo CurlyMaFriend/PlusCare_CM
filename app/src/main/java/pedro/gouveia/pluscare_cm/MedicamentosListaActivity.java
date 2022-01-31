@@ -24,14 +24,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-import pedro.gouveia.pluscare_cm.FragmentAdapterUtente;
-import pedro.gouveia.pluscare_cm.FragmentLoading;
-import pedro.gouveia.pluscare_cm.MyViewModel;
-import pedro.gouveia.pluscare_cm.R;
+import pedro.gouveia.pluscare_cm.viewModels.MyViewModel;
 import pedro.gouveia.pluscare_cm.classes.Medicamento;
-import pedro.gouveia.pluscare_cm.classes.Utilizador;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
-import pedro.gouveia.pluscare_cm.utente.UtilizadorInfo;
 
 public class MedicamentosListaActivity extends AppCompatActivity {
 

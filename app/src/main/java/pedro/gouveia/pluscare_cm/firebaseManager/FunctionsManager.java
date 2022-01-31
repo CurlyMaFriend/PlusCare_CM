@@ -22,7 +22,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import pedro.gouveia.pluscare_cm.admin.AdminStats;
-import pedro.gouveia.pluscare_cm.MyViewModel;
+import pedro.gouveia.pluscare_cm.viewModels.MyViewModel;
 import pedro.gouveia.pluscare_cm.classes.Higiene;
 import pedro.gouveia.pluscare_cm.classes.Medicamento;
 import pedro.gouveia.pluscare_cm.classes.Ocorrencia;

@@ -27,6 +27,7 @@ import pedro.gouveia.pluscare_cm.classes.Higiene;
 import pedro.gouveia.pluscare_cm.dialogs.DialogDeleteHigiene;
 import pedro.gouveia.pluscare_cm.dialogs.DialogEditHigiene;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
+import pedro.gouveia.pluscare_cm.viewModels.MyViewModel;
 
 public class HigieneListaActivity extends AppCompatActivity {
     

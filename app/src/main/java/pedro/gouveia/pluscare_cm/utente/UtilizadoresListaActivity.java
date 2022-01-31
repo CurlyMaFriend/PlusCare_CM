@@ -20,13 +20,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
-import pedro.gouveia.pluscare_cm.FragmentAdapterUtente;
 import pedro.gouveia.pluscare_cm.FragmentLoading;
-import pedro.gouveia.pluscare_cm.MyViewModel;
+import pedro.gouveia.pluscare_cm.viewModels.MyViewModel;
 import pedro.gouveia.pluscare_cm.R;
 import pedro.gouveia.pluscare_cm.classes.Utilizador;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;

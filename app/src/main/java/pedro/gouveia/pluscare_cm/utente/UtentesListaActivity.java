@@ -29,10 +29,11 @@ import java.util.ArrayList;
 
 import pedro.gouveia.pluscare_cm.FragmentAdapterUtente;
 import pedro.gouveia.pluscare_cm.FragmentLoading;
-import pedro.gouveia.pluscare_cm.MyViewModel;
+import pedro.gouveia.pluscare_cm.viewModels.MyViewModel;
 import pedro.gouveia.pluscare_cm.R;
 import pedro.gouveia.pluscare_cm.classes.Utente;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
+import pedro.gouveia.pluscare_cm.viewModels.ViewModelUtente;
 
 public class UtentesListaActivity extends AppCompatActivity {
 
@@ -49,6 +50,7 @@ public class UtentesListaActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
 
     private ArrayList<Utente> utentes;
+    private Menu menuBar;
 
     private Toolbar toolbarListUtentes;
 
@@ -95,6 +97,7 @@ public class UtentesListaActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        menuBar = menu;
         getMenuInflater().inflate(R.menu.menu_list_utentes, menu);
 
         MenuItem searchItem = menu.findItem(R.id.search);
@@ -130,7 +133,19 @@ public class UtentesListaActivity extends AppCompatActivity {
 
         if(id == R.id.create){
             //viewModel.setNavigateNewNote();
+            utentesFrame.setVisibility(View.VISIBLE);
+            utentesScroll.setVisibility(View.GONE);
+
+            replaceFragment(new FragmentUtenteCriar());
+
             Log.d("teste", "Criar utente pressed");
+        }
+        if(id == R.id.goBack){
+            Log.d("teste", "Goback pressed");
+            menuBar.clear();
+            utentesFrame.setVisibility(View.GONE);
+            utentesScroll.setVisibility(View.VISIBLE);
+            getMenuInflater().inflate(R.menu.menu_list_utentes, menuBar);
         }
         return true;
     }

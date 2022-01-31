@@ -16,7 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import java.util.ArrayList;
 
-import pedro.gouveia.pluscare_cm.MyViewModel;
+import pedro.gouveia.pluscare_cm.viewModels.MyViewModel;
 import pedro.gouveia.pluscare_cm.R;
 import pedro.gouveia.pluscare_cm.classes.Utilizador;
 import pedro.gouveia.pluscare_cm.firebaseManager.AuthManager;

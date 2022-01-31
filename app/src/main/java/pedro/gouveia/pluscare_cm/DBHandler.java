@@ -6,10 +6,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Handler;
 import android.os.Looper;
 
-import androidx.annotation.Nullable;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import pedro.gouveia.pluscare_cm.viewModels.MyViewModel;
 
 public class DBHandler extends SQLiteOpenHelper {
 

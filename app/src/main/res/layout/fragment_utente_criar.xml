@@ -5,347 +5,243 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent">
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="600dp">
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TableLayout
+            <LinearLayout
+                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
 
-                <TableRow
-                    android:layout_width="wrap_content"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/imgUtenteCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgUtente"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        tools:srcCompat="@tools:sample/avatars" />
+                </androidx.cardview.widget.CardView>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nomeUtente"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1">
+                    android:hint="@string/nomeUtente"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginHorizontal="20dp">
 
-                    <Space
-                        android:layout_width="94dp"
-                        android:layout_height="57dp" />
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:id="@+id/imageView"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            tools:srcCompat="@tools:sample/avatars" />
-                    </androidx.cardview.widget.CardView>
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10sp"
-                    android:layout_marginBottom="10sp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtNomeUtente"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/nomeUtente"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/nomeNovoUtente"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
                         android:inputType="textPersonName" />
-                </TableRow>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <TableRow
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/loginUsername"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10sp">
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nomePrefUtente"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="20dp">
 
-                    <TextView
-                        android:id="@+id/textView47"
-                        android:layout_width="wrap_content"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/usernameText"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/nickname"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/nomePrefNovoUtente"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
                         android:inputType="textPersonName" />
-                </TableRow>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <TableRow
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/dataNascimento"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10sp">
+                    android:layout_height="wrap_content"
+                    android:hint="@string/dateOfBirth"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="20dp">
 
-                    <TextView
-                        android:id="@+id/textView50"
-                        android:layout_width="wrap_content"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtDataNascimento"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/address"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/moradaNovoUtente"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:inputType="textMultiLine" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10sp">
-
-                    <TextView
-                        android:id="@+id/textView51"
-                        android:layout_width="111dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/dateOfBirth"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/dataNascimentoNovoUtente"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
                         android:inputType="date" />
-                </TableRow>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <TableRow
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/moradaUtente"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10sp">
+                    android:layout_height="wrap_content"
+                    android:hint="@string/morada"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="20dp">
 
-                    <TextView
-                        android:id="@+id/textView53"
-                        android:layout_width="wrap_content"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtMoradaUtente"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/socialSituation"
-                        android:textSize="18sp" />
+                        android:inputType="date" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                    <EditText
-                        android:id="@+id/estadoCivilNovoUtente"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName" />
-                </TableRow>
-
-                <TableRow
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/selectEstadoCivil"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10sp">
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:hint="@string/estadoCivil">
 
-                    <TextView
-                        android:id="@+id/textView54"
-                        android:layout_width="111dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/educationLevel"
-                        android:textSize="18sp" />
+                    <AutoCompleteTextView
+                        android:id="@+id/txtEstadoCivil"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="none"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                    <EditText
-                        android:id="@+id/grauEscolaNovoUtente"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName" />
-                </TableRow>
-
-                <TableRow
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/selectEscolaridade"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10sp">
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:hint="@string/escolaridade">
 
-                    <TextView
-                        android:id="@+id/textView55"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/profession"
-                        android:textSize="18sp" />
+                    <AutoCompleteTextView
+                        android:id="@+id/txtEscolaridade"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:inputType="none"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                    <EditText
-                        android:id="@+id/profissaoNovoUtente"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName" />
-                </TableRow>
-
-                <TableRow
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/profissaoUtente"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10sp">
+                    android:layout_height="wrap_content"
+                    android:hint="@string/profession"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="20dp">
 
-                    <TextView
-                        android:id="@+id/textView56"
-                        android:layout_width="wrap_content"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtProfissao"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/nationatility"
-                        android:textSize="18sp" />
+                        android:lines="1"
+                        android:inputType="text" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                    <EditText
-                        android:id="@+id/nacionalidadeNovoUtente"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName" />
-                </TableRow>
-
-                <TableRow
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nacionalidadeUtente"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10sp">
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nationatility"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="20dp">
 
-                    <TextView
-                        android:id="@+id/textView57"
-                        android:layout_width="wrap_content"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtNacionalidade"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/height"
-                        android:textSize="18sp" />
+                        android:lines="1"
+                        android:inputType="text" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                    <EditText
-                        android:id="@+id/alturaNovoUtente"
-                        android:layout_width="wrap_content"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/alturaUtente"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/height"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="20dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtAltura"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:ems="10"
+                        android:lines="1"
+                        android:maxLength="3"
                         android:inputType="number" />
-                </TableRow>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <TableRow
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ccUtente"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10sp">
+                    android:layout_height="wrap_content"
+                    android:hint="@string/CC"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginHorizontal="20dp">
 
-                    <TextView
-                        android:id="@+id/textView58"
-                        android:layout_width="wrap_content"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtCC"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/CC"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/ccNovoUtente"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10sp"
-                        android:ems="10"
+                        android:lines="1"
+                        android:maxLength="8"
                         android:inputType="number" />
-                </TableRow>
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10sp">
-
-                    <TextView
-                        android:id="@+id/textView59"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/NIF"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/nifNovoUtente"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="number" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10sp">
-
-                    <TextView
-                        android:id="@+id/textView60"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/NISS"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/nissNovoUtente"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="number" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="10sp">
-
-                    <TextView
-                        android:id="@+id/textView61"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="@string/NUS"
-                        android:textSize="18sp" />
-
-                    <EditText
-                        android:id="@+id/nusNovoUtente"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="number" />
-                </TableRow>
-
-            </TableLayout>
+            </LinearLayout>
 
         </ScrollView>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <Button
                 android:id="@+id/buttonCriarUtente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/buttonCriar" />
+                android:layout_column="1"
+                android:text="@string/buttonCriar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/buttonCancelarUtente"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/buttonCancelarUtente"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10sp"
-                android:text="@string/buttonCancel" />
-        </LinearLayout>
-    </LinearLayout>
+                android:layout_column="2"
+                android:text="@string/buttonCancel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/buttonCriarUtente"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
