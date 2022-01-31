@@ -8,16 +8,14 @@ import java.util.Date;
 public class Utilizador implements Serializable {
 
     private String email, nome, morada, id, password, andar;
-    private String data_nascimento;
     private int tipo;
 
-    public Utilizador(String aEmail, String aPassword, String aNome, String aMorada, String aDataNascimento) {
+    public Utilizador(String aEmail, String aPassword, String aNome, String aMorada) {
         id = "0";
         nome = aNome;
         morada = aMorada;
         email = aEmail;
         tipo = 2;
-        data_nascimento = aDataNascimento;
         password = aPassword;
     }
 
@@ -69,13 +67,7 @@ public class Utilizador implements Serializable {
         this.andar = andar;
     }
 
-    public String getData_nascimento() {
-        return data_nascimento;
-    }
 
-    public void setData_nascimento(String data_nascimento) {
-        this.data_nascimento = data_nascimento;
-    }
 
     public int getTipo() {
         return tipo;
@@ -94,7 +86,6 @@ public class Utilizador implements Serializable {
                 ", id='" + id + '\'' +
                 ", password='" + password + '\'' +
                 ", andar='" + andar + '\'' +
-                ", data_nascimento='" + data_nascimento + '\'' +
                 ", tipo=" + tipo +
                 '}';
     }

@@ -13,7 +13,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imagemSair3"
+            android:id="@+id/imagemSair4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
@@ -24,14 +24,13 @@
             app:srcCompat="@drawable/ic_baseline_close_24" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayoutTitulo"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/textInputLayoutTituloMedicamento"
+            style ="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="25sp"
             android:layout_marginRight="25sp"
-            android:hint="@string/introduzirTituloHigiene"
-            android:visibility="visible">
+            android:hint="@string/titulo">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/medicamentoNomeText"
@@ -41,14 +40,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayoutDescription"
+            android:id="@+id/textInputLayoutDescriptionMedicamento"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25sp"
             android:layout_marginRight="25sp"
-            android:hint="@string/introduzirDescricaoHigiene"
-            android:visibility="visible">
+            android:hint="@string/descritpion">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/medicamentoDescriptionText"

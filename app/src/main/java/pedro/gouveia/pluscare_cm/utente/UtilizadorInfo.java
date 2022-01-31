@@ -33,7 +33,6 @@ public class UtilizadorInfo extends AppCompatActivity {
         setContentView(R.layout.utilizador_info_layout);
 
         nomeUtilizador = findViewById(R.id.nomeUtilizador);
-        idadeUtilizador = findViewById(R.id.idadeUtilizador);
         andar = findViewById(R.id.andarUtilizador);
         email = findViewById(R.id.utilizadorEmail);
         funcao = findViewById(R.id.funcaoUtilizador);
@@ -43,22 +42,6 @@ public class UtilizadorInfo extends AppCompatActivity {
         if(utilizador != null){
             nomeUtilizador.setText(utilizador.getNome());
             andar.setText(utilizador.getAndar());
-            String idade = "Nao determinado";
-
-            try {
-                Date d = new SimpleDateFormat("dd/MM/yyyy").parse(utilizador.getData_nascimento());
-                Date today = Calendar.getInstance().getTime();
-                long diffInMillies = Math.abs(today.getTime() - d.getTime());
-
-                long days = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
-
-                idade = days/365 + "";
-
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-
-            idadeUtilizador.setText(idade);
         }
 
     }

@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -24,6 +26,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
+import pedro.gouveia.pluscare_cm.dialogs.DialogCreateMedicamento;
 import pedro.gouveia.pluscare_cm.viewModels.MyViewModel;
 import pedro.gouveia.pluscare_cm.classes.Medicamento;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
@@ -46,6 +49,8 @@ public class MedicamentosListaActivity extends AppCompatActivity {
 
     private FloatingActionButton fab;
 
+    private DialogCreateMedicamento dCM;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +69,8 @@ public class MedicamentosListaActivity extends AppCompatActivity {
 
         functionsManager = new FunctionsManager(this, sharedPreferences, viewModel);
 
+        dCM = new DialogCreateMedicamento(this, functionsManager);
+
         FragmentManager fm = getSupportFragmentManager();
         fragmentAdapter = new FragmentAdapterMedicamento(fm, getLifecycle());
 
@@ -73,7 +80,12 @@ public class MedicamentosListaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d("teste","clicou no botao fab");
+                dCM.show();
+
+                Window window = dCM.getWindow();
+                window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
             }
+
         });
 
         viewModel.getMedicamentos().observe(this, item ->{

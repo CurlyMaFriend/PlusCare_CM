@@ -22,11 +22,6 @@
                 android:layout_width="match_parent"
                 android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/imgUtenteCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/nomeUtilizador"
@@ -62,22 +57,6 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/dataNascimentoUtilizador"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_marginVertical="5dp"
-                    android:hint="@string/dateOfBirth">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/dataNascimentoTxt"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="date" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/emailUtilizador"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
@@ -109,22 +88,6 @@
                         android:inputType="textEmailAddress" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/selectEstadoCivilUtilizador"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_marginVertical="5dp">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/txtEstadoCivilUtilizador"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:inputType="none"
-                        android:text="@string/tipo" />
-                </com.google.android.material.textfield.TextInputLayout>
-
             </LinearLayout>
 
         </ScrollView>
@@ -142,26 +105,29 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <Button
-                android:id="@+id/buttonCriarUtente"
+                android:id="@+id/buttonCriarUtilizador"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
+                android:layout_marginEnd="200dp"
                 android:text="@string/buttonCriar"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/buttonCancelarUtente"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/buttonCancelarUtente"
+                android:id="@+id/buttonCancelarUtilizador"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="2"
+                android:layout_marginStart="200dp"
                 android:text="@string/buttonCancel"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/buttonCriarUtente"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.6" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,19 +15,20 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import pedro.gouveia.pluscare_cm.FragmentAdapterTarefa;
 import pedro.gouveia.pluscare_cm.HigieneListaActivity;
 import pedro.gouveia.pluscare_cm.MedicamentosListaActivity;
 import pedro.gouveia.pluscare_cm.R;
+import pedro.gouveia.pluscare_cm.TarefasInfoActivity;
 import pedro.gouveia.pluscare_cm.utente.UtentesListaActivity;
 import pedro.gouveia.pluscare_cm.utente.UtilizadoresListaActivity;
 
 public class FragmentAdminMain extends Fragment implements View.OnClickListener {
 
     private View view;
-    private Button listarTarefas, listarOcorrencias;
-    private ImageButton listarMedicamentos, listarUtilizadores, listarHigienes, listarUtentes;
+    private ImageButton listarMedicamentos, listarUtilizadores, listarHigienes, listarUtentes, listarTarefas, listarOcorrencias;
     private TextView totalTarefas, totalMedicamentos, totalOcorrencias, totalHigiene;
-    private LinearLayout layoutListarUtilizadoresDashboard, layoutListarUtentesDashboard, layoutListarHigieneDashboard, layoutListarMedicamentosDashboard;
+    private LinearLayout layoutListarUtilizadoresDashboard, layoutListarUtentesDashboard, layoutListarHigieneDashboard, layoutListarMedicamentosDashboard, layoutListarTarefasDashboard, layoutListarOcorrenciasDashboard;
     private AdminStats adminStats;
     private AdminMainActivity activityInstance;
 
@@ -58,6 +59,8 @@ public class FragmentAdminMain extends Fragment implements View.OnClickListener 
         layoutListarUtentesDashboard = view.findViewById(R.id.layoutListarUtentesDashboard);
         layoutListarHigieneDashboard = view.findViewById(R.id.layoutListarHigieneDashboard);
         layoutListarMedicamentosDashboard = view.findViewById(R.id.layoutListarMedicamentosDashboard);
+        layoutListarTarefasDashboard = view.findViewById(R.id.layoutListarTarefasDashboard);
+        layoutListarOcorrenciasDashboard = view.findViewById(R.id.layoutListarOcorrenciasDashboard);
 
         totalTarefas = view.findViewById(R.id.totalTarefasDashboard);
 //       totalMedicamentos = view.findViewById(R.id.totalMedicamentosDashboard);
@@ -100,6 +103,15 @@ public class FragmentAdminMain extends Fragment implements View.OnClickListener 
             case R.id.buttonListarHigieneDashboard:
                 Log.d("botaoClick","clicou botao higiene");
                 activityInstance.switchActivities(HigieneListaActivity.class);
+                break;
+            case R.id.buttonListarTarefasDashboard:
+            case R.id.layoutListarTarefasDashboard:
+                Log.d("botaoClick","clicou botao tarefas");
+                activityInstance.switchActivities(TarefasInfoActivity.class);
+                break;
+            case R.id.buttonListarOcorrenciasDashboard:
+            case R.id.layoutListarOcorrenciasDashboard:
+                Log.d("botaoClick","clicou botao ocorrencias");
                 break;
         }
     }

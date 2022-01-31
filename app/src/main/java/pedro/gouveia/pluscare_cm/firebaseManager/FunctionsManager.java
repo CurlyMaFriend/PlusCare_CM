@@ -263,6 +263,7 @@ public class FunctionsManager {
                         @Override
                         public void onResponse(String response) {
                             Log.d(TAG, "Response add medicamento: " + response);
+                            getMedicamentos();
                         }
                     }, new Response.ErrorListener() {
                 @Override
@@ -427,6 +428,7 @@ public class FunctionsManager {
                         @Override
                         public void onResponse(String response) {
                             Log.d(TAG, "Response add higiene: " + response);
+                            getHigiene();
                         }
                     }, new Response.ErrorListener() {
                 @Override

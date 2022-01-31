@@ -59,8 +59,8 @@ public class DialogEditHigiene extends Dialog implements View.OnClickListener {
 
         btnEdit.setVisibility(View.VISIBLE);
         btnCancel.setVisibility(View.VISIBLE);
-        editTituloFrame.setVisibility(View.GONE);
-        editDescricaoFrame.setVisibility(View.GONE);
+        editTituloFrame.setVisibility(View.VISIBLE);
+        editDescricaoFrame.setVisibility(View.VISIBLE);
 
         btnDel.setVisibility(View.GONE);
         dialogInfo.setVisibility(View.GONE);

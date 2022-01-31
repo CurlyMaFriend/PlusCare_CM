@@ -63,8 +63,7 @@ public class MainActivity extends AppCompatActivity {
                                     "email.test.test@gmail.com",
                                     "password",
                                     "Some name",
-                                    "Morada do gajo",
-                                    "24/12/1990"
+                                    "Morada do gajo"
                             ));
                 });
                 Log.d("teste", "Users: " + item.toString());

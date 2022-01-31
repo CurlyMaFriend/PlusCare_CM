@@ -21,9 +21,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 
 import pedro.gouveia.pluscare_cm.classes.Higiene;
+import pedro.gouveia.pluscare_cm.dialogs.DialogCreateHigiene;
+import pedro.gouveia.pluscare_cm.dialogs.DialogCreateMedicamento;
 import pedro.gouveia.pluscare_cm.dialogs.DialogDeleteHigiene;
 import pedro.gouveia.pluscare_cm.dialogs.DialogEditHigiene;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
@@ -44,6 +48,10 @@ public class HigieneListaActivity extends AppCompatActivity {
 
     private ArrayList<Higiene> higienes;
 
+    private DialogCreateHigiene dCH;
+
+    private FloatingActionButton fab;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +70,23 @@ public class HigieneListaActivity extends AppCompatActivity {
 
         functionsManager = new FunctionsManager(this, sharedPreferences, viewModel);
 
+        dCH = new DialogCreateHigiene(this, functionsManager);
+
         FragmentManager fm = getSupportFragmentManager();
+
+        fab = findViewById(R.id.floatingActionButton2);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("teste","clicou no botao fab");
+                dCH.show();
+
+                Window window = dCH.getWindow();
+                window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+            }
+
+        });
 
         viewModel.getHigiene().observe(this, item ->{
 

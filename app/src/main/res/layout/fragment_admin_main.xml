@@ -31,6 +31,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="30dp"
+                    android:layout_marginBottom="20dp"
                     android:background="@drawable/layout_bg"
                     android:orientation="vertical">
 
@@ -62,6 +63,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="30dp"
+                    android:layout_marginBottom="20dp"
                     android:background="@drawable/layout_bg"
                     android:orientation="vertical">
 
@@ -86,42 +88,6 @@
 
             </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/buttonListarTarefasDashboard"
-                        android:layout_width="142dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="38dp"
-                        android:backgroundTint="#FFFFFF"
-                        android:text="@string/ver"
-                        android:textColor="#81c784" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/buttonListarOcorrenciasDashboard"
-                        android:layout_width="142dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="38dp"
-                        android:backgroundTint="#FFFFFF"
-                        android:text="@string/ver"
-                        android:textColor="#81c784" />
-                </LinearLayout>
-
-            </TableRow>
-
         </TableLayout>
 
         <LinearLayout
@@ -142,6 +108,7 @@
                 android:weightSum="2">
 
                 <LinearLayout
+                    android:id="@+id/layoutListarTarefasDashboard"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10sp"
@@ -153,6 +120,7 @@
                     android:orientation="vertical">
 
                     <ImageButton
+                        android:id="@+id/buttonListarTarefasDashboard"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -206,6 +174,7 @@
                 android:weightSum="2">
 
                 <LinearLayout
+                    android:id="@+id/layoutListarOcorrenciasDashboard"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10sp"
@@ -217,6 +186,7 @@
                     android:orientation="vertical">
 
                     <ImageButton
+                        android:id="@+id/buttonListarOcorrenciasDashboard"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
