@@ -114,8 +114,15 @@
     <string name="dialog_Info">Tem a certeza que pretende apagar?</string>
     <string name="introduzirTituloHigiene">Novo Título da Higiene</string>
     <string name="introduzirDescricaoHigiene">Nova Descrição da Higiene</string>
-
-
-
-
+    <string-array name="tipoUtilizador">
+        <item>Admin</item>
+        <item>Enfermeira</item>
+        <item>Auxiliar</item>
+    </string-array>
+    <string-array name="tipoMedicamento">
+        <item>Comprimido</item>
+        <item>Dissolúvel</item>
+        <item>Injetável</item>
+        <item>Creme</item>
+    </string-array>
 </resources>

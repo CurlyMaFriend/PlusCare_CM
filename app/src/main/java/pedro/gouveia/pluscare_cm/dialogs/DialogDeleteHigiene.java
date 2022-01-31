@@ -18,7 +18,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import pedro.gouveia.pluscare_cm.R;
 import pedro.gouveia.pluscare_cm.classes.Higiene;
 
-public class CustomDialogDelete extends Dialog implements View.OnClickListener {
+public class DialogDeleteHigiene extends Dialog implements View.OnClickListener {
 
     private Dialog d;
     private Button btnEdit, btnDel, btnCancel;
@@ -30,7 +30,7 @@ public class CustomDialogDelete extends Dialog implements View.OnClickListener {
     private FragmentActivity fa;
     private View v1, v2;
 
-    public CustomDialogDelete(FragmentActivity aFA, Higiene aSelectedHigiene) {
+    public DialogDeleteHigiene(FragmentActivity aFA, Higiene aSelectedHigiene) {
         super(aFA);
         fa = aFA;
         selectedHigiene = aSelectedHigiene;

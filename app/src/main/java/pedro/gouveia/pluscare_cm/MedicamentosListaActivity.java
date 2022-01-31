@@ -20,6 +20,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 
 import pedro.gouveia.pluscare_cm.FragmentAdapterUtente;
@@ -47,6 +49,8 @@ public class MedicamentosListaActivity extends AppCompatActivity {
 
     private ArrayList<Medicamento> medicamentos;
 
+    private FloatingActionButton fab;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +71,15 @@ public class MedicamentosListaActivity extends AppCompatActivity {
 
         FragmentManager fm = getSupportFragmentManager();
         fragmentAdapter = new FragmentAdapterMedicamento(fm, getLifecycle());
+
+        fab = findViewById(R.id.floatingActionButton4);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("teste","clicou no botao fab");
+            }
+        });
 
         viewModel.getMedicamentos().observe(this, item ->{
 
@@ -108,7 +121,6 @@ public class MedicamentosListaActivity extends AppCompatActivity {
         TextView txtNomeMedicamento = view.findViewById(R.id.nomeMedicamentoCard);
         TextView txtDescricaoMedicamento = view.findViewById(R.id.descricaoMedicamentoCard);
         TextView txtTipo = view.findViewById(R.id.dataTipo);
-        TextView txtUtentesConsomem = view.findViewById(R.id.utentesConsomem);
 
         Button btnMedicamento = view.findViewById(R.id.btn_medicamento);
 
@@ -124,6 +136,8 @@ public class MedicamentosListaActivity extends AppCompatActivity {
 
         containerMedicamentos.addView(view);
     }
+
+
 
     private void medicamentoDetails(Medicamento aMedicamento){
         Log.d("teste", "chegou");

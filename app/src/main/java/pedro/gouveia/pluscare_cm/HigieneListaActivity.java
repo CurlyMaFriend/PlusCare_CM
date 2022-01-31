@@ -24,8 +24,8 @@ import androidx.lifecycle.ViewModelProvider;
 import java.util.ArrayList;
 
 import pedro.gouveia.pluscare_cm.classes.Higiene;
-import pedro.gouveia.pluscare_cm.dialogs.CustomDialogDelete;
-import pedro.gouveia.pluscare_cm.dialogs.CustomDialogEdit;
+import pedro.gouveia.pluscare_cm.dialogs.DialogDeleteHigiene;
+import pedro.gouveia.pluscare_cm.dialogs.DialogEditHigiene;
 import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
 
 public class HigieneListaActivity extends AppCompatActivity {
@@ -109,7 +109,7 @@ public class HigieneListaActivity extends AppCompatActivity {
         Button deleteHigiene = view.findViewById(R.id.btn_higiene_delete);
 
         deleteHigiene.setOnClickListener(view1 -> {
-            CustomDialogDelete cdd=new CustomDialogDelete(this, aHigiene);
+            DialogDeleteHigiene cdd=new DialogDeleteHigiene(this, aHigiene);
             cdd.show();
 
             Window window = cdd.getWindow();
@@ -117,7 +117,7 @@ public class HigieneListaActivity extends AppCompatActivity {
         });
 
         editarHigiene.setOnClickListener(view1 -> {
-            CustomDialogEdit cdd=new CustomDialogEdit(this, aHigiene);
+            DialogEditHigiene cdd=new DialogEditHigiene(this, aHigiene);
             cdd.show();
 
             Window window = cdd.getWindow();
