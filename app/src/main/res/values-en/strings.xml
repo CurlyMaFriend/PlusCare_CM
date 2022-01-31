@@ -160,4 +160,13 @@
         <item>Secundary school</item>
         <item>Higher education</item>
     </string-array>
+    <string name="detalhesUtilizador">Detalhes Utilizador</string>
+    <string name="tasks">Tarefas</string>
+    <string name="andar">Floor: </string>
+    <string name="dataInicio">Start: </string>
+    <string name="dataFim">End: </string>
+    <string name="tasksToBeDone">Daily Tasks: </string>
+    <string name="tasksTotal">Total Tasks: </string>
+    <string name="perfil">Profile </string>
+
 </resources>

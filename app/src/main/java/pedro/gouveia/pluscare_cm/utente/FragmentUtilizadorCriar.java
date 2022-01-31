@@ -23,6 +23,7 @@ import java.util.Date;
 
 import pedro.gouveia.pluscare_cm.R;
 import pedro.gouveia.pluscare_cm.classes.Utilizador;
+import pedro.gouveia.pluscare_cm.firebaseManager.FunctionsManager;
 import pedro.gouveia.pluscare_cm.main.LoginActivity;
 
 public class FragmentUtilizadorCriar extends Fragment {
@@ -32,8 +33,14 @@ public class FragmentUtilizadorCriar extends Fragment {
     private ArrayList<String> emails = new ArrayList<>();
     private Date date1;
 
+    private FunctionsManager functionsManager;
+
     private FragmentManager fm;
     private FragmentTransaction ft;
+
+    FragmentUtilizadorCriar(FunctionsManager functionsManager){
+        this.functionsManager = functionsManager;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,8 +53,6 @@ public class FragmentUtilizadorCriar extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //emails =
-
         nomeUtilizador = view.findViewById(R.id.txtNomeUtilizador);
         passwordText = view.findViewById(R.id.txtPasswordUtilizador);
         moradaText = view.findViewById(R.id.moradaText);
@@ -58,18 +63,13 @@ public class FragmentUtilizadorCriar extends Fragment {
         buttonCancelar = view.findViewById(R.id.buttonCancelarUtilizador);
 
         buttonCriar.setOnClickListener(view2 -> {
-            if(emails.contains(emailText.getText())){
-                Toast.makeText(getContext(),getString(R.string.usernameNotAvailable),Toast.LENGTH_SHORT);
-                nomeUtilizador.setText("");
-                emailText.setText("");
-                passwordText.setText("");
-                moradaText.setText("");
-                emailText.setText("");
-            } else {
-
-                    new Utilizador(emailText.getText().toString(), passwordText.getText().toString(), nomeUtilizador.getText().toString(), moradaText.getText().toString());
-                    Toast.makeText(getContext(),getString(R.string.createdAccountSuccess),Toast.LENGTH_LONG);
-            }
+            Utilizador uti = new Utilizador(emailText.getText().toString(), passwordText.getText().toString(), nomeUtilizador.getText().toString(), moradaText.getText().toString());
+            functionsManager.addUtilizador(uti);
+            Toast.makeText(getContext(),getString(R.string.createdAccountSuccess),Toast.LENGTH_LONG);
+            getParentFragmentManager().beginTransaction().hide(this).commit();
+            getActivity().findViewById(R.id.utilizadoresFrame).setVisibility(View.GONE);
+            getActivity().findViewById(R.id.floatingActionButton).setVisibility(View.VISIBLE);
+            getActivity().findViewById(R.id.utilizadoresScroll).setVisibility(View.VISIBLE);
         });
 
         buttonCancelar.setOnClickListener(view2-> {
@@ -80,25 +80,6 @@ public class FragmentUtilizadorCriar extends Fragment {
             getActivity().findViewById(R.id.utilizadoresScroll).setVisibility(View.VISIBLE);
         });
 
-        /*buttonCriar.setOnClickListener(view -> {
-            if(emails.contains(emailText.getText())){
-                Toast.makeText(getContext(),getString(R.string.usernameNotAvailable),Toast.LENGTH_SHORT);
-                nomeUtilizador.setText("");
-                emailText.setText("");
-                passwordText.setText("");
-                moradaText.setText("");
-                emailText.setText("");
-                dataNascimentoText.setText("");
-            } else {
-
-                    new Utilizador(emailText.getText().toString(), passwordText.getText().toString(), nomeUtilizador.getText().toString(), moradaText.getText().toString(), date1.toString());
-                    Toast.makeText(getContext(),getString(R.string.createdAccountSuccess),Toast.LENGTH_LONG);
-            }
-        });*/
-
-
     }
-
-
 
 }

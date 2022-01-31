@@ -17,6 +17,8 @@ public class FragmentAdapterTarefa extends FragmentStateAdapter {
     private ArrayList<Tarefa> tarefas;
     private boolean loading;
     private FragmentTarefasCompletas fragmentTarefasCompletas;
+    private FragmentTarefasPorFazer fragmentTarefasPorFazer;
+    private FragmentTarefasIncompletas fragmentTarefasIncompletas;
 
     public FragmentAdapterTarefa(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
@@ -27,7 +29,8 @@ public class FragmentAdapterTarefa extends FragmentStateAdapter {
     public void setTarefas(ArrayList<Tarefa> aTarefas){
         tarefas = aTarefas;
         fragmentTarefasCompletas.setTarefas(tarefas);
-
+        fragmentTarefasIncompletas.setTarefas(tarefas);
+        fragmentTarefasPorFazer.setTarefas(tarefas);
         Log.d("teste", "Entrou no set tarefas com: " + aTarefas.size());
     }
 
@@ -43,10 +46,10 @@ public class FragmentAdapterTarefa extends FragmentStateAdapter {
                 return fragmentTarefasCompletas;
             case 1:
                 if(loading) return new FragmentLoading();
-                else return new FragmentTarefasPorFazer();
+                else return fragmentTarefasPorFazer;
             default:
                 if(loading) return new FragmentLoading();
-                else return new FragmentTarefasIncompletas();
+                else return fragmentTarefasIncompletas;
         }
     }
 

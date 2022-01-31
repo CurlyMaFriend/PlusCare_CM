@@ -42,6 +42,7 @@ public class UtentesListaActivity extends AppCompatActivity {
     private MyViewModel viewModel;
     private FragmentManager fm;
     private FragmentTransaction ft;
+    private String extra;
 
     private ScrollView utentesScroll;
     private FrameLayout utentesFrame;
@@ -99,7 +100,16 @@ public class UtentesListaActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         menuBar = menu;
-        getMenuInflater().inflate(R.menu.menu_list_utentes, menu);
+
+        Intent intent = getIntent();
+
+        extra = intent.getStringExtra("tipo");
+
+        if(extra == null){
+            getMenuInflater().inflate(R.menu.menu_list_utentes, menu);
+        } else {
+            getMenuInflater().inflate(R.menu.fragment_menu, menu);
+        }
 
         MenuItem searchItem = menu.findItem(R.id.search);
         SearchView searchView = (SearchView) searchItem.getActionView();

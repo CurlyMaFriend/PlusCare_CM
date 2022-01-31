@@ -6,6 +6,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
 
@@ -27,34 +30,73 @@ import java.util.concurrent.TimeUnit;
 
 import pedro.gouveia.pluscare_cm.FragmentAdapterTarefa;
 import pedro.gouveia.pluscare_cm.R;
+import pedro.gouveia.pluscare_cm.classes.Tarefa;
 import pedro.gouveia.pluscare_cm.classes.Utente;
 import pedro.gouveia.pluscare_cm.classes.Utilizador;
 
 public class UtilizadorInfo extends AppCompatActivity {
 
     private TextView andar, nomeUtilizador, idadeUtilizador, email, funcao;
+    private ImageButton imageButton;
     private FragmentAdapterTarefa fragmentAdapter;
     private Utilizador utilizador;
     private Toolbar toolbarListUtilizadores;
+    private LinearLayout listaTarefas;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.utilizador_info_layout);
 
+        listaTarefas = findViewById(R.id.listaTarefas);
+
         toolbarListUtilizadores = findViewById(R.id.toolbar);
         setSupportActionBar(toolbarListUtilizadores);
 
         nomeUtilizador = findViewById(R.id.nomeUtilizador);
-        andar = findViewById(R.id.andarUtilizador);
-        email = findViewById(R.id.utilizadorEmail);
+        andar = findViewById(R.id.andarUtilizadorInfo);
+        email = findViewById(R.id.emailUtilizadorInfo);
         funcao = findViewById(R.id.funcaoUtilizador);
+
+        imageButton = findViewById(R.id.imageButton);
 
         utilizador = (Utilizador) getIntent().getSerializableExtra("utilizador");
 
         if(utilizador != null){
             nomeUtilizador.setText(utilizador.getNome());
             andar.setText(utilizador.getAndar());
+        }
+
+        imageButton.setOnClickListener(view -> {
+
+        });
+
+
+
+    }
+
+    private void addCardTarefa(Tarefa tarefa){
+
+        Log.d("teste", "Entrou on card utente");
+        View view = getLayoutInflater().inflate(R.layout.task_card_2, null);
+
+        TextView txtTituloTarefa = view.findViewById(R.id.txtTaskName);
+        TextView txtTaskType = view.findViewById(R.id.txtTaskType);
+        TextView txtTaskInicio = view.findViewById(R.id.txtTaskTime2);
+        TextView txtTaskFim = view.findViewById(R.id.txtTaskTime3);
+
+        txtTituloTarefa .setText(tarefa.getTitulo());
+        txtTaskType.setText(tarefa.getTipo());
+        txtTaskInicio.setText(tarefa.getDataInicio());
+        txtTaskFim.setText(tarefa.getDataFim());
+
+        listaTarefas.addView(view);
+    }
+
+    private void setTarefas(ArrayList<Tarefa> aTarefas){
+        listaTarefas.removeAllViews();
+        for (Tarefa ta : aTarefas) {
+            addCardTarefa(ta);
         }
     }
 

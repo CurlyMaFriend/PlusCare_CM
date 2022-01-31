@@ -89,7 +89,7 @@ public class UtilizadoresListaActivity extends AppCompatActivity {
                 utilizadoresFrame.setVisibility(View.VISIBLE);
                 utilizadoresScroll.setVisibility(View.GONE);
                 fab.setVisibility(View.GONE);
-                replaceFragment(new FragmentUtilizadorCriar());
+                replaceFragment(new FragmentUtilizadorCriar(functionsManager));
             }
 
         });

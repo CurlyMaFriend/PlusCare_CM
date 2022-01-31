@@ -159,4 +159,13 @@
         <item>Injetável</item>
         <item>Creme</item>
     </string-array>
+    <string name="detalhesUtilizador">User Details</string>
+    <string name="tasks">Tarefas</string>
+    <string name="andar">Andar: </string>
+    <string name="dataInicio">Início: </string>
+    <string name="dataFim">Fim: </string>
+    <string name="tasksToBeDone">Tarefas do dia: </string>
+    <string name="tasksTotal">Total Tarefas: </string>
+    <string name="perfil">Perfil </string>
+
 </resources>
